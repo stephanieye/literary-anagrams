@@ -52,6 +52,11 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &.contents, &.score {
+    padding: 10px;
   }
 
 
@@ -93,6 +98,15 @@ div {
   &.hint {
     background-color: rgba(200,200,200,1);
     padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &.hint1 , &.hint2 {
+    border: 1px solid black;
+    padding: 20px;
   }
 
   &.tile {
@@ -110,11 +124,27 @@ div {
 button {
   height: 40px;
   width: 80px;
+  color: black;
+  border: 1px solid black;
   border-radius: 20px;
   background-color: rgba(200,200,200,1);
+    &:hover {
+      border: 1px solid white;
+      background-color: black;
+      color: white;
+    }
+
+
+
+
 }
 
 p {
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

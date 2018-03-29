@@ -37,7 +37,10 @@ div {
     padding: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between; }
+    justify-content: space-between;
+    flex-wrap: wrap; }
+  div.contents, div.score {
+    padding: 10px; }
   div.question {
     padding: 50px;
     background-color: #c8c8c8; }
@@ -64,7 +67,14 @@ div {
     flex-wrap: wrap; }
   div.hint {
     background-color: #c8c8c8;
-    padding: 50px; }
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+  div.hint1, div.hint2 {
+    border: 1px solid black;
+    padding: 20px; }
   div.tile {
     font-size: 60px;
     height: 80px;
@@ -77,11 +87,21 @@ div {
 button {
   height: 40px;
   width: 80px;
+  color: black;
+  border: 1px solid black;
   border-radius: 20px;
   background-color: #c8c8c8; }
+  button:hover {
+    border: 1px solid white;
+    background-color: black;
+    color: white; }
 
 p {
   font-family: 'Quicksand', sans-serif;
   font-size: 20px; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
 
 /*# sourceMappingURL=style.css.map */
