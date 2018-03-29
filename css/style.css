@@ -15,6 +15,10 @@ header {
   text-align: left;
   padding: 30px 0 10px 0; }
 
+section {
+  display: none;
+  width: 100%; }
+
 div {
   text-align: center; }
   div.control {
@@ -22,24 +26,14 @@ div {
     width: 100%; }
   div.intro {
     width: 100%; }
-  div.level {
-    display: none;
-    width: 100%;
-    visibility: visible;
-    opacity: 1;
-    animation: fade 2s; }
-@keyframes fade {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
   div.question {
     padding: 50px;
     background-color: #c8c8c8; }
   div.anagramboard {
     font-family: 'Acme', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center; }
   div.anagramrow {
     display: flex;
@@ -52,8 +46,7 @@ div {
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap; }
+    justify-content: center; }
   div.hint {
     background-color: #c8c8c8;
     padding: 50px; }
@@ -65,8 +58,6 @@ div {
     border: 1px solid black;
     padding: 10px;
     margin: 10px; }
-  div.fade {
-    opacity: 0.5; }
 
 button {
   height: 40px;

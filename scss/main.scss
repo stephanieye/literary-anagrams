@@ -7,7 +7,6 @@ body {
 }
 
 
-
 main {
   margin: 40px auto;
   width: 80%;
@@ -20,6 +19,12 @@ header {
   text-align: left;
   padding: 30px 0 10px 0;
 }
+
+section {
+  display: none;
+  width: 100%;
+}
+
 
 div {
   text-align: center;
@@ -34,23 +39,21 @@ div {
     width: 100%;
   }
 
-  &.level {
-    display: none;
-    width: 100%;
-    visibility: visible;
-    opacity: 1;
-    animation: fade 2s;
-  }
 
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
+  //   visibility: visible;
+  //   opacity: 1;
+  //   animation: fade 2s;
+  // }
+  //
+  // @keyframes fade {
+  //   0% {
+  //     opacity: 0;
+  //   }
+  //
+  //   100% {
+  //     opacity: 1;
+  //   }
 
-    100% {
-      opacity: 1;
-    }
-  }
 
   &.question {
     padding: 50px;
@@ -60,9 +63,10 @@ div {
   &.anagramboard {
     font-family: 'Acme', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-  }
+   }
 
   &.anagramrow {
     display: flex;
@@ -80,7 +84,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
+
   }
 
 
@@ -99,9 +103,6 @@ div {
     margin: 10px;
   }
 
-  &.fade {
-    opacity: 0.5;
-  }
 }
 
 button {
