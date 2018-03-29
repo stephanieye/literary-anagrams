@@ -17,15 +17,27 @@ header {
 
 section {
   display: none;
-  width: 100%; }
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+  animation: fade 2s; }
+  section.intro {
+    display: block; }
 
+@keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 div {
   text-align: center; }
   div.control {
     background-color: #f3e1dd;
-    width: 100%; }
-  div.intro {
-    width: 100%; }
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
   div.question {
     padding: 50px;
     background-color: #c8c8c8; }
@@ -34,11 +46,13 @@ div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center; }
+    justify-content: space-between;
+    align-items: flex-start; }
   div.anagramrow {
     display: flex;
     flex-direction: row;
-    justify-content: center; }
+    justify-content: center;
+    flex-wrap: wrap; }
   div.answer {
     background-color: #f3e1dd;
     padding: 50px; }
@@ -46,7 +60,8 @@ div {
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: row;
-    justify-content: center; }
+    justify-content: center;
+    flex-wrap: wrap; }
   div.hint {
     background-color: #c8c8c8;
     padding: 50px; }

@@ -23,36 +23,36 @@ header {
 section {
   display: none;
   width: 100%;
+  visibility: visible;
+  opacity: 1;
+  animation: fade 2s;
+
+  &.intro {
+    display: block;
+  }
 }
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 div {
   text-align: center;
 
   &.control {
     background-color: rgba(243,225,221,1);
-    width: 100%
-  }
-
-
-  &.intro {
     width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-
-
-  //   visibility: visible;
-  //   opacity: 1;
-  //   animation: fade 2s;
-  // }
-  //
-  // @keyframes fade {
-  //   0% {
-  //     opacity: 0;
-  //   }
-  //
-  //   100% {
-  //     opacity: 1;
-  //   }
 
 
   &.question {
@@ -65,13 +65,15 @@ div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
    }
 
   &.anagramrow {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   &.answer {
@@ -84,7 +86,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+    flex-wrap: wrap;
   }
 
 
