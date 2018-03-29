@@ -24,16 +24,27 @@ div {
     width: 100%; }
   div.level {
     display: none;
-    width: 100%; }
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+    animation: fade 2s; }
+@keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
   div.question {
     padding: 50px;
     background-color: #c8c8c8; }
   div.anagramboard {
     font-family: 'Acme', sans-serif;
     display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  div.anagramrow {
+    display: flex;
     flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap; }
+    justify-content: center; }
   div.answer {
     background-color: #f3e1dd;
     padding: 50px; }

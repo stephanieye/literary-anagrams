@@ -1,5 +1,5 @@
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -37,21 +37,20 @@ div {
   &.level {
     display: none;
     width: 100%;
-    // visibility: visible;
-    //    opacity: 1;
-    //    animation: fade 2s;
-   }
+    visibility: visible;
+    opacity: 1;
+    animation: fade 2s;
+  }
 
-   // @keyframes fade {
-   //     0% {
-   //         opacity: 0;
-   //     }
-   //
-   //     100% {
-   //         opacity: 1;
-   //     }
-  //
-  // }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 
   &.question {
     padding: 50px;
@@ -61,9 +60,14 @@ div {
   &.anagramboard {
     font-family: 'Acme', sans-serif;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &.anagramrow {
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
   }
 
   &.answer {
