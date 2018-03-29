@@ -3,8 +3,10 @@ box-sizing: border-box;
 }
 
 body {
-  background-color: rgba(252, 212, 164, 1);
+  background-color: white;;
 }
+
+
 
 main {
   margin: 40px auto;
@@ -12,56 +14,100 @@ main {
   height: 100%;
 }
 
+header {
+  font-family: 'Londrina Sketch', cursive;
+  font-size: 30px;
+  text-align: left;
+  padding: 30px 0 10px 0;
+}
+
 div {
   text-align: center;
 
   &.control {
-    background-color: blue;
-    height: 50px;
+    background-color: rgba(243,225,221,1);
     width: 100%
   }
 
 
   &.intro {
-    height: 700px;
     width: 100%;
   }
 
   &.level {
     display: none;
-    height: 700px;
     width: 100%;
-    visibility: visible;
-       opacity: 1;
-       animation: fade 2s;
+    // visibility: visible;
+    //    opacity: 1;
+    //    animation: fade 2s;
    }
 
-   @keyframes fade {
-       0% {
-           opacity: 0;
-       }
-
-       100% {
-           opacity: 1;
-       }
-
-  }
+   // @keyframes fade {
+   //     0% {
+   //         opacity: 0;
+   //     }
+   //
+   //     100% {
+   //         opacity: 1;
+   //     }
+  //
+  // }
 
   &.question {
-    height: 400px;
-    background-color: red;
     padding: 50px;
+    background-color: rgba(200,200,200,1);
   }
+
+  &.anagramboard {
+    font-family: 'Acme', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   &.answer {
-    height: 200px;
-    background-color: papayawhip;
+    background-color: rgba(243,225,221,1);
     padding: 50px;
   }
+
+  &.answerboard {
+    font-family: 'Acme', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+
   &.hint {
-    height: 100px;
-    background-color: grey;
+    background-color: rgba(200,200,200,1);
     padding: 50px;
   }
 
+  &.tile {
+    font-size: 60px;
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+  }
 
+  &.fade {
+    opacity: 0.5;
+  }
+}
+
+button {
+  height: 40px;
+  width: 80px;
+  border-radius: 20px;
+  background-color: rgba(200,200,200,1);
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
 }
