@@ -35,12 +35,14 @@ div {
   div.control {
     background-color: #f3e1dd;
     width: 100%;
-    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap; }
-  div.contents, div.score {
+  div.contents, div.timer, div.score {
+    text-align: center;
+    width: 180px;
     padding: 10px; }
   div.introtop, div.finaltop {
     padding: 50px;
@@ -76,6 +78,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
     flex-wrap: wrap; }
   div.introbottom, div.finalbottom {
     background-color: #d2d2d2;
@@ -108,6 +111,8 @@ div {
     border-radius: 10px;
     padding: 10px;
     margin: 10px; }
+    div.tile:hover {
+      border: 2px solid black; }
 
 button {
   margin: 20px;
@@ -130,19 +135,41 @@ a {
   text-decoration: none;
   color: inherit; }
 
-@media only screen and (max-width: 1176px) {
+@media only screen and (max-width: 1200px) {
   main {
-    margin: 20px auto; }
+    width: 85%; }
+
+  header {
+    font-size: 45px;
+    margin-bottom: 10px; }
+
+  div.anagramboard, div.answerboard {
+    height: 285px;
+    padding: 0 10px; }
+  div.hint {
+    padding: 20px; }
+  div.hint1, div.hint2 {
+    width: 150px;
+    height: 60px;
+    padding: 10px; }
+  div.tile {
+    font-size: 50px;
+    height: 70px;
+    width: 70px;
+    padding: 10px;
+    margin: 10px; }
+    div.tile:hover {
+      border: 2px solid black; } }
+@media only screen and (max-width: 1000px) {
+  main {
+    margin: 20px auto;
+    width: 90%; }
 
   header {
     font-size: 40px;
     text-align: left;
     margin-bottom: 10px; }
 
-  div.control {
-    padding: 10px; }
-  div.contents, div.score {
-    padding: 10px; }
   div.anagramboard, div.answerboard {
     height: 275px;
     padding: 0 10px; }
@@ -153,11 +180,13 @@ a {
     height: 60px;
     padding: 10px; }
   div.tile {
-    font-size: 30px;
-    height: 50px;
-    width: 50px;
+    font-size: 35px;
+    height: 52px;
+    width: 52px;
     padding: 10px;
-    margin: 10px; }
+    margin: 8px; }
+    div.tile:hover {
+      border: 2px solid black; }
 
   p {
     font-size: 18px; } }
@@ -171,8 +200,8 @@ a {
     margin-bottom: 10px; }
 
   div.control {
-    padding: 5px; }
-  div.contents, div.score {
+    flex-direction: column; }
+  div.contents, div.timer, div.score {
     padding: 5px; }
   div.anagramboard, div.answerboard {
     height: 160px;
@@ -184,12 +213,14 @@ a {
     height: 60px;
     padding: 5px; }
   div.tile {
-    font-size: 23px;
-    height: 30px;
-    width: 30px;
-    padding: 5px;
-    margin: 2px;
+    font-size: 25px;
+    height: 33.5px;
+    width: 33.5px;
+    padding: 4px;
+    margin: 2.5px;
     border-radius: 3px; }
+    div.tile:hover {
+      border: 2px solid black; }
 
   button {
     margin: 5px;
