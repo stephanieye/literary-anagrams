@@ -44,11 +44,16 @@ div {
     text-align: center;
     width: 180px;
     padding: 10px; }
+  div.timer {
+    border: 1px solid black; }
   div.introtop, div.finaltop {
     padding: 50px;
     background-color: #d2d2d2;
     background: radial-gradient(circle, #d2d2d2 0%, #f3e1dd 100%);
-    font-family: 'Acme', sans-serif; }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
   div.anagramboard {
     padding: 0 20px;
     background-color: #d2d2d2;
@@ -69,7 +74,10 @@ div {
     background-color: #f3e1dd;
     background: radial-gradient(circle, #f3e1dd 0%, #d2d2d2 100%);
     padding: 50px;
-    font-family: 'Acme', sans-serif; }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
   div.answerboard {
     background-color: #f3e1dd;
     padding: 50px;
@@ -83,7 +91,11 @@ div {
   div.introbottom, div.finalbottom {
     background-color: #d2d2d2;
     background: radial-gradient(circle, #d2d2d2 0%, #f3e1dd 100%);
-    padding: 50px; }
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
   div.hint {
     background-color: #d2d2d2;
     padding: 50px;
@@ -100,6 +112,8 @@ div {
     display: flex;
     flex-direction: column;
     justify-content: center; }
+    div.hint1:hover, div.hint2:hover {
+      border: 2px solid black; }
   div.hintrevealed {
     background-color: #f3e1dd; }
   div.tile {
@@ -157,9 +171,7 @@ a {
     height: 70px;
     width: 70px;
     padding: 10px;
-    margin: 10px; }
-    div.tile:hover {
-      border: 2px solid black; } }
+    margin: 10px; } }
 @media only screen and (max-width: 1000px) {
   main {
     margin: 20px auto;
@@ -185,8 +197,6 @@ a {
     width: 52px;
     padding: 10px;
     margin: 8px; }
-    div.tile:hover {
-      border: 2px solid black; }
 
   p {
     font-size: 18px; } }
@@ -219,8 +229,6 @@ a {
     padding: 4px;
     margin: 2.5px;
     border-radius: 3px; }
-    div.tile:hover {
-      border: 2px solid black; }
 
   button {
     margin: 5px;

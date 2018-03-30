@@ -1,8 +1,11 @@
 $(()=>{
+
+
   var levelcount = 0;
   var points = 0;
   var demerits = 0;
   var timerId = null;
+
   const $submitbutton = $('button.submit');
   const $level = $('section');
   const $tile = $('div.tile');
@@ -10,10 +13,8 @@ $(()=>{
   const $answerboard = $('div.answerboard');
   const $hint1 = $('div.hint1');
   const $hint2 = $('div.hint2');
-  const $contents = $('div.contents').find('p');
   const $scoreboard = $('div.score').find('p');
   const $timer = $('div.timer').find('p');
-
 
   const $titles = ['OLIVERTWIST', 'FRANKENSTEIN', 'HEARTOFDARKNESS', 'BRIDESHEADREVISITED', 'WUTHERINGHEIGHTS', 'THEREMAINSOFTHEDAY', 'LORDOFTHEFLIES', 'ACLOCKWORKORANGE', 'THEWAROFTHEWORLDS', 'ANIMALFARM', 'APASSAGETOINDIA', 'MRSDALLOWAY', 'TINKERTAILORSOLDIERSPY', 'ASTUDYINSCARLET', 'BRAVENEWWORLD', 'THEWINDINTHEWILLOWS', 'MANSFIELDPARK', 'SILASMARNER','MYFAMILYANDOTHERANIMALS','JUDETHEOBSCURE'];
 
@@ -23,12 +24,10 @@ $(()=>{
   $submitbutton.on('click', play);
 
 
-
   function play(){
     clearInterval(timerId);
     if (levelcount < 20) {
       startTimer();
-      $contents.text(`Anagram ${levelcount+1} of 20`);
     }
     var $answer = $('div.chosen');
     console.log($answer.text());
@@ -60,32 +59,6 @@ $(()=>{
   }
 
 
-
-
-  $hint1.on('click', function(){
-    $(this).find('p').text(`${$hints[levelcount-1][0]}`);
-    $(this).addClass('hintrevealed');
-    demerits += 1;
-    console.log(demerits);
-  });
-
-  $hint2.on('click', function(){
-    $(this).find('p').text(`${$hints[levelcount-1][1]}`);
-    $(this).addClass('hintrevealed');
-    demerits += 1;
-    console.log(demerits);
-  });
-
-
-  $('header').on('click', function(){
-    location.reload();
-  });
-
-
-
-
-
-
   function startTimer() {
     $timer.text('60 seconds left');
     var timeRemaining = 60;
@@ -100,50 +73,25 @@ $(()=>{
   }
 
 
+  $hint1.on('click', function(){
+    $(this).find('p').text(`${$hints[levelcount-1][0]}`);
+    $(this).addClass('hintrevealed');
+    demerits += 1;
+    console.log(demerits);
+  });
 
 
+  $hint2.on('click', function(){
+    $(this).find('p').text(`${$hints[levelcount-1][1]}`);
+    $(this).addClass('hintrevealed');
+    demerits += 1;
+    console.log(demerits);
+  });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  $('header').on('click', function(){
+    location.reload();
+  });
 
 
 });
