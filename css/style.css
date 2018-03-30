@@ -5,15 +5,16 @@ body {
   background-color: white; }
 
 main {
-  margin: 40px auto;
+  margin: 20px auto;
   width: 80%;
   height: 100%; }
 
 header {
-  font-family: 'Londrina Sketch', cursive;
-  font-size: 30px;
+  font-family: 'Jacques Francois Shadow', cursive;
+  color: #727272;
+  font-size: 50px;
   text-align: left;
-  padding: 30px 0 10px 0; }
+  margin-bottom: 15px; }
 
 section {
   display: none;
@@ -41,58 +42,83 @@ div {
     flex-wrap: wrap; }
   div.contents, div.score {
     padding: 10px; }
-  div.question {
+  div.introtop, div.finaltop {
     padding: 50px;
-    background-color: #c8c8c8; }
+    background-color: #d2d2d2;
+    background: radial-gradient(circle, #d2d2d2 0%, #f3e1dd 100%);
+    font-family: 'Acme', sans-serif; }
   div.anagramboard {
+    padding: 0 20px;
+    background-color: #d2d2d2;
+    height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start; }
+    align-items: center; }
   div.anagramrow {
+    margin: 0 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap; }
-  div.answer {
+  div.intromiddle, div.finalmiddle {
     background-color: #f3e1dd;
-    padding: 50px; }
+    background: radial-gradient(circle, #f3e1dd 0%, #d2d2d2 100%);
+    padding: 50px;
+    font-family: 'Acme', sans-serif; }
   div.answerboard {
+    background-color: #f3e1dd;
+    padding: 50px;
+    height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap; }
+  div.introbottom, div.finalbottom {
+    background-color: #d2d2d2;
+    background: radial-gradient(circle, #d2d2d2 0%, #f3e1dd 100%);
+    padding: 50px; }
   div.hint {
-    background-color: #c8c8c8;
+    background-color: #d2d2d2;
     padding: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap; }
   div.hint1, div.hint2 {
+    width: 200px;
+    height: 80px;
     border: 1px solid black;
-    padding: 20px; }
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  div.hintrevealed {
+    background-color: #f3e1dd; }
   div.tile {
     font-size: 60px;
     height: 80px;
     width: 80px;
     background-color: white;
     border: 1px solid black;
+    border-radius: 10px;
     padding: 10px;
     margin: 10px; }
 
 button {
-  height: 40px;
-  width: 80px;
+  margin: 20px;
+  height: 50px;
+  width: 90px;
   color: black;
   border: 1px solid black;
-  border-radius: 20px;
-  background-color: #c8c8c8; }
+  border-radius: 30px;
+  background-color: white; }
   button:hover {
-    border: 1px solid white;
+    border: 1px solid #f3e1dd;
     background-color: black;
     color: white; }
 
@@ -103,5 +129,73 @@ p {
 a {
   text-decoration: none;
   color: inherit; }
+
+@media only screen and (max-width: 1176px) {
+  main {
+    margin: 20px auto; }
+
+  header {
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 10px; }
+
+  div.control {
+    padding: 10px; }
+  div.contents, div.score {
+    padding: 10px; }
+  div.anagramboard, div.answerboard {
+    height: 275px;
+    padding: 0 10px; }
+  div.hint {
+    padding: 20px; }
+  div.hint1, div.hint2 {
+    width: 150px;
+    height: 60px;
+    padding: 10px; }
+  div.tile {
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    margin: 10px; }
+
+  p {
+    font-size: 18px; } }
+@media only screen and (max-width: 700px) {
+  main {
+    margin: 5px auto; }
+
+  header {
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 10px; }
+
+  div.control {
+    padding: 5px; }
+  div.contents, div.score {
+    padding: 5px; }
+  div.anagramboard, div.answerboard {
+    height: 160px;
+    padding: 0; }
+  div.hint {
+    padding: 5px; }
+  div.hint1, div.hint2 {
+    width: 100px;
+    height: 60px;
+    padding: 5px; }
+  div.tile {
+    font-size: 23px;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 3px; }
+
+  button {
+    margin: 5px;
+    width: 70px; }
+
+  p {
+    font-size: 15px; } }
 
 /*# sourceMappingURL=style.css.map */

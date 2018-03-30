@@ -12,9 +12,9 @@ $(()=>{
   const $contents = $('div.contents').find('p');
   const $scoreboard = $('div.score').find('p');
 
-  const $titles = ['OLIVERTWIST', 'FRANKENSTEIN', 'HEARTOFDARKNESS', 'PRIDEANDPREJUDICE', 'WUTHERINGHEIGHTS', 'THELORDOFTHERINGS', 'LORDOFTHEFLIES', 'ACLOCKWORKORANGE', 'THEWAROFTHEWORLDS', 'ANIMALFARM', 'DAVIDCOPPERFIELD', 'THEHITCHHIKERSGUIDETOTHEGALAXY', 'PERSUASION', 'GREATEXPECTATIONS', 'BRAVENEWWORLD', 'THEWINDINTHEWILLOWS', 'MANSFIELDPARK', 'SILASMARNER','SONSANDLOVERS','JUDETHEOBSCURE'];
+  const $titles = ['OLIVERTWIST', 'FRANKENSTEIN', 'HEARTOFDARKNESS', 'BRIDESHEADREVISITED', 'WUTHERINGHEIGHTS', 'THEREMAINSOFTHEDAY', 'LORDOFTHEFLIES', 'ACLOCKWORKORANGE', 'THEWAROFTHEWORLDS', 'ANIMALFARM', 'APASSAGETOINDIA', 'MRSDALLOWAY', 'TINKERTAILORSOLDIERSPY', 'ASTUDYINSCARLET', 'BRAVENEWWORLD', 'THEWINDINTHEWILLOWS', 'MANSFIELDPARK', 'SILASMARNER','MYFAMILYANDOTHERANIMALS','JUDETHEOBSCURE'];
 
-  const $hints = [['Charles Dickens', '2 words'], ['Mary Shelley', '1 word'], ['Joseph Conrad', '3 words'], ['Jane Austen', '3 words'], ['Emily Bronte', '2 words'], ['J.R.R. Tolkien', '5 words'], ['William Golding','4 words'], ['Anthony Burgess', '3 words'], ['H.G. Wells', '5 words'], ['George Orwell', '2 words'], ['Charles Dickens', '2 words'], ['Douglas Adams', '6 words'], ['Jane Austen', '1 word'], ['Charles Dickens', '2 words'], ['Aldous Huxley', '3 words'], ['Kenneth Grahame', '5 words'], ['Jane Austen', '2 words'], ['George Eliot', '2 words'], ['D.H. Lawrence', '3 words'], ['Thomas Hardy', '3 words']];
+  const $hints = [['Charles Dickens', '2 words'], ['Mary Shelley', '1 word'], ['Joseph Conrad', '3 words'], ['Evelyn Waugh', '2 words'], ['Emily Bronte', '2 words'], ['Kazuo Ishiguro', '5 words'], ['William Golding','4 words'], ['Anthony Burgess', '3 words'], ['H.G. Wells', '5 words'], ['George Orwell', '2 words'], ['E.M. Forster', '4 words'], ['Virginia Woolf', '2 words'], ['John le Carre', '4 words'], ['Arthur Conan Doyle', '4 words'], ['Aldous Huxley', '3 words'], ['Kenneth Grahame', '5 words'], ['Jane Austen', '2 words'], ['George Eliot', '2 words'], ['Gerald Durrell', '5 words'], ['Thomas Hardy', '3 words']];
 
 
   $submitbutton.on('click', function(){
@@ -26,6 +26,7 @@ $(()=>{
       points += 5;
       console.log(points);
       var score = points - demerits;
+      console.log(score);
       $scoreboard.text(`${score} out of 100 marks`);
     }
     $level.eq(levelcount).remove();
@@ -50,26 +51,17 @@ $(()=>{
 
   $hint1.on('click', function(){
     $(this).find('p').text(`${$hints[levelcount-1][0]}`);
+    $(this).addClass('hintrevealed');
     demerits += 1;
+    console.log(demerits);
   });
 
   $hint2.on('click', function(){
     $(this).find('p').text(`${$hints[levelcount-1][1]}`);
+    $(this).addClass('hintrevealed');
     demerits += 1;
+    console.log(demerits);
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   $('header').on('click', function(){
