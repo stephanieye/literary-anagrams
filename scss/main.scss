@@ -1,7 +1,9 @@
 $base: rgba(255,255,255,1);
-$header: rgba(114,114,114,1);
+$header: rgba(99,99,99,1);
 $grey: rgba(210,210,210,1);
-$pink: rgba(243,225,221,1);
+$blue: rgba(189,205,239,1);
+$rose: rgba(239,179,179,1);
+$pink: rgba(242,222,222,1);
 $black: rgba(0,0,0,1);
 
 
@@ -55,6 +57,7 @@ div {
 
   &.control {
     background-color: $pink;
+    background: linear-gradient(270deg, $pink 0%, $rose 100%);
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -72,12 +75,13 @@ div {
 
   &.timer {
     border: 1px solid $black;
+    background-color: $pink;
   }
 
   &.introtop, &.finaltop {
     padding: 50px;
     background-color: $grey;
-    background: radial-gradient(circle, $grey 0%, $pink 100%);
+    background: radial-gradient(circle, $grey 0%, $blue 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,6 +91,7 @@ div {
   &.anagramboard {
     padding: 0 20px;
     background-color: $grey;
+    background: linear-gradient(90deg, $grey 0%, $blue 100%);
     height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
@@ -106,7 +111,7 @@ div {
 
   &.intromiddle, &.finalmiddle {
     background-color: $pink;
-    background: radial-gradient(circle, $pink 0%, $grey 100%);
+    background: radial-gradient(circle, $pink 0%, $rose 100%);
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -116,6 +121,7 @@ div {
 
   &.answerboard {
     background-color: $pink;
+    background: linear-gradient(270deg, $pink 0%, $rose 100%);
     padding: 0 20px;
     height: 300px;
     font-family: 'Acme', sans-serif;
@@ -129,7 +135,7 @@ div {
 
   &.introbottom, &.finalbottom {
     background-color: $grey;
-    background: radial-gradient(circle, $grey 0%, $pink 100%);
+    background: radial-gradient(circle, $grey 0%, $blue 100%);
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -139,6 +145,7 @@ div {
 
   &.hint {
     background-color: $grey;
+    background: linear-gradient(90deg, $grey 0%, $blue 100%);
     padding: 50px;
     display: flex;
     flex-direction: row;
@@ -192,7 +199,7 @@ button {
   border-radius: 30px;
   background-color: $base;
   &:hover {
-    border: 1px solid $pink;
+    border: 2px solid transparent;
     background-color: $black;
     color: $base;
   }

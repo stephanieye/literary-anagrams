@@ -89,7 +89,7 @@ $(()=>{
   }
 
 
-  $hint1.on('click', function(){
+  $hint1.one('click', function(){
     purr.play();
     $(this).find('p').text(`${$hints[levelcount-1][0]}`);
     $(this).addClass('hintrevealed');
@@ -98,7 +98,7 @@ $(()=>{
   });
 
 
-  $hint2.on('click', function(){
+  $hint2.one('click', function(){
     purr.play();
     $(this).find('p').text(`${$hints[levelcount-1][1]}`);
     $(this).addClass('hintrevealed');
