@@ -1,4 +1,5 @@
 $base: rgba(255,255,255,1);
+$mint: rgba(245,255,245,1);
 $header: rgba(99,99,99,1);
 $grey: rgba(210,210,210,1);
 $blue: rgba(189,205,239,1);
@@ -56,7 +57,7 @@ div {
 
   &.control {
     background-color: $pink;
-    background: linear-gradient(270deg, $pink 0%, $rose 100%);
+    background: linear-gradient(300deg, $pink 0%, $rose 100%);
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -68,7 +69,7 @@ div {
 
   &.contents, &.timer, &.score {
     text-align: center;
-    width: 180px;
+    width: 210px;
     padding: 10px;
   }
 
@@ -90,7 +91,7 @@ div {
   &.anagramboard {
     padding: 0 20px;
     background-color: $grey;
-    background: linear-gradient(90deg, $grey 0%, $blue 100%);
+    background: linear-gradient(220deg, $blue 0%, $grey 100%);
     height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
@@ -120,7 +121,7 @@ div {
 
   &.answerboard {
     background-color: $pink;
-    background: linear-gradient(270deg, $pink 0%, $rose 100%);
+    background: linear-gradient(300deg, $pink 0%, $rose 100%);
     padding: 0 20px;
     height: 300px;
     font-family: 'Acme', sans-serif;
@@ -144,7 +145,7 @@ div {
 
   &.hint {
     background-color: $grey;
-    background: linear-gradient(90deg, $grey 0%, $blue 100%);
+    background: linear-gradient(220deg, $blue 0%, $grey 100%);
     padding: 50px;
     display: flex;
     flex-direction: row;
@@ -154,7 +155,7 @@ div {
   }
 
   &.hint1 , &.hint2 {
-    width: 200px;
+    width: 210px;
     height: 80px;
     border: 1px solid $black;
     padding: 20px;
@@ -288,7 +289,7 @@ a {
     }
 
     &.hint1 , &.hint2 {
-      width: 150px;
+      width: 180px;
       height: 60px;
       padding: 10px;
     }
@@ -304,6 +305,7 @@ a {
 
   p {
     font-size: 18px;
+    line-height: 22px;
   }
 
 }
@@ -328,6 +330,7 @@ a {
     }
 
     &.contents, &.timer, &.score {
+      width: 160px;
       padding: 5px;
     }
 
@@ -341,7 +344,7 @@ a {
     }
 
     &.hint1 , &.hint2 {
-      width: 100px;
+      width: 130px;
       height: 60px;
       padding: 5px;
     }
@@ -363,6 +366,7 @@ a {
 
   p {
     font-size: 15px;
+    line-height: 17px;
   }
 
 }

@@ -34,7 +34,7 @@ div {
   text-align: center; }
   div.control {
     background-color: #f2dede;
-    background: linear-gradient(270deg, #f2dede 0%, #efb3b3 100%);
+    background: linear-gradient(300deg, #f2dede 0%, #efb3b3 100%);
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -44,7 +44,7 @@ div {
     padding: 5px; }
   div.contents, div.timer, div.score {
     text-align: center;
-    width: 180px;
+    width: 210px;
     padding: 10px; }
   div.timer {
     border: 1px solid black;
@@ -60,7 +60,7 @@ div {
   div.anagramboard {
     padding: 0 20px;
     background-color: #d2d2d2;
-    background: linear-gradient(90deg, #d2d2d2 0%, #bdcdef 100%);
+    background: linear-gradient(220deg, #bdcdef 0%, #d2d2d2 100%);
     height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
@@ -84,7 +84,7 @@ div {
     align-items: center; }
   div.answerboard {
     background-color: #f2dede;
-    background: linear-gradient(270deg, #f2dede 0%, #efb3b3 100%);
+    background: linear-gradient(300deg, #f2dede 0%, #efb3b3 100%);
     padding: 0 20px;
     height: 300px;
     font-family: 'Acme', sans-serif;
@@ -103,7 +103,7 @@ div {
     align-items: center; }
   div.hint {
     background-color: #d2d2d2;
-    background: linear-gradient(90deg, #d2d2d2 0%, #bdcdef 100%);
+    background: linear-gradient(220deg, #bdcdef 0%, #d2d2d2 100%);
     padding: 50px;
     display: flex;
     flex-direction: row;
@@ -111,7 +111,7 @@ div {
     align-items: center;
     flex-wrap: wrap; }
   div.hint1, div.hint2 {
-    width: 200px;
+    width: 210px;
     height: 80px;
     border: 1px solid black;
     padding: 20px;
@@ -198,7 +198,7 @@ a {
   div.hint {
     padding: 20px; }
   div.hint1, div.hint2 {
-    width: 150px;
+    width: 180px;
     height: 60px;
     padding: 10px; }
   div.tile {
@@ -209,7 +209,8 @@ a {
     margin: 8px; }
 
   p {
-    font-size: 18px; } }
+    font-size: 18px;
+    line-height: 22px; } }
 @media only screen and (max-width: 700px) {
   main {
     margin: 5px auto; }
@@ -222,6 +223,7 @@ a {
   div.control {
     flex-direction: column; }
   div.contents, div.timer, div.score {
+    width: 160px;
     padding: 5px; }
   div.anagramboard, div.answerboard {
     height: 160px;
@@ -229,7 +231,7 @@ a {
   div.hint {
     padding: 5px; }
   div.hint1, div.hint2 {
-    width: 100px;
+    width: 130px;
     height: 60px;
     padding: 5px; }
   div.tile {
@@ -245,6 +247,7 @@ a {
     width: 70px; }
 
   p {
-    font-size: 15px; } }
+    font-size: 15px;
+    line-height: 17px; } }
 
 /*# sourceMappingURL=style.css.map */
