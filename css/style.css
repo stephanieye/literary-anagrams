@@ -25,16 +25,10 @@ section {
   section.intro {
     display: block; }
 
-@keyframes fade {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
 div {
   text-align: center; }
   div.control {
-    background-color: #f2dede;
-    background: linear-gradient(300deg, #f2dede 0%, #efb3b3 100%);
+    background-color: #efb3b3;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -47,27 +41,28 @@ div {
     width: 210px;
     padding: 10px; }
   div.timer {
-    border: 1px solid black;
+    border: 1px solid #636363;
     background-color: #f2dede; }
   div.introtop, div.finaltop {
     padding: 50px;
-    background-color: #d2d2d2;
-    background: radial-gradient(circle, #d2d2d2 0%, #bdcdef 100%);
+    background-color: #d2d2e6;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
   div.anagramboard {
     padding: 0 20px;
-    background-color: #d2d2d2;
-    background: linear-gradient(220deg, #bdcdef 0%, #d2d2d2 100%);
+    background-color: #d2d2e6;
+    background: radial-gradient(circle, #d2d2e6, #bebed2, #aaaabe, #9696aa);
+    background-size: 400% 400%;
     height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    animation: flowing 10s ease infinite; }
   div.anagramrow {
     margin: 0 5px;
     display: flex;
@@ -76,7 +71,6 @@ div {
     flex-wrap: wrap; }
   div.intromiddle, div.finalmiddle {
     background-color: #f2dede;
-    background: radial-gradient(circle, #f2dede 0%, #efb3b3 100%);
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -84,7 +78,8 @@ div {
     align-items: center; }
   div.answerboard {
     background-color: #f2dede;
-    background: linear-gradient(300deg, #f2dede 0%, #efb3b3 100%);
+    background: radial-gradient(circle, #e696a0, #efb3b3, #f0c8c8, #f2dede);
+    background-size: 400% 400%;
     padding: 0 20px;
     height: 300px;
     font-family: 'Acme', sans-serif;
@@ -92,18 +87,17 @@ div {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    animation: flowing 10s ease infinite; }
   div.introbottom, div.finalbottom {
-    background-color: #d2d2d2;
-    background: radial-gradient(circle, #d2d2d2 0%, #bdcdef 100%);
+    background-color: #d2d2e6;
     padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
   div.hint {
-    background-color: #d2d2d2;
-    background: linear-gradient(220deg, #bdcdef 0%, #d2d2d2 100%);
+    background-color: #bebed2;
     padding: 50px;
     display: flex;
     flex-direction: row;
@@ -113,7 +107,7 @@ div {
   div.hint1, div.hint2 {
     width: 210px;
     height: 80px;
-    border: 1px solid black;
+    border: 1px solid #636363;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -127,7 +121,7 @@ div {
     height: 80px;
     width: 80px;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid #636363;
     border-radius: 10px;
     padding: 10px;
     margin: 10px; }
@@ -141,16 +135,21 @@ button {
   height: 50px;
   width: 90px;
   color: black;
-  border: 1px solid black;
+  border: 2px solid #636363;
   border-radius: 30px;
   background-color: white; }
-  button:hover {
-    border: 2px solid transparent;
-    background-color: black;
-    color: white; }
   button.playagain {
     height: 65px;
     width: 105px; }
+  button.rainbow {
+    background-color: white;
+    background: linear-gradient(45deg, #e696a0, #efb3b3, #f0c8c8, #bebed2, #aaaabe, #9696aa);
+    background-size: 400% 400%;
+    animation: flowing 5s ease infinite; }
+  button:hover {
+    border: 3px solid white;
+    background-color: black;
+    color: white; }
 
 p {
   font-family: 'Libre Franklin', sans-serif;
@@ -165,6 +164,18 @@ a {
   text-decoration: none;
   color: inherit; }
 
+@keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes flowing {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
 @media only screen and (max-width: 1200px) {
   main {
     width: 85%; }

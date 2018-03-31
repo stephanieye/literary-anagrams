@@ -24,7 +24,6 @@ $(()=>{
   const $ranking7 = $('#ranking7');
   const $playagainbutton = $('button.playagain');
 
-
   const choose = document.getElementById('choose');
   choose.src = 'sounds/choose.mp3';
   const unchoose = document.getElementById('unchoose');

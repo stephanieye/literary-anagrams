@@ -1,9 +1,12 @@
 $base: rgba(255,255,255,1);
-$mint: rgba(245,255,245,1);
 $header: rgba(99,99,99,1);
-$grey: rgba(210,210,210,1);
-$blue: rgba(189,205,239,1);
+$grey: rgba(210,210,230,1);
+$slate: rgba(190,190,210,1);
+$sky: rgba(170,170,190,1);
+$ocean: rgba(150,150,170,1);
+$blush: rgba(230,150,160,1);
 $rose: rgba(239,179,179,1);
+$kitten: rgba(240,200,200,1);
 $pink: rgba(242,222,222,1);
 $black: rgba(0,0,0,1);
 
@@ -42,22 +45,11 @@ section {
   }
 }
 
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 div {
   text-align: center;
 
   &.control {
-    background-color: $pink;
-    background: linear-gradient(300deg, $pink 0%, $rose 100%);
+    background-color: $rose;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -74,14 +66,13 @@ div {
   }
 
   &.timer {
-    border: 1px solid $black;
+    border: 1px solid $header;
     background-color: $pink;
   }
 
   &.introtop, &.finaltop {
     padding: 50px;
     background-color: $grey;
-    background: radial-gradient(circle, $grey 0%, $blue 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,7 +82,8 @@ div {
   &.anagramboard {
     padding: 0 20px;
     background-color: $grey;
-    background: linear-gradient(220deg, $blue 0%, $grey 100%);
+    background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
+    background-size: 400% 400%;
     height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
@@ -99,6 +91,7 @@ div {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    animation: flowing 10s ease infinite;
   }
 
   &.anagramrow {
@@ -111,7 +104,6 @@ div {
 
   &.intromiddle, &.finalmiddle {
     background-color: $pink;
-    background: radial-gradient(circle, $pink 0%, $rose 100%);
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -121,7 +113,8 @@ div {
 
   &.answerboard {
     background-color: $pink;
-    background: linear-gradient(300deg, $pink 0%, $rose 100%);
+    background: radial-gradient(circle, $blush, $rose, $kitten, $pink);
+    background-size: 400% 400%;
     padding: 0 20px;
     height: 300px;
     font-family: 'Acme', sans-serif;
@@ -130,12 +123,11 @@ div {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    animation: flowing 10s ease infinite;
   }
-
 
   &.introbottom, &.finalbottom {
     background-color: $grey;
-    background: radial-gradient(circle, $grey 0%, $blue 100%);
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -144,8 +136,7 @@ div {
   }
 
   &.hint {
-    background-color: $grey;
-    background: linear-gradient(220deg, $blue 0%, $grey 100%);
+    background-color: $slate;
     padding: 50px;
     display: flex;
     flex-direction: row;
@@ -157,7 +148,7 @@ div {
   &.hint1 , &.hint2 {
     width: 210px;
     height: 80px;
-    border: 1px solid $black;
+    border: 1px solid $header;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -177,7 +168,7 @@ div {
     height: 80px;
     width: 80px;
     background-color: $base;
-    border: 1px solid $black;
+    border: 1px solid $header;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -199,17 +190,23 @@ button {
   height: 50px;
   width: 90px;
   color: $black;
-  border: 1px solid $black;
+  border: 2px solid $header;
   border-radius: 30px;
   background-color: $base;
-  &:hover {
-    border: 2px solid transparent;
-    background-color: $black;
-    color: $base;
-  }
   &.playagain {
     height: 65px;
     width: 105px;
+  }
+  &.rainbow {
+    background-color: $base;
+    background: linear-gradient(45deg, $blush, $rose, $kitten, $slate, $sky, $ocean);
+    background-size: 400% 400%;
+    animation: flowing 5s ease infinite;
+  }
+  &:hover {
+    border: 3px solid $base;
+    background-color: $black;
+    color: $base;
   }
 }
 
@@ -229,6 +226,28 @@ span {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flowing {
+0% {
+  background-position: 0% 50%
+}
+50% {
+  background-position: 100% 50%
+}
+100% {
+  background-position: 0% 50%
+}
 }
 
 
