@@ -15,7 +15,16 @@ $(()=>{
   const $hint2 = $('div.hint2');
   const $scoreboard = $('div.score').find('p');
   const $timer = $('div.timer').find('p');
-  const $ranking = $('#ranking').find('p');
+  const $ranking1 = $('#ranking1');
+  const $ranking2 = $('#ranking2');
+  const $ranking3 = $('#ranking3');
+  const $ranking4 = $('#ranking4');
+  const $ranking5 = $('#ranking5');
+  const $ranking6 = $('#ranking6');
+  const $ranking7 = $('#ranking7');
+  const $playagainbutton = $('button.playagain');
+
+
   const choose = document.getElementById('choose');
   choose.src = 'sounds/choose.mp3';
   const unchoose = document.getElementById('unchoose');
@@ -46,30 +55,19 @@ $(()=>{
     console.log($titles[levelcount-1]);
     if ($answer.text() === $titles[levelcount-1]) {
       points += 5;
-      console.log(points);
-      var score = points - demerits;
-      console.log(score);
-      $scoreboard.text(`${score} out of 100 marks`);
+    } else {
+      points += 0;
     }
+    console.log(points);
+    var score = points - demerits;
+    console.log(score);
+    $scoreboard.text(`${score} out of 100 marks`);
+
     $level.eq(levelcount).remove();
     levelcount += 1;
     if (levelcount === 21) {
       fanfare.play();
-      if (score === 100) {
-        $ranking.text('You are an Alpha Double-Plus');
-      } else if (score > 79) {
-        $ranking.text('You are an Alpha Plus');
-      } else if (score > 69) {
-        $ranking.text('You are an Alpha');
-      } else if (score > 59) {
-        $ranking.text('You are a Beta');
-      } else if (score > 49) {
-        $ranking.text('You are a Gamma');
-      } else if (score > 39) {
-        $ranking.text('You are a Delta');
-      } else {
-        $ranking.text('You are an Epsilon');
-      }
+      rankplayer(score);
     }
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
     var $currentAnagramBoard = $level.eq(levelcount).find($anagramboard);
@@ -105,6 +103,25 @@ $(()=>{
   }
 
 
+  function rankplayer(s){
+    if (s === 100) {
+      $ranking1.css({'display': 'block'});
+    } else if (s > 79) {
+      $ranking2.css({'display': 'block'});
+    } else if (s > 69) {
+      $ranking3.css({'display': 'block'});
+    } else if (s > 59) {
+      $ranking4.css({'display': 'block'});
+    } else if (s > 49) {
+      $ranking5.css({'display': 'block'});
+    } else if (s > 39) {
+      $ranking6.css({'display': 'block'});
+    } else {
+      $ranking7.css({'display': 'block'});
+    }
+  }
+
+
   $hint1.one('click', function(){
     purr.play();
     $(this).find('p').text(`${$hints[levelcount-1][0]}`);
@@ -120,6 +137,11 @@ $(()=>{
     $(this).addClass('hintrevealed');
     demerits += 1;
     console.log(demerits);
+  });
+
+
+  $playagainbutton.on('click', function(){
+    location.reload();
   });
 
 

@@ -133,6 +133,8 @@ div {
     margin: 10px; }
     div.tile:hover {
       border: 2px solid black; }
+  div #ranking1, div #ranking2, div #ranking3, div #ranking4, div #ranking5, div #ranking6, div #ranking7 {
+    display: none; }
 
 button {
   margin: 20px;
@@ -146,10 +148,18 @@ button {
     border: 2px solid transparent;
     background-color: black;
     color: white; }
+  button.playagain {
+    height: 65px;
+    width: 105px; }
 
 p {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 300;
+  line-height: 25px;
   font-size: 20px; }
+
+span.em {
+  font-style: italic; }
 
 a {
   text-decoration: none;

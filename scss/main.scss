@@ -15,7 +15,6 @@ body {
   background-color: $base;
 }
 
-
 main {
   margin: 20px auto;
   width: 80%;
@@ -188,6 +187,10 @@ div {
 
   }
 
+  #ranking1, #ranking2, #ranking3, #ranking4, #ranking5, #ranking6, #ranking7 {
+    display: none;
+  }
+
 }
 
 button {
@@ -203,12 +206,23 @@ button {
     background-color: $black;
     color: $base;
   }
-
+  &.playagain {
+    height: 65px;
+    width: 105px;
+  }
 }
 
 p {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 300;
+  line-height: 25px;
   font-size: 20px;
+}
+
+span {
+  &.em {
+    font-style: italic;
+  }
 }
 
 a {
