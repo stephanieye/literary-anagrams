@@ -21,6 +21,10 @@ $(()=>{
   unchoose.src = 'sounds/unchoose.mp3';
   const submit = document.getElementById('submit');
   submit.src = 'sounds/submit.wav';
+  const purr = document.getElementById('purr');
+  purr.src = 'sounds/purr.wav';
+  const fanfare = document.getElementById('fanfare');
+  fanfare.src = 'sounds/fanfare.flac';
 
   const $titles = ['OLIVERTWIST', 'FRANKENSTEIN', 'HEARTOFDARKNESS', 'BRIDESHEADREVISITED', 'WUTHERINGHEIGHTS', 'THEREMAINSOFTHEDAY', 'LORDOFTHEFLIES', 'ACLOCKWORKORANGE', 'THEWAROFTHEWORLDS', 'ANIMALFARM', 'APASSAGETOINDIA', 'MRSDALLOWAY', 'TINKERTAILORSOLDIERSPY', 'ASTUDYINSCARLET', 'BRAVENEWWORLD', 'THEWINDINTHEWILLOWS', 'MANSFIELDPARK', 'SILASMARNER','MYFAMILYANDOTHERANIMALS','JUDETHEOBSCURE'];
 
@@ -48,6 +52,9 @@ $(()=>{
     }
     $level.eq(levelcount).remove();
     levelcount += 1;
+    if (levelcount === 21) {
+      fanfare.play();
+    }
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
     var $currentAnagramBoard = $level.eq(levelcount).find($anagramboard);
     var $currentTile = $currentAnagramBoard.find($tile);
@@ -76,13 +83,14 @@ $(()=>{
       $timer.text(`${timeRemaining} seconds left`);
       if (timeRemaining === 0) {
         clearInterval(timerId);
-        play();
+        playgame();
       }
     }, 1000);
   }
 
 
   $hint1.on('click', function(){
+    purr.play();
     $(this).find('p').text(`${$hints[levelcount-1][0]}`);
     $(this).addClass('hintrevealed');
     demerits += 1;
@@ -91,6 +99,7 @@ $(()=>{
 
 
   $hint2.on('click', function(){
+    purr.play();
     $(this).find('p').text(`${$hints[levelcount-1][1]}`);
     $(this).addClass('hintrevealed');
     demerits += 1;

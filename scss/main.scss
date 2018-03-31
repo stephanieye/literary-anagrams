@@ -116,7 +116,7 @@ div {
 
   &.answerboard {
     background-color: $pink;
-    padding: 50px;
+    padding: 0 20px;
     height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
@@ -227,16 +227,6 @@ a {
     &.anagramboard, &.answerboard {
       height: 285px;
       padding: 0 10px;
-    }
-
-    &.hint {
-      padding: 20px;
-    }
-
-    &.hint1 , &.hint2 {
-      width: 150px;
-      height: 60px;
-      padding: 10px;
     }
 
     &.tile {

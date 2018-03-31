@@ -81,7 +81,7 @@ div {
     align-items: center; }
   div.answerboard {
     background-color: #f3e1dd;
-    padding: 50px;
+    padding: 0 20px;
     height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
@@ -161,12 +161,6 @@ a {
   div.anagramboard, div.answerboard {
     height: 285px;
     padding: 0 10px; }
-  div.hint {
-    padding: 20px; }
-  div.hint1, div.hint2 {
-    width: 150px;
-    height: 60px;
-    padding: 10px; }
   div.tile {
     font-size: 50px;
     height: 70px;
