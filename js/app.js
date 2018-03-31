@@ -15,6 +15,7 @@ $(()=>{
   const $hint2 = $('div.hint2');
   const $scoreboard = $('div.score').find('p');
   const $timer = $('div.timer').find('p');
+  const $ranking = $('#ranking').find('p');
   const choose = document.getElementById('choose');
   choose.src = 'sounds/choose.mp3';
   const unchoose = document.getElementById('unchoose');
@@ -54,6 +55,21 @@ $(()=>{
     levelcount += 1;
     if (levelcount === 21) {
       fanfare.play();
+      if (score === 100) {
+        $ranking.text('You are an Alpha Double-Plus');
+      } else if (score > 79) {
+        $ranking.text('You are an Alpha Plus');
+      } else if (score > 69) {
+        $ranking.text('You are an Alpha');
+      } else if (score > 59) {
+        $ranking.text('You are a Beta');
+      } else if (score > 49) {
+        $ranking.text('You are a Gamma');
+      } else if (score > 39) {
+        $ranking.text('You are a Delta');
+      } else {
+        $ranking.text('You are an Epsilon');
+      }
     }
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
     var $currentAnagramBoard = $level.eq(levelcount).find($anagramboard);
