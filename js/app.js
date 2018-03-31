@@ -15,16 +15,23 @@ $(()=>{
   const $hint2 = $('div.hint2');
   const $scoreboard = $('div.score').find('p');
   const $timer = $('div.timer').find('p');
+  const choose = document.getElementById('choose');
+  choose.src = 'sounds/choose.mp3';
+  const unchoose = document.getElementById('unchoose');
+  unchoose.src = 'sounds/unchoose.mp3';
+  const submit = document.getElementById('submit');
+  submit.src = 'sounds/submit.wav';
 
   const $titles = ['OLIVERTWIST', 'FRANKENSTEIN', 'HEARTOFDARKNESS', 'BRIDESHEADREVISITED', 'WUTHERINGHEIGHTS', 'THEREMAINSOFTHEDAY', 'LORDOFTHEFLIES', 'ACLOCKWORKORANGE', 'THEWAROFTHEWORLDS', 'ANIMALFARM', 'APASSAGETOINDIA', 'MRSDALLOWAY', 'TINKERTAILORSOLDIERSPY', 'ASTUDYINSCARLET', 'BRAVENEWWORLD', 'THEWINDINTHEWILLOWS', 'MANSFIELDPARK', 'SILASMARNER','MYFAMILYANDOTHERANIMALS','JUDETHEOBSCURE'];
 
   const $hints = [['Charles Dickens', '2 words'], ['Mary Shelley', '1 word'], ['Joseph Conrad', '3 words'], ['Evelyn Waugh', '2 words'], ['Emily Brontë', '2 words'], ['Kazuo Ishiguro', '5 words'], ['William Golding','4 words'], ['Anthony Burgess', '3 words'], ['H.G. Wells', '5 words'], ['George Orwell', '2 words'], ['E.M. Forster', '4 words'], ['Virginia Woolf', '2 words'], ['John le Carré', '4 words'], ['Arthur Conan Doyle', '4 words'], ['Aldous Huxley', '3 words'], ['Kenneth Grahame', '5 words'], ['Jane Austen', '2 words'], ['George Eliot', '2 words'], ['Gerald Durrell', '5 words'], ['Thomas Hardy', '3 words']];
 
 
-  $submitbutton.on('click', play);
+  $submitbutton.on('click', playgame);
 
 
-  function play(){
+  function playgame(){
+    submit.play();
     clearInterval(timerId);
     if (levelcount < 20) {
       startTimer();
@@ -48,9 +55,11 @@ $(()=>{
     for (var i = 0; i < $currentTile.length; i++) {
       $($currentTile[i]).on('click', function(){
         if (($(this)).hasClass('chosen')) {
+          unchoose.play();
           $currentAnagramBoard.append($(this));
           $($(this)).removeClass('chosen');
         } else {
+          choose.play();
           ($(this)).addClass('chosen');
           $currentAnswerBoard.append($(this));
         }

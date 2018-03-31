@@ -39,7 +39,8 @@ div {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    padding: 5px; }
   div.contents, div.timer, div.score {
     text-align: center;
     width: 180px;
