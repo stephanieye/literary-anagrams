@@ -265,8 +265,6 @@ div {
     }
   }
 
-
-
   &.tile {
     font-size: 60px;
     height: 80px;
@@ -468,7 +466,7 @@ span {
 @media only screen and (max-width: 1200px) {
 
   main {
-    width: 90%
+    width: 100%
   }
 
   header {
@@ -478,6 +476,11 @@ span {
   }
 
   div {
+
+    &.masthead {
+      margin: 0 auto;
+      width: 90%;
+    }
 
     &.contents, &.timer, &.score {
       width: 200px;
@@ -490,7 +493,7 @@ span {
 
     &.anagramboard {
       height: 280px;
-      padding: 0 10px;
+      padding: 0 20px;
     }
 
     &.answer {
@@ -499,7 +502,7 @@ span {
 
     &.answerboard {
       height: 205px;
-      padding: 0 10px;
+      padding: 0 20px;
     }
 
     &.hint {
@@ -571,7 +574,7 @@ span {
 
     &.anagramboard {
       height: 173px;
-      padding: 0 3px;
+      padding: 0 15px;
     }
 
     &.answer {
@@ -580,12 +583,12 @@ span {
 
     &.answerboard {
       height: 130px;
-      padding: 0 3px;
+      padding: 0 15px;
     }
 
     &.hint {
       height: 100px;
-      padding: 8px 10px;
+      padding: 8px 15px;
     }
 
     &.hint1 , &.hint2 {
