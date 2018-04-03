@@ -33,6 +33,57 @@ header {
   font-size: 50px;
   text-align: left;
   margin-bottom: 15px;
+
+  &.move1 {
+    position: relative;
+    animation: move1 2.5s ease-out 2s forwards;
+  }
+
+  &.move2 {
+    position: relative;
+    animation: move2 2.5s linear 2s forwards;
+  }
+
+  &.move3 {
+    position: relative;
+    animation: move3 2.5s ease-in 2s forwards;
+  }
+
+  &.move4 {
+    position: relative;
+    animation: move4 5s ease-in 5s forwards;
+  }
+
+  &.move5 {
+    position: relative;
+    animation: move5 2.5s linear 2s forwards;
+  }
+
+  &.move6 {
+    position: relative;
+    animation: move6 2.5s ease-out 2s forwards;
+  }
+
+  &.move7 {
+    position: relative;
+    animation: move7 2.5s ease-in 2s forwards;
+  }
+
+  &.move8 {
+    position: relative;
+    animation: move8 2.5s linear 2s forwards;
+  }
+
+  &.move9 {
+    position: relative;
+    animation: move9 2.5s ease-out 2s forwards;
+  }
+
+  &.move10 {
+    position: relative;
+    animation: move10 2.5s linear 2s forwards;
+  }
+
 }
 
 section {
@@ -49,6 +100,13 @@ section {
 
 div {
   text-align: center;
+
+  &.masthead {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   &.control {
     background-color: $rose;
@@ -278,6 +336,83 @@ span {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+
+@keyframes move1 {
+    0%   { left:0px; top:0px;}
+    50%  { left:32.5%; top:500px;}
+    100% { left:32.5%; top:0px;}
+}
+
+@keyframes move2 {
+    0%   { left:0px; top:0px;}
+    50%  { left:71%; top:300px;}
+    100% { left:71%; top:0px;}
+}
+
+@keyframes move3 {
+    0%   { left:0px; top:0px;}
+    50%  { left:-20.5%; top:200px;}
+    100% { left:-20.5%; top:0px;}
+}
+
+@keyframes move4 {
+    0%   { left:0px; top:0px; transform: skewY(-35deg);}
+    15%   { left:65%; top:0px; transform: skewY(-35deg) rotate(-10deg);}
+    20%   { left:65%; top:0px; transform: skewY(0) rotate(0deg);}
+    25%   { left:65%; top:0px; transform: skewY(0) rotate(10deg);}
+    30%   { left:65%; top:0px; transform: skewY(0) rotate(0deg);}
+    35%   { left:65%; top:0px; transform: skewY(0) rotate(-8deg);}
+    40%   { left:65%; top:0px; transform: skewY(0) rotate(0deg);}
+    45%   { left:65%; top:0px; transform: skewY(0) rotate(8deg);}
+    50%   { left:65%; top:0px; transform: skewY(0) rotate(0deg);}
+    55%   { left:65%; top:0px; transform: skewY(0) rotate(-6deg);}
+    60%   { left:65%; top:0px; transform: skewY(0) rotate(0deg);}
+    65%   { left:65%; top:0px; transform: skewY(0) rotate(6deg);}
+    70%   { left:65%; top:0px; transform: skewY(0) rotate(0deg);}
+    75%   { left:65%; top:0px; transform: skewY(0) rotate(-4deg);}
+    80%   { left:65%; top:0px; transform: skewY(0) rotate(0deg);}
+    85%   { left:65%; top:0px; transform: skewY(0) rotate(4deg);}
+    90%   { left:65%; top:0px; transform: skewY(0) rotate(0deg);}
+    95%   { left:65%; top:0px; transform: skewY(0) rotate(-2deg);}
+    100% { left:65%; top:0px; transform: skewY(0);}
+}
+
+@keyframes move5 {
+    0%   { left:0px; top:0px;}
+    50%  { left:-39%; top:300px;}
+    100% { left:-39%; top:0px;}
+}
+
+@keyframes move6 {
+    0%   { left:0px; top:0px;}
+    50%  { left:6.25%; top:400px;}
+    100% { left:6.25%; top:0px;}
+}
+
+@keyframes move7 {
+    0%   { left:0px; top:0px;}
+    50%  { left:-6.25%; top:200px;}
+    100% { left:-6.25%; top:0px;}
+}
+
+@keyframes move8 {
+    0%   { left:0px; top:0px;}
+    50%  { left:-39%; top:300px;}
+    100% { left:-39%; top:0px;}
+}
+
+@keyframes move9 {
+    0%   { left:0px; top:0px;}
+    50%  { left:-26.5%; top:250px;}
+    100% { left:-26.5%; top:0px;}
+}
+
+@keyframes move10 {
+    0%   { left:0px; top:0px;}
+    50%  { left:-78.5%; top:200px;}
+    100% { left:-78.5%; top:0px;}
 }
 
 @keyframes fade {
