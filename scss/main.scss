@@ -88,11 +88,32 @@ div {
     align-items: center;
   }
 
-  &.anagramboard {
-    padding: 0 20px;
+  &.question {
+    height: 450px;
     background-color: $grey;
     background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
     background-size: 400% 400%;
+    animation: flowing 10s linear infinite;
+  }
+
+  &.instruction {
+    color: $base;
+    padding: 15px 20px;
+    height: 50px;
+    text-align: right;
+    animation: blink 8s ease infinite;
+  }
+
+  &.deinstruction {
+    color: $base;
+    padding: 15px 20px;
+    height: 50px;
+    text-align: right;
+    animation: deblink 8s ease infinite;
+  }
+
+  &.anagramboard {
+    padding: 0 20px;
     height: 400px;
     font-family: 'Acme', sans-serif;
     display: flex;
@@ -100,7 +121,6 @@ div {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    animation: flowing 10s linear infinite;
   }
 
   &.anagramrow {
@@ -121,10 +141,15 @@ div {
     align-items: center;
   }
 
-  &.answerboard {
+  &.answer {
+    height: 350px;
     background-color: $pink;
     background: radial-gradient(circle, $blush, $rose, $kitten, $pink);
     background-size: 400% 400%;
+    animation: flowing 10s linear infinite;
+  }
+
+  &.answerboard {
     padding: 0 20px;
     height: 300px;
     font-family: 'Acme', sans-serif;
@@ -133,7 +158,6 @@ div {
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
-    animation: flowing 10s linear infinite;
   }
 
   &.introbottom, &.finalbottom {
@@ -297,7 +321,29 @@ a {
   }
 }
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+@keyframes deblink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 @media only screen and (max-width: 1200px) {
 
@@ -314,9 +360,17 @@ a {
 
   div {
 
+    &.question {
+      height: 330px;
+    }
+
     &.anagramboard {
       height: 280px;
       padding: 0 10px;
+    }
+
+    &.answer {
+      height: 255px;
     }
 
     &.answerboard {
@@ -382,9 +436,17 @@ a {
       padding: 5px;
     }
 
+    &.question {
+      height: 207px;
+    }
+
     &.anagramboard {
       height: 157px;
       padding: 0 3px;
+    }
+
+    &.answer {
+      height: 167px;
     }
 
     &.answerboard {

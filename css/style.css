@@ -56,19 +56,33 @@ div {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-  div.anagramboard {
-    padding: 0 20px;
+  div.question {
+    height: 450px;
     background-color: #d2d2e6;
     background: radial-gradient(circle, #d2d2e6, #bebed2, #aaaabe, #9696aa);
     background-size: 400% 400%;
+    animation: flowing 10s linear infinite; }
+  div.instruction {
+    color: white;
+    padding: 15px 20px;
+    height: 50px;
+    text-align: right;
+    animation: blink 8s ease infinite; }
+  div.deinstruction {
+    color: white;
+    padding: 15px 20px;
+    height: 50px;
+    text-align: right;
+    animation: deblink 8s ease infinite; }
+  div.anagramboard {
+    padding: 0 20px;
     height: 400px;
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: flex-start;
-    animation: flowing 10s linear infinite; }
+    align-items: flex-start; }
   div.anagramrow {
     margin: 0 5px;
     display: flex;
@@ -83,10 +97,13 @@ div {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-  div.answerboard {
+  div.answer {
+    height: 350px;
     background-color: #f2dede;
     background: radial-gradient(circle, #e696a0, #efb3b3, #f0c8c8, #f2dede);
     background-size: 400% 400%;
+    animation: flowing 10s linear infinite; }
+  div.answerboard {
     padding: 0 20px;
     height: 300px;
     font-family: 'Acme', sans-serif;
@@ -94,8 +111,7 @@ div {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: wrap;
-    animation: flowing 10s linear infinite; }
+    flex-wrap: wrap; }
   div.introbottom, div.finalbottom {
     background-color: #d2d2e6;
     background: radial-gradient(circle, #d2d2e6, #bebed2, #aaaabe, #9696aa);
@@ -209,6 +225,20 @@ a {
     transform: translateY(-20px); }
   100% {
     transform: translateY(0); } }
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes deblink {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 @media only screen and (max-width: 1200px) {
   main {
     margin: 20px auto;
@@ -219,9 +249,13 @@ a {
     text-align: left;
     margin-bottom: 10px; }
 
+  div.question {
+    height: 330px; }
   div.anagramboard {
     height: 280px;
     padding: 0 10px; }
+  div.answer {
+    height: 255px; }
   div.answerboard {
     height: 205px;
     padding: 0 10px; }
@@ -261,9 +295,13 @@ a {
   div.contents, div.timer, div.score {
     width: 180px;
     padding: 5px; }
+  div.question {
+    height: 207px; }
   div.anagramboard {
     height: 157px;
     padding: 0 3px; }
+  div.answer {
+    height: 167px; }
   div.answerboard {
     height: 117px;
     padding: 0 3px; }
