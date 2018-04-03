@@ -72,6 +72,9 @@ div {
     background-color: $pink;
     p {
       font-weight: 500;
+      &.warning {
+        color: red;
+      }
     }
   }
 
@@ -101,7 +104,7 @@ div {
     padding: 15px 20px;
     height: 50px;
     text-align: right;
-    animation: blink 8s ease infinite;
+    animation: blink 8s ease-in-out infinite;
   }
 
   &.deinstruction {
@@ -109,7 +112,7 @@ div {
     padding: 15px 20px;
     height: 50px;
     text-align: right;
-    animation: deblink 8s ease infinite;
+    animation: deblink 8s ease-in-out infinite;
   }
 
   &.anagramboard {
@@ -175,7 +178,7 @@ div {
 
   &.hint {
     background-color: $slate;
-    padding: 25px 50px;
+    padding: 10px 50px;
     height: 150px;
     display: flex;
     flex-direction: row;
@@ -235,8 +238,8 @@ div {
 
 button {
   margin: 20px;
-  height: 50px;
-  width: 90px;
+  height: 65px;
+  width: 105px;
   color: $black;
   border: 2px solid $header;
   border-radius: 30px;
@@ -249,7 +252,7 @@ button {
   }
   &:hover {
     border: 3px solid $base;
-    height: 75px;
+    height: 85px;
     width: 130px;
     border-radius: 40px;
     color: $base;
@@ -257,16 +260,6 @@ button {
       font-size: 30px;
     }
   }
-  &.playagain {
-    height: 65px;
-    width: 105px;
-    &:hover {
-      height: 85px;
-      width: 125px;
-    }
-  }
-
-
 }
 
 p {
@@ -379,7 +372,7 @@ a {
     }
 
     &.hint {
-      padding: 20px;
+      padding: 10px 20px;
     }
 
     &.hint1 , &.hint2 {
@@ -455,6 +448,7 @@ a {
     }
 
     &.hint {
+      height: 100px;
       padding: 8px 10px;
     }
 

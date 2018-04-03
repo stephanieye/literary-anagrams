@@ -34,6 +34,8 @@ $(()=>{
   purr.src = 'sounds/purr.wav';
   const fanfare = document.getElementById('fanfare');
   fanfare.src = 'sounds/fanfare.flac';
+  const warn = document.getElementById('warn');
+  warn.src = 'sounds/warn.wav';
 
   const $titles = ['FRANKENSTEIN', 'OLIVERTWIST', 'HEARTOFDARKNESS', 'BRIDESHEADREVISITED', 'WUTHERINGHEIGHTS', 'THEREMAINSOFTHEDAY', 'LORDOFTHEFLIES', 'ACLOCKWORKORANGE', 'THEWAROFTHEWORLDS', 'ANIMALFARM', 'APASSAGETOINDIA', 'MRSDALLOWAY', 'TINKERTAILORSOLDIERSPY', 'ASTUDYINSCARLET', 'BRAVENEWWORLD', 'THEWINDINTHEWILLOWS', 'MANSFIELDPARK', 'SILASMARNER','MYFAMILYANDOTHERANIMALS','JUDETHEOBSCURE'];
 
@@ -45,6 +47,7 @@ $(()=>{
 
   function playgame(){
     submit.play();
+    $timer.removeClass('warning');
     clearInterval(timerId);
     if (levelcount < 20) {
       startTimer();
@@ -94,6 +97,10 @@ $(()=>{
     timerId = setInterval(()=> {
       timeRemaining--;
       $timer.text(`${timeRemaining} seconds left`);
+      if (timeRemaining < 11) {
+        $timer.addClass('warning');
+        warn.play();
+      }
       if (timeRemaining === 0) {
         clearInterval(timerId);
         playgame();
@@ -140,11 +147,6 @@ $(()=>{
 
 
   $playagainbutton.on('click', function(){
-    location.reload();
-  });
-
-
-  $('header').on('click', function(){
     location.reload();
   });
 
