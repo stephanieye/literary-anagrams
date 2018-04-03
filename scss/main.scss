@@ -1,5 +1,6 @@
 $base: rgba(255,255,255,1);
 $header: rgba(99,99,99,1);
+$shadow: rgba(99,99,99,0.5);
 $grey: rgba(210,210,230,1);
 $slate: rgba(190,190,210,1);
 $sky: rgba(170,170,190,1);
@@ -8,6 +9,7 @@ $blush: rgba(230,150,160,1);
 $rose: rgba(239,179,179,1);
 $kitten: rgba(240,200,200,1);
 $pink: rgba(242,222,222,1);
+$lemon: rgba(255,255,220,1);
 $black: rgba(0,0,0,1);
 
 
@@ -68,11 +70,18 @@ div {
   &.timer {
     border: 1px solid $header;
     background-color: $pink;
+    p {
+      font-weight: 500;
+    }
   }
 
   &.introtop, &.finaltop {
     padding: 50px;
     background-color: $grey;
+    background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
+    animation: flowing 10s linear infinite;
+    background-size: 400% 400%;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,7 +113,8 @@ div {
 
   &.intromiddle, &.finalmiddle {
     background-color: $pink;
-    padding: 50px;
+    padding: 20px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,7 +138,11 @@ div {
 
   &.introbottom, &.finalbottom {
     background-color: $grey;
-    padding: 50px;
+    background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
+    animation: flowing 10s linear infinite;
+    background-size: 400% 400%;
+    padding: 20px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -138,6 +152,7 @@ div {
   &.hint {
     background-color: $slate;
     padding: 25px 50px;
+    height: 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -149,19 +164,22 @@ div {
     width: 185px;
     height: 80px;
     border: 1px solid $header;
+    border-radius: 10px;
     padding: 20px;
+    box-shadow: 6px 6px 2px 1px $shadow;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     &:hover {
-      border: 2px solid $black;
+      background-color: $lemon;
+    }
+    &.hintrevealed {
+      background-color: $pink;
+      box-shadow: -6px 6px 2px 1px $shadow;
     }
   }
 
-  &.hintrevealed {
-    background-color: $pink;
-  }
+
 
   &.tile {
     font-size: 60px;
@@ -172,9 +190,15 @@ div {
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
+    box-shadow: 6px 6px 2px 1px $shadow;
 
     &:hover {
-      border: 2px solid $black;
+      background-color: $lemon;
+    }
+
+    &.chosen {
+      animation: bounce 0.3s ease-out 1;
+      box-shadow: -6px 6px 2px 1px $shadow;
     }
 
   }
@@ -193,21 +217,32 @@ button {
   border: 2px solid $header;
   border-radius: 30px;
   background-color: $base;
-  &.playagain {
-    height: 65px;
-    width: 105px;
-  }
-  &.rainbow {
-    background-color: $base;
-    background: linear-gradient(45deg, $blush, $rose, $kitten, $slate, $sky, $ocean);
-    background-size: 400% 400%;
-    animation: flowing 5s linear infinite;
+  background: linear-gradient(45deg, $blush, $rose, $kitten, $slate, $sky, $ocean);
+  background-size: 400% 400%;
+  animation: flowing 5s linear infinite;
+  p {
+    font-weight: 500;
   }
   &:hover {
     border: 3px solid $base;
-    background-color: $black;
+    height: 75px;
+    width: 130px;
+    border-radius: 40px;
     color: $base;
+    p {
+      font-size: 30px;
+    }
   }
+  &.playagain {
+    height: 65px;
+    width: 105px;
+    &:hover {
+      height: 85px;
+      width: 125px;
+    }
+  }
+
+
 }
 
 p {
@@ -239,16 +274,29 @@ a {
 }
 
 @keyframes flowing {
-0% {
-  background-position: 0% 50%
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
 }
-50% {
-  background-position: 100% 50%
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-100% {
-  background-position: 0% 50%
-}
-}
+
 
 
 @media only screen and (max-width: 1200px) {
@@ -284,6 +332,10 @@ a {
       width: 165px;
       height: 60px;
       padding: 10px;
+      box-shadow: 3px 3px 1px 0.5px $shadow;
+      &.hintrevealed {
+        box-shadow: -3px 3px 1px 0.5px $shadow;
+      }
     }
 
     &.tile {
@@ -292,6 +344,10 @@ a {
       width: 52px;
       padding: 10px;
       margin: 8px;
+      box-shadow: 3px 3px 1px 0.5px $shadow;
+      &.chosen {
+        box-shadow: -3px 3px 1px 0.5px $shadow;
+      }
     }
   }
 
@@ -322,28 +378,32 @@ a {
     }
 
     &.contents, &.timer, &.score {
-      width: 160px;
+      width: 180px;
       padding: 5px;
     }
 
     &.anagramboard {
       height: 157px;
-      padding: 0;
+      padding: 0 3px;
     }
 
     &.answerboard {
       height: 117px;
-      padding: 0;
+      padding: 0 3px;
     }
 
     &.hint {
-      padding: 5px;
+      padding: 8px 10px;
     }
 
     &.hint1 , &.hint2 {
-      width: 108px;
+      width: 130px;
       height: 60px;
       padding: 5px;
+      box-shadow: 1.5px 1.5px 0.5px 0.25px $shadow;
+      &.hintrevealed {
+        box-shadow: -1.5px 1.5px 0.5px 0.25px $shadow;
+      }
     }
 
     &.tile {
@@ -353,17 +413,12 @@ a {
       padding: 4px;
       margin: 2.5px;
       border-radius: 3px;
+      box-shadow: 1.5px 1.5px 0.5px 0.25px $shadow;
+      &.chosen {
+        box-shadow: -1.5px 1.5px 0.5px 0.25px $shadow;
+      }
     }
-  }
 
-  button {
-    margin: 5px;
-    width: 70px;
-  }
-
-  p {
-    font-size: 15px;
-    line-height: 17px;
   }
 
 }

@@ -43,9 +43,15 @@ div {
   div.timer {
     border: 1px solid #636363;
     background-color: #f2dede; }
+    div.timer p {
+      font-weight: 500; }
   div.introtop, div.finaltop {
     padding: 50px;
     background-color: #d2d2e6;
+    background: radial-gradient(circle, #d2d2e6, #bebed2, #aaaabe, #9696aa);
+    animation: flowing 10s linear infinite;
+    background-size: 400% 400%;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +77,8 @@ div {
     flex-wrap: wrap; }
   div.intromiddle, div.finalmiddle {
     background-color: #f2dede;
-    padding: 50px;
+    padding: 20px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,7 +98,11 @@ div {
     animation: flowing 10s linear infinite; }
   div.introbottom, div.finalbottom {
     background-color: #d2d2e6;
-    padding: 50px;
+    background: radial-gradient(circle, #d2d2e6, #bebed2, #aaaabe, #9696aa);
+    animation: flowing 10s linear infinite;
+    background-size: 400% 400%;
+    padding: 20px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,6 +110,7 @@ div {
   div.hint {
     background-color: #bebed2;
     padding: 25px 50px;
+    height: 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -108,14 +120,17 @@ div {
     width: 185px;
     height: 80px;
     border: 1px solid #636363;
+    border-radius: 10px;
     padding: 20px;
+    box-shadow: 6px 6px 2px 1px rgba(99, 99, 99, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center; }
     div.hint1:hover, div.hint2:hover {
-      border: 2px solid black; }
-  div.hintrevealed {
-    background-color: #f2dede; }
+      background-color: #ffffdc; }
+    div.hint1.hintrevealed, div.hint2.hintrevealed {
+      background-color: #f2dede;
+      box-shadow: -6px 6px 2px 1px rgba(99, 99, 99, 0.5); }
   div.tile {
     font-size: 60px;
     height: 80px;
@@ -124,9 +139,13 @@ div {
     border: 1px solid #636363;
     border-radius: 10px;
     padding: 10px;
-    margin: 10px; }
+    margin: 10px;
+    box-shadow: 6px 6px 2px 1px rgba(99, 99, 99, 0.5); }
     div.tile:hover {
-      border: 2px solid black; }
+      background-color: #ffffdc; }
+    div.tile.chosen {
+      animation: bounce 0.3s ease-out 1;
+      box-shadow: -6px 6px 2px 1px rgba(99, 99, 99, 0.5); }
   div #ranking1, div #ranking2, div #ranking3, div #ranking4, div #ranking5, div #ranking6, div #ranking7 {
     display: none; }
 
@@ -137,19 +156,26 @@ button {
   color: black;
   border: 2px solid #636363;
   border-radius: 30px;
-  background-color: white; }
+  background-color: white;
+  background: linear-gradient(45deg, #e696a0, #efb3b3, #f0c8c8, #bebed2, #aaaabe, #9696aa);
+  background-size: 400% 400%;
+  animation: flowing 5s linear infinite; }
+  button p {
+    font-weight: 500; }
+  button:hover {
+    border: 3px solid white;
+    height: 75px;
+    width: 130px;
+    border-radius: 40px;
+    color: white; }
+    button:hover p {
+      font-size: 30px; }
   button.playagain {
     height: 65px;
     width: 105px; }
-  button.rainbow {
-    background-color: white;
-    background: linear-gradient(45deg, #e696a0, #efb3b3, #f0c8c8, #bebed2, #aaaabe, #9696aa);
-    background-size: 400% 400%;
-    animation: flowing 5s linear infinite; }
-  button:hover {
-    border: 3px solid white;
-    background-color: black;
-    color: white; }
+    button.playagain:hover {
+      height: 85px;
+      width: 125px; }
 
 p {
   font-family: 'Libre Franklin', sans-serif;
@@ -176,6 +202,13 @@ a {
     background-position: 100% 50%; }
   100% {
     background-position: 0% 50%; } }
+@keyframes bounce {
+  0% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-20px); }
+  100% {
+    transform: translateY(0); } }
 @media only screen and (max-width: 1200px) {
   main {
     margin: 20px auto;
@@ -197,13 +230,19 @@ a {
   div.hint1, div.hint2 {
     width: 165px;
     height: 60px;
-    padding: 10px; }
+    padding: 10px;
+    box-shadow: 3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); }
+    div.hint1.hintrevealed, div.hint2.hintrevealed {
+      box-shadow: -3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); }
   div.tile {
     font-size: 35px;
     height: 52px;
     width: 52px;
     padding: 10px;
-    margin: 8px; }
+    margin: 8px;
+    box-shadow: 3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); }
+    div.tile.chosen {
+      box-shadow: -3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); }
 
   p {
     font-size: 18px;
@@ -220,34 +259,32 @@ a {
   div.control {
     flex-direction: column; }
   div.contents, div.timer, div.score {
-    width: 160px;
+    width: 180px;
     padding: 5px; }
   div.anagramboard {
     height: 157px;
-    padding: 0; }
+    padding: 0 3px; }
   div.answerboard {
     height: 117px;
-    padding: 0; }
+    padding: 0 3px; }
   div.hint {
-    padding: 5px; }
+    padding: 8px 10px; }
   div.hint1, div.hint2 {
-    width: 108px;
+    width: 130px;
     height: 60px;
-    padding: 5px; }
+    padding: 5px;
+    box-shadow: 1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); }
+    div.hint1.hintrevealed, div.hint2.hintrevealed {
+      box-shadow: -1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); }
   div.tile {
     font-size: 25px;
     height: 33.5px;
     width: 33.5px;
     padding: 4px;
     margin: 2.5px;
-    border-radius: 3px; }
-
-  button {
-    margin: 5px;
-    width: 70px; }
-
-  p {
-    font-size: 15px;
-    line-height: 17px; } }
+    border-radius: 3px;
+    box-shadow: 1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); }
+    div.tile.chosen {
+      box-shadow: -1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); } }
 
 /*# sourceMappingURL=style.css.map */
