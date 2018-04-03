@@ -28,60 +28,60 @@ main {
 }
 
 header {
-  font-family: 'Jacques Francois Shadow', cursive;
+  font-family: 'Special Elite', cursive;
   color: $header;
-  font-size: 50px;
+  font-size: 60px;
   text-align: left;
   margin-bottom: 15px;
 
   &.move1 {
     position: relative;
-    animation: move1 2.5s ease-out 2s forwards;
+    animation: move1 5s ease-out 2s forwards;
   }
 
   &.move2 {
     position: relative;
-    animation: move2 2.5s linear 2s forwards;
+    animation: move2 5s linear 2s forwards;
   }
 
   &.move3 {
     position: relative;
-    animation: move3 2.5s ease-in 2s forwards;
+    animation: move3 5s ease-in 2s forwards;
   }
 
   &.move4 {
     position: relative;
-    animation: move4 5s ease-in 5s forwards;
+    animation: move4 6s ease-in 7.5s forwards;
   }
 
   &.move5 {
     position: relative;
-    animation: move5 2.5s linear 2s forwards;
+    animation: move5 5s linear 2s forwards;
   }
 
   &.move6 {
     position: relative;
-    animation: move6 2.5s ease-out 2s forwards;
+    animation: move6 5s ease-out 2s forwards;
   }
 
   &.move7 {
     position: relative;
-    animation: move7 2.5s ease-in 2s forwards;
+    animation: move7 5s ease-in 2s forwards;
   }
 
   &.move8 {
     position: relative;
-    animation: move8 2.5s linear 2s forwards;
+    animation: move8 5s linear 2s forwards;
   }
 
   &.move9 {
     position: relative;
-    animation: move9 2.5s ease-out 2s forwards;
+    animation: move9 5s ease-out 2s forwards;
   }
 
   &.move10 {
     position: relative;
-    animation: move10 2.5s linear 2s forwards;
+    animation: move10 5s linear 2s forwards;
   }
 
 }
@@ -122,7 +122,7 @@ div {
 
   &.contents, &.timer, &.score {
     text-align: center;
-    width: 210px;
+    width: 280px;
     padding: 10px;
   }
 
@@ -143,7 +143,7 @@ div {
     background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
     animation: flowing 10s linear infinite;
     background-size: 400% 400%;
-    height: 150px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -248,7 +248,7 @@ div {
 
   &.hint1 , &.hint2 {
     width: 185px;
-    height: 80px;
+    height: 120px;
     border: 1px solid $header;
     border-radius: 10px;
     padding: 20px;
@@ -297,35 +297,30 @@ div {
 
 button {
   margin: 20px;
-  height: 65px;
-  width: 105px;
+  height: 75px;
+  width: 140px;
   color: $black;
   border: 2px solid $header;
-  border-radius: 30px;
+  border-radius: 40px;
   background-color: $base;
   background: linear-gradient(45deg, $blush, $rose, $kitten, $slate, $sky, $ocean);
   background-size: 400% 400%;
   animation: flowing 5s linear infinite;
-  p {
-    font-weight: 500;
-  }
   &:hover {
     border: 3px solid $base;
-    height: 75px;
-    width: 120px;
-    border-radius: 35px;
+    height: 85px;
+    width: 160px;
     color: $base;
     p {
-      font-size: 25px;
+      font-size: 35px;
     }
   }
 }
 
 p {
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 300;
-  line-height: 25px;
-  font-size: 20px;
+  font-family: 'Special Elite', cursive;
+  line-height: 35px;
+  font-size: 30px;
 }
 
 span {
@@ -334,16 +329,11 @@ span {
   }
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 
 @keyframes move1 {
     0%   { left:0px; top:0px;}
-    50%  { left:32.5%; top:500px;}
-    100% { left:32.5%; top:0px;}
+    50%  { left:32%; top:500px;}
+    100% { left:32%; top:0px;}
 }
 
 @keyframes move2 {
@@ -354,8 +344,8 @@ a {
 
 @keyframes move3 {
     0%   { left:0px; top:0px;}
-    50%  { left:-20.5%; top:200px;}
-    100% { left:-20.5%; top:0px;}
+    50%  { left:-20%; top:200px;}
+    100% { left:-20%; top:0px;}
 }
 
 @keyframes move4 {
@@ -412,8 +402,8 @@ a {
 
 @keyframes move10 {
     0%   { left:0px; top:0px;}
-    50%  { left:-78.5%; top:200px;}
-    100% { left:-78.5%; top:0px;}
+    50%  { left:-77.5%; top:200px;}
+    100% { left:-77.5%; top:0px;}
 }
 
 @keyframes fade {
@@ -474,6 +464,7 @@ a {
   }
 }
 
+
 @media only screen and (max-width: 1200px) {
 
   main {
@@ -481,12 +472,17 @@ a {
   }
 
   header {
-    font-size: 40px;
+    font-size: 50px;
     text-align: left;
     margin-bottom: 10px;
   }
 
   div {
+
+    &.contents, &.timer, &.score {
+      width: 200px;
+      padding: 5px;
+    }
 
     &.question {
       height: 330px;
@@ -512,7 +508,7 @@ a {
 
     &.hint1 , &.hint2 {
       width: 165px;
-      height: 60px;
+      height: 85px;
       padding: 10px;
       box-shadow: 3px 3px 1px 0.5px $shadow;
       &.hintrevealed {
@@ -534,8 +530,22 @@ a {
   }
 
   p {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  button {
+    margin: 10px;
+    height: 55px;
+    width: 110px;
+    border-radius: 30px;
+    &:hover {
+      height: 65px;
+      width: 120px;
+      p {
+        font-size: 25px;
+      }
+    }
   }
 
 }
@@ -544,7 +554,7 @@ a {
 @media only screen and (max-width: 800px) {
 
   header {
-    font-size: 25px;
+    font-size: 35px;
     text-align: left;
     margin-bottom: 10px;
   }
@@ -555,26 +565,21 @@ a {
       flex-direction: column;
     }
 
-    &.contents, &.timer, &.score {
-      width: 180px;
-      padding: 5px;
-    }
-
     &.question {
-      height: 207px;
+      height: 223px;
     }
 
     &.anagramboard {
-      height: 157px;
+      height: 173px;
       padding: 0 3px;
     }
 
     &.answer {
-      height: 167px;
+      height: 180px;
     }
 
     &.answerboard {
-      height: 117px;
+      height: 130px;
       padding: 0 3px;
     }
 
@@ -585,7 +590,7 @@ a {
 
     &.hint1 , &.hint2 {
       width: 130px;
-      height: 60px;
+      height: 85px;
       padding: 5px;
       box-shadow: 1.5px 1.5px 0.5px 0.25px $shadow;
       &.hintrevealed {
@@ -595,9 +600,9 @@ a {
 
     &.tile {
       font-size: 25px;
-      height: 33.5px;
-      width: 33.5px;
-      padding: 4px;
+      height: 37px;
+      width: 37px;
+      padding: 6px;
       margin: 2.5px;
       border-radius: 3px;
       box-shadow: 1.5px 1.5px 0.5px 0.25px $shadow;

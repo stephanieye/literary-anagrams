@@ -10,41 +10,41 @@ main {
   height: 100%; }
 
 header {
-  font-family: 'Jacques Francois Shadow', cursive;
+  font-family: 'Special Elite', cursive;
   color: #636363;
-  font-size: 50px;
+  font-size: 60px;
   text-align: left;
   margin-bottom: 15px; }
   header.move1 {
     position: relative;
-    animation: move1 2.5s ease-out 2s forwards; }
+    animation: move1 5s ease-out 2s forwards; }
   header.move2 {
     position: relative;
-    animation: move2 2.5s linear 2s forwards; }
+    animation: move2 5s linear 2s forwards; }
   header.move3 {
     position: relative;
-    animation: move3 2.5s ease-in 2s forwards; }
+    animation: move3 5s ease-in 2s forwards; }
   header.move4 {
     position: relative;
-    animation: move4 5s ease-in 5s forwards; }
+    animation: move4 6s ease-in 7.5s forwards; }
   header.move5 {
     position: relative;
-    animation: move5 2.5s linear 2s forwards; }
+    animation: move5 5s linear 2s forwards; }
   header.move6 {
     position: relative;
-    animation: move6 2.5s ease-out 2s forwards; }
+    animation: move6 5s ease-out 2s forwards; }
   header.move7 {
     position: relative;
-    animation: move7 2.5s ease-in 2s forwards; }
+    animation: move7 5s ease-in 2s forwards; }
   header.move8 {
     position: relative;
-    animation: move8 2.5s linear 2s forwards; }
+    animation: move8 5s linear 2s forwards; }
   header.move9 {
     position: relative;
-    animation: move9 2.5s ease-out 2s forwards; }
+    animation: move9 5s ease-out 2s forwards; }
   header.move10 {
     position: relative;
-    animation: move10 2.5s linear 2s forwards; }
+    animation: move10 5s linear 2s forwards; }
 
 section {
   display: none;
@@ -74,7 +74,7 @@ div {
     padding: 15px 5px 5px 5px; }
   div.contents, div.timer, div.score {
     text-align: center;
-    width: 210px;
+    width: 280px;
     padding: 10px; }
   div.timer {
     border: 1px solid #636363;
@@ -89,7 +89,7 @@ div {
     background: radial-gradient(circle, #d2d2e6, #bebed2, #aaaabe, #9696aa);
     animation: flowing 10s linear infinite;
     background-size: 400% 400%;
-    height: 150px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,7 +172,7 @@ div {
     flex-wrap: wrap; }
   div.hint1, div.hint2 {
     width: 185px;
-    height: 80px;
+    height: 120px;
     border: 1px solid #636363;
     border-radius: 10px;
     padding: 20px;
@@ -205,48 +205,40 @@ div {
 
 button {
   margin: 20px;
-  height: 65px;
-  width: 105px;
+  height: 75px;
+  width: 140px;
   color: black;
   border: 2px solid #636363;
-  border-radius: 30px;
+  border-radius: 40px;
   background-color: white;
   background: linear-gradient(45deg, #e696a0, #efb3b3, #f0c8c8, #bebed2, #aaaabe, #9696aa);
   background-size: 400% 400%;
   animation: flowing 5s linear infinite; }
-  button p {
-    font-weight: 500; }
   button:hover {
     border: 3px solid white;
-    height: 75px;
-    width: 120px;
-    border-radius: 35px;
+    height: 85px;
+    width: 160px;
     color: white; }
     button:hover p {
-      font-size: 25px; }
+      font-size: 35px; }
 
 p {
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 300;
-  line-height: 25px;
-  font-size: 20px; }
+  font-family: 'Special Elite', cursive;
+  line-height: 35px;
+  font-size: 30px; }
 
 span.em {
   font-style: italic; }
-
-a {
-  text-decoration: none;
-  color: inherit; }
 
 @keyframes move1 {
   0% {
     left: 0px;
     top: 0px; }
   50% {
-    left: 32.5%;
+    left: 32%;
     top: 500px; }
   100% {
-    left: 32.5%;
+    left: 32%;
     top: 0px; } }
 @keyframes move2 {
   0% {
@@ -263,10 +255,10 @@ a {
     left: 0px;
     top: 0px; }
   50% {
-    left: -20.5%;
+    left: -20%;
     top: 200px; }
   100% {
-    left: -20.5%;
+    left: -20%;
     top: 0px; } }
 @keyframes move4 {
   0% {
@@ -400,10 +392,10 @@ a {
     left: 0px;
     top: 0px; }
   50% {
-    left: -78.5%;
+    left: -77.5%;
     top: 200px; }
   100% {
-    left: -78.5%;
+    left: -77.5%;
     top: 0px; } }
 @keyframes fade {
   0% {
@@ -443,10 +435,13 @@ a {
     width: 90%; }
 
   header {
-    font-size: 40px;
+    font-size: 50px;
     text-align: left;
     margin-bottom: 10px; }
 
+  div.contents, div.timer, div.score {
+    width: 200px;
+    padding: 5px; }
   div.question {
     height: 330px; }
   div.anagramboard {
@@ -461,7 +456,7 @@ a {
     padding: 10px 20px; }
   div.hint1, div.hint2 {
     width: 165px;
-    height: 60px;
+    height: 85px;
     padding: 10px;
     box-shadow: 3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); }
     div.hint1.hintrevealed, div.hint2.hintrevealed {
@@ -477,44 +472,52 @@ a {
       box-shadow: -3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); }
 
   p {
-    font-size: 18px;
-    line-height: 22px; } }
+    font-size: 20px;
+    line-height: 25px; }
+
+  button {
+    margin: 10px;
+    height: 55px;
+    width: 110px;
+    border-radius: 30px; }
+    button:hover {
+      height: 65px;
+      width: 120px; }
+      button:hover p {
+        font-size: 25px; } }
 @media only screen and (max-width: 800px) {
   header {
-    font-size: 25px;
+    font-size: 35px;
     text-align: left;
     margin-bottom: 10px; }
 
   div.control {
     flex-direction: column; }
-  div.contents, div.timer, div.score {
-    width: 180px;
-    padding: 5px; }
   div.question {
-    height: 207px; }
+    height: 223px; }
   div.anagramboard {
-    height: 157px;
+    height: 173px;
     padding: 0 3px; }
   div.answer {
-    height: 167px; }
+    height: 180px; }
   div.answerboard {
-    height: 117px;
+    height: 130px;
     padding: 0 3px; }
   div.hint {
     height: 100px;
     padding: 8px 10px; }
   div.hint1, div.hint2 {
     width: 130px;
-    height: 60px;
+    height: 85px;
     padding: 5px;
     box-shadow: 1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); }
     div.hint1.hintrevealed, div.hint2.hintrevealed {
       box-shadow: -1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); }
   div.tile {
     font-size: 25px;
-    height: 33.5px;
-    width: 33.5px;
-    padding: 4px;
+    height: 37px;
+    width: 37px;
+    padding: 6px;
     margin: 2.5px;
     border-radius: 3px;
     box-shadow: 1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); }

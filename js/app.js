@@ -63,7 +63,7 @@ $(()=>{
     console.log(points);
     var score = points - demerits;
     console.log(score);
-    $scoreboard.text(`${score} out of 100 marks`);
+    $scoreboard.text(`${score} / 100 marks`);
 
     $level.eq(levelcount).remove();
     levelcount += 1;
