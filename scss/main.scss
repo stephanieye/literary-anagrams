@@ -84,14 +84,14 @@ div {
     background-color: $grey;
     background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
     background-size: 400% 400%;
-    height: 300px;
+    height: 400px;
     font-family: 'Acme', sans-serif;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    animation: flowing 10s ease infinite;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    animation: flowing 10s linear infinite;
   }
 
   &.anagramrow {
@@ -123,7 +123,7 @@ div {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    animation: flowing 10s ease infinite;
+    animation: flowing 10s linear infinite;
   }
 
   &.introbottom, &.finalbottom {
@@ -137,7 +137,7 @@ div {
 
   &.hint {
     background-color: $slate;
-    padding: 50px;
+    padding: 25px 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -146,7 +146,7 @@ div {
   }
 
   &.hint1 , &.hint2 {
-    width: 210px;
+    width: 185px;
     height: 80px;
     border: 1px solid $header;
     padding: 20px;
@@ -201,7 +201,7 @@ button {
     background-color: $base;
     background: linear-gradient(45deg, $blush, $rose, $kitten, $slate, $sky, $ocean);
     background-size: 400% 400%;
-    animation: flowing 5s ease infinite;
+    animation: flowing 5s linear infinite;
   }
   &:hover {
     border: 3px solid $base;
@@ -251,39 +251,7 @@ a {
 }
 
 
-
 @media only screen and (max-width: 1200px) {
-
-  main {
-    width: 85%
-  }
-
-  header {
-    font-size: 45px;
-    margin-bottom: 10px;
-  }
-
-  div {
-
-    &.anagramboard, &.answerboard {
-      height: 285px;
-      padding: 0 10px;
-    }
-
-    &.tile {
-      font-size: 50px;
-      height: 70px;
-      width: 70px;
-      padding: 10px;
-      margin: 10px;
-      }
-
-    }
-
-}
-
-
-@media only screen and (max-width: 1000px) {
 
   main {
     margin: 20px auto;
@@ -299,7 +267,7 @@ a {
   div {
 
     &.anagramboard, &.answerboard {
-      height: 275px;
+      height: 280px;
       padding: 0 10px;
     }
 
@@ -308,7 +276,7 @@ a {
     }
 
     &.hint1 , &.hint2 {
-      width: 180px;
+      width: 165px;
       height: 60px;
       padding: 10px;
     }
@@ -330,7 +298,7 @@ a {
 }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
 
   main {
     margin: 5px auto;
@@ -354,7 +322,7 @@ a {
     }
 
     &.anagramboard, &.answerboard {
-      height: 160px;
+      height: 157px;
       padding: 0;
     }
 
@@ -363,7 +331,7 @@ a {
     }
 
     &.hint1 , &.hint2 {
-      width: 130px;
+      width: 108px;
       height: 60px;
       padding: 5px;
     }
