@@ -20,7 +20,7 @@ body {
 }
 
 main {
-  margin: 20px auto;
+  margin: 15px auto;
   width: 80%;
   height: 100%;
 }
@@ -88,7 +88,7 @@ div {
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
     animation: flowing 10s linear infinite;
@@ -121,7 +121,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     animation: flowing 10s linear infinite;
   }
@@ -266,8 +266,13 @@ a {
 
   div {
 
-    &.anagramboard, &.answerboard {
+    &.anagramboard {
       height: 280px;
+      padding: 0 10px;
+    }
+
+    &.answerboard {
+      height: 205px;
       padding: 0 10px;
     }
 
@@ -321,8 +326,13 @@ a {
       padding: 5px;
     }
 
-    &.anagramboard, &.answerboard {
+    &.anagramboard {
       height: 157px;
+      padding: 0;
+    }
+
+    &.answerboard {
+      height: 117px;
       padding: 0;
     }
 

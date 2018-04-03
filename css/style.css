@@ -5,7 +5,7 @@ body {
   background-color: white; }
 
 main {
-  margin: 20px auto;
+  margin: 15px auto;
   width: 80%;
   height: 100%; }
 
@@ -59,7 +59,7 @@ div {
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
     animation: flowing 10s linear infinite; }
@@ -86,7 +86,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     animation: flowing 10s linear infinite; }
   div.introbottom, div.finalbottom {
@@ -186,8 +186,11 @@ a {
     text-align: left;
     margin-bottom: 10px; }
 
-  div.anagramboard, div.answerboard {
+  div.anagramboard {
     height: 280px;
+    padding: 0 10px; }
+  div.answerboard {
+    height: 205px;
     padding: 0 10px; }
   div.hint {
     padding: 20px; }
@@ -219,8 +222,11 @@ a {
   div.contents, div.timer, div.score {
     width: 160px;
     padding: 5px; }
-  div.anagramboard, div.answerboard {
+  div.anagramboard {
     height: 157px;
+    padding: 0; }
+  div.answerboard {
+    height: 117px;
     padding: 0; }
   div.hint {
     padding: 5px; }
