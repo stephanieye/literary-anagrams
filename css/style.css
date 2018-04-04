@@ -254,11 +254,23 @@ button {
     color: white; }
     button:hover p {
       font-size: 35px; }
+      button:hover p.small {
+        font-size: 30px; }
+  button.big {
+    margin: 5px 40px;
+    height: 150px;
+    width: 300px; }
+    button.big:hover {
+      height: 150px;
+      width: 300px; }
 
 p {
   font-family: 'Special Elite', cursive;
   line-height: 35px;
   font-size: 30px; }
+  p.small {
+    line-height: 25px;
+    font-size: 20px; }
 
 a {
   text-decoration: none;
@@ -518,6 +530,9 @@ span.em {
   p {
     font-size: 20px;
     line-height: 25px; }
+    p.small {
+      line-height: 20px;
+      font-size: 15px; }
 
   button {
     margin: 10px;
@@ -528,7 +543,16 @@ span.em {
       height: 70px;
       width: 140px; }
       button:hover p {
-        font-size: 25px; } }
+        font-size: 25px; }
+        button:hover p.small {
+          font-size: 20px; }
+    button.big {
+      margin: 5px 20px;
+      height: 95px;
+      width: 190px; }
+      button.big:hover {
+        height: 95px;
+        width: 190px; } }
 @media only screen and (max-width: 800px) {
   header {
     font-size: 35px;

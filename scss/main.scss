@@ -359,14 +359,34 @@ button {
     color: $base;
     p {
       font-size: 35px;
+      &.small {
+        font-size: 30px;
+      }
     }
   }
+
+  &.big {
+    margin: 5px 40px;
+    height: 150px;
+    width: 300px;
+    &:hover {
+      height: 150px;
+      width: 300px;
+    }
+  }
+
+
+
 }
 
 p {
   font-family: 'Special Elite', cursive;
   line-height: 35px;
   font-size: 30px;
+  &.small {
+    line-height: 25px;
+    font-size: 20px;
+  }
 }
 
 a {
@@ -595,6 +615,10 @@ span {
   p {
     font-size: 20px;
     line-height: 25px;
+    &.small {
+      line-height: 20px;
+      font-size: 15px;
+    }
   }
 
   button {
@@ -607,6 +631,18 @@ span {
       width: 140px;
       p {
         font-size: 25px;
+        &.small {
+          font-size: 20px;
+        }
+      }
+    }
+    &.big {
+      margin: 5px 20px;
+      height: 95px;
+      width: 190px;
+      &:hover {
+        height: 95px;
+        width: 190px;
       }
     }
   }
