@@ -19,6 +19,13 @@ $black: rgba(0,0,0,1);
 
 body {
   background-color: $base;
+  background: repeating-linear-gradient(
+  -55deg,
+  $kitten,
+  $slate 40px,
+  $kitten 40px,
+  $slate 80px
+);
 }
 
 main {
@@ -92,7 +99,7 @@ section {
   width: 100%;
   visibility: visible;
   opacity: 1;
-  animation: fade 2s;
+  animation: fade 0.5s;
 
   &.intro {
     display: block;

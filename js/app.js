@@ -24,7 +24,6 @@ $(()=>{
   const $ranking7 = $('#ranking7');
   const $playagainbutton = $('button.playagain');
   const $showsociety = $('div.showsociety');
-  const $hidesociety = $('div.hidesociety');
   const $music = $('div.music');
   const $audio = $('audio');
 
@@ -154,12 +153,16 @@ $(()=>{
     location.reload();
   });
 
-  $showsociety.on('click', function(){
-    $('div.society').css({'display': 'block'});
-  });
 
-  $hidesociety.on('click', function(){
-    $('div.society').css({'display': 'none'});
+  var soc = 1;
+  $showsociety.on('click', function(){
+    if (soc === 1) {
+      $('div.society').css({'display': 'block'});
+      soc -= 1;
+    } else {
+      $('div.society').css({'display': 'none'});
+      soc += 1;
+    }
   });
 
 

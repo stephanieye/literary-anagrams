@@ -2,7 +2,8 @@
   box-sizing: border-box; }
 
 body {
-  background-color: white; }
+  background-color: white;
+  background: repeating-linear-gradient(-55deg, #f0c8c8, #bebed2 40px, #f0c8c8 40px, #bebed2 80px); }
 
 main {
   margin: 0 auto;
@@ -52,7 +53,7 @@ section {
   width: 100%;
   visibility: visible;
   opacity: 1;
-  animation: fade 2s; }
+  animation: fade 0.5s; }
   section.intro {
     display: block; }
 
