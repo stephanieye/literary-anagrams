@@ -5,6 +5,10 @@ $(()=>{
   var points = 0;
   var demerits = 0;
   var timerId = null;
+  var players = 1;
+  var player1 = [0];
+  var player2 = [0];
+  var soc = 1;
 
   const $submitbutton = $('button.submit');
   const $duobutton = $('button.duo');
@@ -47,91 +51,87 @@ $(()=>{
 
   const $hints = [['Mary Shelley', 'F'], ['Charles Dickens', 'O'], ['Joseph Conrad', 'H'], ['Evelyn Waugh', 'B'], ['Emily Brontë', 'W'], ['Kazuo Ishiguro', 'T'], ['William Golding','L'], ['Anthony Burgess', 'A'], ['H.G. Wells', 'T'], ['George Orwell', 'A'], ['E.M. Forster', 'A'], ['Virginia Woolf', 'M'], ['John le Carré', 'T'], ['Arthur Conan Doyle', 'A'], ['Aldous Huxley', 'B'], ['Kenneth Grahame', 'T'], ['Jane Austen', 'M'], ['George Eliot', 'S'], ['Gerald Durrell', 'M'], ['Thomas Hardy', 'J']];
 
-  var players = 1;
-  var player1 = [0];
-  var player2 = [0];
-
 
   $submitbutton.on('click', playgame);
 
   $duobutton.on('click', function(){
     players += 1;
-    $contents.text('Player 1');
-    playgame;
+    playgame();
   });
-
-
-  function getSum(total, num) {
-    return total + num;
-  }
 
 
 
   function playgame(){
     submit.play();
-    console.log(levelcount);
     $timer.removeClass('warning');
     clearInterval(timerId);
     if (levelcount < 20) {
       startTimer();
     }
     var $answer = $('div.chosen');
-    console.log($answer.text());
-    console.log($titles[levelcount-1]);
+    // console.log($answer.text());
+    // console.log($titles[levelcount-1]);
+
+    //---awarding points from previous round---
     if ($answer.text() === $titles[levelcount-1]) {
-      points += 5;
       if (players===2) {
         if (levelcount%2 === 0) {
           player2.push(10);
         } else {
           player1.push(10);
         }
+      } else {
+        points +=5;
       }
     } else {
-      points += 0;
       if (players===2) {
         if (levelcount%2 === 0) {
           player2.push(0);
         } else {
           player1.push(0);
         }
+      } else {
+        points += 0;
       }
     }
 
+    //---computing accumulated score
     var score = points - demerits;
-
     if (players===2) {
       var indivscore1 = player1.reduce(getSum);
       var indivscore2 = player2.reduce(getSum);
       if (levelcount%2 === 0) {
+        console.log(`player 1 ${indivscore1}`);
         $scoreboard.text(`${indivscore1} / 100 marks`);
       } else {
+        console.log(`player 2 ${indivscore2}`);
         $scoreboard.text(`${indivscore2} / 100 marks`);
       }
     } else {
+      console.log(score);
       $scoreboard.text(`${score} / 100 marks`);
     }
 
-
-
+    //---moving game on to next level
     $level.eq(levelcount).remove();
     levelcount += 1;
+    //---if game has ended
     if (levelcount === 21) {
       fanfare.play();
       if (players === 2) {
         if (indivscore1 > indivscore2) {
-          $finale.html(`Player 1 has ${indivscore1} and Player 2 has ${indivscore2}! Player 1 wins!`);
+          $finale.html(`Player 1 has ${indivscore1} / 100 and Player 2 has ${indivscore2} / 100! Player 1 is the winner!`);
         }  else if (indivscore1 < indivscore2) {
-          $finale.html(`Player 1 has ${indivscore1} and Player 2 has ${indivscore2}! Player 2 wins!`);
+          $finale.html(`Player 1 has ${indivscore1} / 100 and Player 2 has ${indivscore2} / 100! Player 2 is the winner!`);
         } else {
-          $finale.html(`Player 1 has ${indivscore1} and Player 2 has ${indivscore2}! It&#8217;s a tie!`);
+          $finale.html(`Player 1 and Player 2 both have ${indivscore1} / 100! It&#8217;s a tie!`);
         }
       } else {
         $finale.text(`You earned ${score} / 100 marks!`);
         rankplayer(score);
       }
     }
-
+    //---if game has not ended
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
     if (players === 2) {
       if (levelcount%2 === 0) {
@@ -177,6 +177,11 @@ $(()=>{
   }
 
 
+  function getSum(total, num) {
+    return total + num;
+  }
+
+
   function rankplayer(s){
     if (s === 100) {
       $ranking1.css({'display': 'block'});
@@ -200,13 +205,14 @@ $(()=>{
     purr.play();
     $(this).find('p').text(`${$hints[levelcount-1][0]}`);
     $(this).addClass('hintrevealed');
-    demerits += 1;
     if (players===2) {
       if (levelcount%2 === 0) {
         player2.push(-2);
       } else {
         player1.push(-2);
       }
+    } else {
+      demerits += 1;
     }
   });
 
@@ -215,14 +221,14 @@ $(()=>{
     purr.play();
     $(this).find('p').text(`${$hints[levelcount-1][1]}`);
     $(this).addClass('hintrevealed');
-    demerits += 1;
-    console.log(demerits);
     if (players===2) {
       if (levelcount%2 === 0) {
         player2.push(-2);
       } else {
         player1.push(-2);
       }
+    } else {
+      demerits += 1;
     }
   });
 
@@ -232,7 +238,6 @@ $(()=>{
   });
 
 
-  var soc = 1;
   $showsociety.on('click', function(){
     if (soc === 1) {
       $('div.society').css({'display': 'block'});
