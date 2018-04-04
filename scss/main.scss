@@ -23,7 +23,7 @@ body {
 
 main {
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   height: 100%;
 }
 
@@ -31,7 +31,8 @@ header {
   font-family: 'Special Elite', cursive;
   color: $header;
   font-size: 60px;
-  text-align: left;
+  text-align: center;
+  width: 80%;
   margin-bottom: 15px;
 
   &.move1 {
@@ -102,11 +103,13 @@ div {
   text-align: center;
 
   &.masthead {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 15px;
+    padding-top: 50px;
+    padding-bottom: 20px;
   }
 
   &.control {
@@ -117,7 +120,7 @@ div {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 15px 5px 5px 5px;
+    padding: 15px 50px;
   }
 
   &.contents, &.timer, &.score {
@@ -152,6 +155,7 @@ div {
 
   &.question {
     height: 450px;
+    padding: 0 15px;
     background-color: $grey;
     background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
     background-size: 400% 400%;
@@ -160,7 +164,7 @@ div {
 
   &.instruction {
     color: $base;
-    padding: 15px 20px;
+    padding: 15px 50px;
     height: 50px;
     text-align: right;
     animation: blink 8s ease-in-out infinite;
@@ -168,14 +172,14 @@ div {
 
   &.deinstruction {
     color: $base;
-    padding: 15px 20px;
+    padding: 15px 50px;
     height: 50px;
     text-align: right;
     animation: deblink 8s ease-in-out infinite;
   }
 
   &.anagramboard {
-    padding: 0 20px;
+    padding: 0 50px;
     height: 400px;
     font-family: 'Acme', sans-serif;
     display: flex;
@@ -212,7 +216,7 @@ div {
   }
 
   &.answerboard {
-    padding: 0 20px;
+    padding: 0 50px;
     height: 300px;
     font-family: 'Acme', sans-serif;
     display: flex;
@@ -227,8 +231,8 @@ div {
     background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
     animation: flowing 10s linear infinite;
     background-size: 400% 400%;
-    padding: 20px;
-    height: 150px;
+    padding: 20px 50px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -247,7 +251,7 @@ div {
   }
 
   &.hint1 , &.hint2 {
-    width: 185px;
+    width: 250px;
     height: 120px;
     border: 1px solid $header;
     border-radius: 10px;
@@ -330,8 +334,8 @@ span {
 
 @keyframes move1 {
     0%   { left:0px; top:0px;}
-    50%  { left:32%; top:500px;}
-    100% { left:32%; top:0px;}
+    50%  { left:31%; top:500px;}
+    100% { left:31%; top:0px;}
 }
 
 @keyframes move2 {
@@ -342,8 +346,8 @@ span {
 
 @keyframes move3 {
     0%   { left:0px; top:0px;}
-    50%  { left:-20%; top:200px;}
-    100% { left:-20%; top:0px;}
+    50%  { left:-18%; top:200px;}
+    100% { left:-18%; top:0px;}
 }
 
 @keyframes move4 {
@@ -370,14 +374,14 @@ span {
 
 @keyframes move5 {
     0%   { left:0px; top:0px;}
-    50%  { left:-39%; top:300px;}
-    100% { left:-39%; top:0px;}
+    50%  { left:-38%; top:300px;}
+    100% { left:-38%; top:0px;}
 }
 
 @keyframes move6 {
     0%   { left:0px; top:0px;}
-    50%  { left:6.25%; top:400px;}
-    100% { left:6.25%; top:0px;}
+    50%  { left:7%; top:400px;}
+    100% { left:7%; top:0px;}
 }
 
 @keyframes move7 {
@@ -388,20 +392,20 @@ span {
 
 @keyframes move8 {
     0%   { left:0px; top:0px;}
-    50%  { left:-39%; top:300px;}
-    100% { left:-39%; top:0px;}
+    50%  { left:-38%; top:300px;}
+    100% { left:-38%; top:0px;}
 }
 
 @keyframes move9 {
     0%   { left:0px; top:0px;}
-    50%  { left:-26.5%; top:250px;}
-    100% { left:-26.5%; top:0px;}
+    50%  { left:-24%; top:250px;}
+    100% { left:-24%; top:0px;}
 }
 
 @keyframes move10 {
     0%   { left:0px; top:0px;}
-    50%  { left:-77.5%; top:200px;}
-    100% { left:-77.5%; top:0px;}
+    50%  { left:-75%; top:200px;}
+    100% { left:-75%; top:0px;}
 }
 
 @keyframes fade {
@@ -478,8 +482,8 @@ span {
   div {
 
     &.masthead {
-      margin: 0 auto;
-      width: 90%;
+      padding-top: 20px;
+      padding-bottom: 10px;
     }
 
     &.contents, &.timer, &.score {
