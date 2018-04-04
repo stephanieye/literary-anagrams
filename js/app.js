@@ -54,11 +54,11 @@ $(()=>{
 
   $submitbutton.on('click', playgame);
 
+
   $duobutton.on('click', function(){
     players += 1;
     playgame();
   });
-
 
 
   function playgame(){
@@ -71,65 +71,23 @@ $(()=>{
     var $answer = $('div.chosen');
     // console.log($answer.text());
     // console.log($titles[levelcount-1]);
-
     //---awarding points from previous round---
     if ($answer.text() === $titles[levelcount-1]) {
-      if (players===2) {
-        if (levelcount%2 === 0) {
-          player2.push(10);
-        } else {
-          player1.push(10);
-        }
-      } else {
-        points +=5;
-      }
+      playerSuccess();
     } else {
-      if (players===2) {
-        if (levelcount%2 === 0) {
-          player2.push(0);
-        } else {
-          player1.push(0);
-        }
-      } else {
-        points += 0;
-      }
+      playerFail();
     }
-
     //---computing accumulated score
     var score = points - demerits;
-    if (players===2) {
-      var indivscore1 = player1.reduce(getSum);
-      var indivscore2 = player2.reduce(getSum);
-      if (levelcount%2 === 0) {
-        console.log(`player 1 ${indivscore1}`);
-        $scoreboard.text(`${indivscore1} / 100 marks`);
-      } else {
-        console.log(`player 2 ${indivscore2}`);
-        $scoreboard.text(`${indivscore2} / 100 marks`);
-      }
-    } else {
-      console.log(score);
-      $scoreboard.text(`${score} / 100 marks`);
-    }
-
+    var indivscore1 = player1.reduce(getSum);
+    var indivscore2 = player2.reduce(getSum);
+    accumulativeScore(indivscore1, indivscore2, score);
     //---moving game on to next level
     $level.eq(levelcount).remove();
     levelcount += 1;
     //---if game has ended
     if (levelcount === 21) {
-      fanfare.play();
-      if (players === 2) {
-        if (indivscore1 > indivscore2) {
-          $finale.html(`Player 1 has ${indivscore1} / 100 and Player 2 has ${indivscore2} / 100! Player 1 is the winner!`);
-        }  else if (indivscore1 < indivscore2) {
-          $finale.html(`Player 1 has ${indivscore1} / 100 and Player 2 has ${indivscore2} / 100! Player 2 is the winner!`);
-        } else {
-          $finale.html(`Player 1 and Player 2 both have ${indivscore1} / 100! It&#8217;s a tie!`);
-        }
-      } else {
-        $finale.text(`You earned ${score} / 100 marks!`);
-        rankplayer(score);
-      }
+      finalResult(indivscore1, indivscore2, score);
     }
     //---if game has not ended
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
@@ -174,6 +132,65 @@ $(()=>{
         playgame();
       }
     }, 1000);
+  }
+
+
+  function playerSuccess() {
+    if (players===2) {
+      if (levelcount%2 === 0) {
+        player2.push(10);
+      } else {
+        player1.push(10);
+      }
+    } else {
+      points +=5;
+    }
+  }
+
+
+  function playerFail() {
+    if (players===2) {
+      if (levelcount%2 === 0) {
+        player2.push(0);
+      } else {
+        player1.push(0);
+      }
+    } else {
+      points += 0;
+    }
+  }
+
+
+  function accumulativeScore(a, b, c) {
+    if (players===2) {
+      if (levelcount%2 === 0) {
+        console.log(`player 1 ${a}`);
+        $scoreboard.text(`${a} / 100 marks`);
+      } else {
+        console.log(`player 2 ${b}`);
+        $scoreboard.text(`${b} / 100 marks`);
+      }
+    } else {
+      console.log(c);
+      $scoreboard.text(`${c} / 100 marks`);
+    }
+  }
+
+
+  function finalResult(a, b, c) {
+    fanfare.play();
+    if (players === 2) {
+      if (a > b) {
+        $finale.html(`Player 1 has ${a} / 100 marks and Player 2 has ${b} / 100 marks! Player 1 is the winner!`);
+      }  else if (a < b) {
+        $finale.html(`Player 1 has ${a} / 100 marks and Player 2 has ${b} / 100 marks! Player 2 is the winner!`);
+      } else {
+        $finale.html(`Player 1 and Player 2 both have ${a} / 100 marks! It&#8217;s a tie!`);
+      }
+    } else {
+      $finale.text(`You earned ${c} / 100 marks!`);
+      rankplayer(c);
+    }
   }
 
 
@@ -260,5 +277,6 @@ $(()=>{
       }
     }
   });
+
 
 });
