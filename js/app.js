@@ -7,13 +7,16 @@ $(()=>{
   var timerId = null;
 
   const $submitbutton = $('button.submit');
+  const $duobutton = $('button.duo');
   const $level = $('section');
   const $tile = $('div.tile');
   const $anagramboard = $('div.anagramboard');
   const $answerboard = $('div.answerboard');
   const $hint1 = $('div.hint1');
   const $hint2 = $('div.hint2');
+  const $contents = $('div.contents').find('p');
   const $scoreboard = $('div.score').find('p');
+  const $finale = $('div.finale').find('p');
   const $timer = $('div.timer').find('p');
   const $ranking1 = $('#ranking1');
   const $ranking2 = $('#ranking2');
@@ -44,12 +47,29 @@ $(()=>{
 
   const $hints = [['Mary Shelley', 'F'], ['Charles Dickens', 'O'], ['Joseph Conrad', 'H'], ['Evelyn Waugh', 'B'], ['Emily Brontë', 'W'], ['Kazuo Ishiguro', 'T'], ['William Golding','L'], ['Anthony Burgess', 'A'], ['H.G. Wells', 'T'], ['George Orwell', 'A'], ['E.M. Forster', 'A'], ['Virginia Woolf', 'M'], ['John le Carré', 'T'], ['Arthur Conan Doyle', 'A'], ['Aldous Huxley', 'B'], ['Kenneth Grahame', 'T'], ['Jane Austen', 'M'], ['George Eliot', 'S'], ['Gerald Durrell', 'M'], ['Thomas Hardy', 'J']];
 
+  var players = 1;
+  var player1 = [0];
+  var player2 = [0];
+
 
   $submitbutton.on('click', playgame);
+
+  $duobutton.on('click', function(){
+    players += 1;
+    $contents.text('Player 1');
+    playgame;
+  });
+
+
+  function getSum(total, num) {
+    return total + num;
+  }
+
 
 
   function playgame(){
     submit.play();
+    console.log(levelcount);
     $timer.removeClass('warning');
     clearInterval(timerId);
     if (levelcount < 20) {
@@ -60,21 +80,66 @@ $(()=>{
     console.log($titles[levelcount-1]);
     if ($answer.text() === $titles[levelcount-1]) {
       points += 5;
+      if (players===2) {
+        if (levelcount%2 === 0) {
+          player2.push(10);
+        } else {
+          player1.push(10);
+        }
+      }
     } else {
       points += 0;
+      if (players===2) {
+        if (levelcount%2 === 0) {
+          player2.push(0);
+        } else {
+          player1.push(0);
+        }
+      }
     }
-    console.log(points);
+
     var score = points - demerits;
-    console.log(score);
-    $scoreboard.text(`${score} / 100 marks`);
+
+    if (players===2) {
+      var indivscore1 = player1.reduce(getSum);
+      var indivscore2 = player2.reduce(getSum);
+      if (levelcount%2 === 0) {
+        $scoreboard.text(`${indivscore1} / 100 marks`);
+      } else {
+        $scoreboard.text(`${indivscore2} / 100 marks`);
+      }
+    } else {
+      $scoreboard.text(`${score} / 100 marks`);
+    }
+
+
 
     $level.eq(levelcount).remove();
     levelcount += 1;
     if (levelcount === 21) {
       fanfare.play();
-      rankplayer(score);
+      if (players === 2) {
+        if (indivscore1 > indivscore2) {
+          $finale.html(`Player 1 has ${indivscore1} and Player 2 has ${indivscore2}! Player 1 wins!`);
+        }  else if (indivscore1 < indivscore2) {
+          $finale.html(`Player 1 has ${indivscore1} and Player 2 has ${indivscore2}! Player 2 wins!`);
+        } else {
+          $finale.html(`Player 1 has ${indivscore1} and Player 2 has ${indivscore2}! It&#8217;s a tie!`);
+        }
+      } else {
+        $finale.text(`You earned ${score} / 100 marks!`);
+        rankplayer(score);
+      }
     }
+
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
+    if (players === 2) {
+      if (levelcount%2 === 0) {
+        $contents.text('Player 2');
+      } else {
+        $contents.text('Player 1');
+      }
+    }
     var $currentAnagramBoard = $level.eq(levelcount).find($anagramboard);
     var $currentTile = $currentAnagramBoard.find($tile);
     var $currentAnswerBoard = $answerboard.eq(levelcount-1);
@@ -136,7 +201,13 @@ $(()=>{
     $(this).find('p').text(`${$hints[levelcount-1][0]}`);
     $(this).addClass('hintrevealed');
     demerits += 1;
-    console.log(demerits);
+    if (players===2) {
+      if (levelcount%2 === 0) {
+        player2.push(-2);
+      } else {
+        player1.push(-2);
+      }
+    }
   });
 
 
@@ -146,6 +217,13 @@ $(()=>{
     $(this).addClass('hintrevealed');
     demerits += 1;
     console.log(demerits);
+    if (players===2) {
+      if (levelcount%2 === 0) {
+        player2.push(-2);
+      } else {
+        player1.push(-2);
+      }
+    }
   });
 
 

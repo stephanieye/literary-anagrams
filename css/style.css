@@ -142,7 +142,15 @@ div {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap; }
-  div.intromiddle, div.finalmiddle {
+  div.intromiddle {
+    background-color: #f2dede;
+    padding: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+  div.finalmiddle {
     background-color: #f2dede;
     padding: 20px;
     height: 200px;
@@ -230,8 +238,8 @@ div {
 
 button {
   margin: 20px;
-  height: 75px;
-  width: 140px;
+  height: 80px;
+  width: 160px;
   color: black;
   border: 2px solid #636363;
   border-radius: 40px;
@@ -241,8 +249,8 @@ button {
   animation: flowing 5s linear infinite; }
   button:hover {
     border: 3px solid white;
-    height: 85px;
-    width: 160px;
+    height: 90px;
+    width: 180px;
     color: white; }
     button:hover p {
       font-size: 35px; }
@@ -513,12 +521,12 @@ span.em {
 
   button {
     margin: 10px;
-    height: 55px;
-    width: 110px;
+    height: 60px;
+    width: 120px;
     border-radius: 30px; }
     button:hover {
-      height: 65px;
-      width: 120px; }
+      height: 70px;
+      width: 140px; }
       button:hover p {
         font-size: 25px; } }
 @media only screen and (max-width: 800px) {
