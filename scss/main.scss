@@ -133,12 +133,13 @@ div {
   &.control {
     background-color: $rose;
     width: 100%;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 15px 100px;
+    padding: 15px 80px;
   }
 
   &.contents, &.timer, &.score {
