@@ -126,14 +126,13 @@ div {
   &.contents, &.timer, &.score {
     text-align: center;
     width: 280px;
-    padding: 10px;
+    padding: 14px 10px 6px 10px;
   }
 
   &.timer {
     border: 1px solid $header;
     background-color: $pink;
     p {
-      font-weight: 500;
       &.warning {
         color: red;
       }
@@ -509,7 +508,7 @@ span {
 
     &.contents, &.timer, &.score {
       width: 200px;
-      padding: 5px;
+      padding: 8px 5px 2px 5px;
     }
 
     &.question {
