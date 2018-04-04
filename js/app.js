@@ -25,6 +25,8 @@ $(()=>{
   const $playagainbutton = $('button.playagain');
   const $showsociety = $('div.showsociety');
   const $hidesociety = $('div.hidesociety');
+  const $music = $('div.music');
+  const $audio = $('audio');
 
   const choose = document.getElementById('choose');
   choose.src = 'sounds/choose.mp3';
@@ -155,11 +157,22 @@ $(()=>{
   $showsociety.on('click', function(){
     $('div.society').css({'display': 'block'});
   });
-  
+
   $hidesociety.on('click', function(){
     $('div.society').css({'display': 'none'});
   });
 
 
+  $music.on('click', function(){
+    for (var i = 0; i < $audio.length; i++) {
+      if ($audio[i].muted === true) {
+        $audio[i].muted = false;
+        $music.find('p').html('&#9835;');
+      } else {
+        $audio[i].muted = true;
+        $music.find('p').text('...');
+      }
+    }
+  });
 
 });
