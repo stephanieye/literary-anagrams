@@ -3,7 +3,7 @@
 
 body {
   background-color: white;
-  background: repeating-linear-gradient(-55deg, #f0c8c8, #bebed2 40px, #f0c8c8 40px, #bebed2 80px); }
+  background: repeating-linear-gradient(-55deg, #f0c8c8, #f0c8c8 40px, #bebed2 40px, #bebed2 80px); }
 
 main {
   margin: 0 auto;
@@ -13,6 +13,7 @@ main {
 header {
   font-family: 'Special Elite', cursive;
   color: #636363;
+  text-shadow: 2px 2px #636363;
   font-size: 60px;
   text-align: center;
   width: 80%;
