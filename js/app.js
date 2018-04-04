@@ -23,6 +23,8 @@ $(()=>{
   const $ranking6 = $('#ranking6');
   const $ranking7 = $('#ranking7');
   const $playagainbutton = $('button.playagain');
+  const $showsociety = $('div.showsociety');
+  const $hidesociety = $('div.hidesociety');
 
   const choose = document.getElementById('choose');
   choose.src = 'sounds/choose.mp3';
@@ -149,6 +151,15 @@ $(()=>{
   $playagainbutton.on('click', function(){
     location.reload();
   });
+
+  $showsociety.on('click', function(){
+    $('div.society').css({'display': 'block'});
+  });
+  
+  $hidesociety.on('click', function(){
+    $('div.society').css({'display': 'none'});
+  });
+
 
 
 });

@@ -295,6 +295,19 @@ div {
     display: none;
   }
 
+  &.society {
+    display: none;
+    padding: 50px;
+    background-color: $pink;
+  }
+
+  &.caste {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 button {
@@ -323,6 +336,14 @@ p {
   font-family: 'Special Elite', cursive;
   line-height: 35px;
   font-size: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: $header;
+  &:hover {
+    color: $ocean;
+  }
 }
 
 span {

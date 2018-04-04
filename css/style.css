@@ -206,6 +206,16 @@ div {
       box-shadow: -6px 6px 2px 1px rgba(99, 99, 99, 0.5); }
   div #ranking1, div #ranking2, div #ranking3, div #ranking4, div #ranking5, div #ranking6, div #ranking7 {
     display: none; }
+  div.society {
+    display: none;
+    padding: 50px;
+    background-color: #f2dede; }
+  div.caste {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
 
 button {
   margin: 20px;
@@ -230,6 +240,12 @@ p {
   font-family: 'Special Elite', cursive;
   line-height: 35px;
   font-size: 30px; }
+
+a {
+  text-decoration: none;
+  color: #636363; }
+  a:hover {
+    color: #9696aa; }
 
 span.em {
   font-style: italic; }
