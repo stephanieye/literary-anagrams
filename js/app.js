@@ -40,6 +40,8 @@ $(()=>{
   choose.src = 'sounds/choose.mp3';
   const unchoose = document.getElementById('unchoose');
   unchoose.src = 'sounds/unchoose.mp3';
+  const compete = document.getElementById('compete');
+  compete.src = 'sounds/typereturn.wav';
   const submit = document.getElementById('submit');
   submit.src = 'sounds/submit.wav';
   const purr = document.getElementById('purr');
@@ -55,7 +57,7 @@ $(()=>{
 
 
   $duobutton.on('click', function(){
-    purr.play();
+    compete.play();
     $identities.css({'display': 'block'});
   });
 
