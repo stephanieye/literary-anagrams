@@ -45,6 +45,15 @@ p {
     line-height: 25px;
     font-size: 20px;
   }
+  &.p1colour {
+    color: $p1;
+  }
+  &.p2colour {
+    color: $p2;
+  }
+  &.strikethrough {
+    text-decoration: line-through;
+  }
 }
 
 a {
@@ -58,6 +67,12 @@ a {
 span {
   &.em {
     font-style: italic;
+  }
+  &.p1colour {
+    color: $p1;
+  }
+  &.p2colour {
+    color: $p2;
   }
 }
 

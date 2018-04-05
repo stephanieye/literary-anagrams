@@ -149,6 +149,15 @@ input {
   padding: 20px 10px 10px 10px;
 }
 
+#player1name {
+    color: $p1;
+}
+
+#player2name {
+    color: $p2;
+}
+
+
 @media only screen and (max-width: 1200px) {
 
   header {

@@ -29,6 +29,12 @@ p {
   p.small {
     line-height: 25px;
     font-size: 20px; }
+  p.p1colour {
+    color: #378437; }
+  p.p2colour {
+    color: #752675; }
+  p.strikethrough {
+    text-decoration: line-through; }
 
 a {
   text-decoration: none;
@@ -38,6 +44,10 @@ a {
 
 span.em {
   font-style: italic; }
+span.p1colour {
+  color: #378437; }
+span.p2colour {
+  color: #752675; }
 
 @media only screen and (max-width: 1200px) {
   main {
@@ -694,6 +704,12 @@ input {
   width: 100%;
   max-width: 600px;
   padding: 20px 10px 10px 10px; }
+
+#player1name {
+  color: #378437; }
+
+#player2name {
+  color: #752675; }
 
 @media only screen and (max-width: 1200px) {
   header {

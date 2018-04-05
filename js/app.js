@@ -23,6 +23,7 @@ $(()=>{
   const $contents = $('div.contents').find('p');
   const $scoreboard = $('div.score').find('p');
   const $finale = $('div.finale').find('p');
+  const $finalee = $('div.finalee').find('p');
   const $timer = $('div.timer').find('p');
   const $ranking1 = $('#ranking1');
   const $ranking2 = $('#ranking2');
@@ -133,12 +134,15 @@ $(()=>{
     levelcount += 1;
     if (levelcount === 21) {
       fanfare.play();
+      $finale.html(`<span class='p1colour'>${player1name}</span> has ${indivscore1} / 100 marks and <span class='p2colour'>${player2name}</span> has ${indivscore2} / 100 marks!`);
       if (indivscore1 > indivscore2) {
-        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! <br><br>&#9733; ${player1name} is the winner! &#9733;`);
+        $finalee.addClass('p1colour');
+        $finalee.html(`&#9733; ${player1name} is the winner! &#9733;`);
       }  else if (indivscore1 < indivscore2) {
-        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! <br><br>&#9733; ${player2name} is the winner! &#9733;`);
+        $finalee.addClass('p2colour');
+        $finalee.html(`&#9733; ${player2name} is the winner! &#9733;`);
       } else {
-        $finale.html(`${player1name} and ${player2name} both have ${indivscore1} / 100 marks! <br><br>&#9733; It&#8217;s a tie! &#9733;`);
+        $finalee.html('<span class=\'p1colour\'>&#9733;</span> It&#8217;s a tie! <span class=\'p2colour\'>&#9733;</span>');
       }
     }
     layOutGame();
@@ -149,8 +153,12 @@ $(()=>{
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
     if (players === 2) {
       if (levelcount%2 === 0) {
+        $contents.removeClass('p1colour');
+        $contents.addClass('p2colour');
         $contents.html(`${player2name}&#8217;s turn`);
       } else {
+        $contents.removeClass('p2colour');
+        $contents.addClass('p1colour');
         $contents.html(`${player1name}&#8217;s turn`);
       }
     }
@@ -270,10 +278,10 @@ $(()=>{
     for (var i = 0; i < $audio.length; i++) {
       if ($audio[i].muted === true) {
         $audio[i].muted = false;
-        $music.find('p').html('&#9835;');
+        $music.find('p').removeClass('strikethrough');
       } else {
         $audio[i].muted = true;
-        $music.find('p').text('...');
+        $music.find('p').addClass('strikethrough');
       }
     }
   });
