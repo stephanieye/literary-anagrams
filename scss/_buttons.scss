@@ -96,6 +96,9 @@ button {
       margin: 5px 30px;
       height: 250px;
       width: 400px;
+      p {
+        line-height: 55px;
+      }
       &:hover {
         height: 250px;
         width: 400px;
