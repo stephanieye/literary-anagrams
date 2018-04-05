@@ -136,10 +136,10 @@ button {
     left: 0px;
     top: 0px; }
   50% {
-    left: 32%;
+    left: 31.5%;
     top: 500px; }
   100% {
-    left: 32%;
+    left: 31.5%;
     top: 0px; } }
 @keyframes move2 {
   0% {
@@ -293,10 +293,10 @@ button {
     left: 0px;
     top: 0px; }
   50% {
-    left: -77.5%;
+    left: -77.25%;
     top: 200px; }
   100% {
-    left: -77.5%;
+    left: -77.25%;
     top: 0px; } }
 @keyframes fade {
   0% {
