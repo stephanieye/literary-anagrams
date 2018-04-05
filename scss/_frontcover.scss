@@ -110,13 +110,41 @@ div {
     animation: flowing 10s linear infinite;
     background-size: 400% 400%;
     padding: 20px 50px;
-    height: 200px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
+  &.identities {
+    background-color: $pink;
+    height: 250px;
+    padding: 20px 0;
+    width: 100%;
+    display: none;
+  }
+
+  &.form {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.field {
+    padding: 20px;
+  }
+
+}
+
+input {
+  font-size: 30px;
+  height: 50px;
+  width: 300px;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -185,7 +213,7 @@ div {
     &.intromiddle {
       padding: 30px 5px;
     }
-        
+
   }
 
 

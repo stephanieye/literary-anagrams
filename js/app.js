@@ -10,6 +10,8 @@ $(()=>{
   var player2 = [0];
   var soc = 1;
 
+  const $identities = $('div.identities');
+  const $getnamesbutton = $('button.getnames');
   const $submitbutton = $('button.submit');
   const $duobutton = $('button.duo');
   const $level = $('section');
@@ -52,12 +54,26 @@ $(()=>{
   const $hints = [['Mary Shelley', 'F'], ['Charles Dickens', 'O'], ['Joseph Conrad', 'H'], ['Evelyn Waugh', 'B'], ['Emily Brontë', 'W'], ['Kazuo Ishiguro', 'T'], ['William Golding','L'], ['Anthony Burgess', 'A'], ['H.G. Wells', 'T'], ['George Orwell', 'A'], ['E.M. Forster', 'A'], ['Virginia Woolf', 'M'], ['John le Carré', 'T'], ['Arthur Conan Doyle', 'A'], ['Aldous Huxley', 'B'], ['Kenneth Grahame', 'T'], ['Jane Austen', 'M'], ['George Eliot', 'S'], ['Gerald Durrell', 'M'], ['Thomas Hardy', 'J']];
 
 
-  $submitbutton.on('click', playgame);
-
-
   $duobutton.on('click', function(){
+    $identities.css({'display': 'block'});
+  });
+
+
+
+
+  $getnamesbutton.on('click', function(){
+    player1name = document.getElementById('player1name').value;
+    player2name = document.getElementById('player2name').value;
     players += 1;
-    playgame();
+    playgame2(player1name, player2name);
+  });
+
+  $submitbutton.on('click', function() {
+    if (players === 1) {
+      playgame();
+    } else {
+      playgame2(player1name, player2name);
+    }
   });
 
 
@@ -73,31 +89,26 @@ $(()=>{
     // console.log($titles[levelcount-1]);
     //---awarding points from previous round---
     if ($answer.text() === $titles[levelcount-1]) {
-      playerSuccess();
+
+      points +=5;
+
     } else {
-      playerFail();
+      points += 0;
     }
     //---computing accumulated score
     var score = points - demerits;
-    var indivscore1 = player1.reduce(getSum);
-    var indivscore2 = player2.reduce(getSum);
-    accumulativeScore(indivscore1, indivscore2, score);
+    $scoreboard.text(`${score} / 100 marks`);
     //---moving game on to next level
     $level.eq(levelcount).remove();
     levelcount += 1;
     //---if game has ended
     if (levelcount === 21) {
-      finalResult(indivscore1, indivscore2, score);
+      fanfare.play();
+      $finale.text(`You earned ${score} / 100 marks!`);
+      rankplayer(score);
     }
     //---if game has not ended
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
-    if (players === 2) {
-      if (levelcount%2 === 0) {
-        $contents.text('Player 2');
-      } else {
-        $contents.text('Player 1');
-      }
-    }
     var $currentAnagramBoard = $level.eq(levelcount).find($anagramboard);
     var $currentTile = $currentAnagramBoard.find($tile);
     var $currentAnswerBoard = $answerboard.eq(levelcount-1);
@@ -115,6 +126,92 @@ $(()=>{
       });
     }
   }
+
+
+  function playgame2(player1name, player2name){
+    submit.play();
+    $timer.removeClass('warning');
+    clearInterval(timerId);
+    if (levelcount < 20) {
+      startTimer();
+    }
+    var $answer = $('div.chosen');
+    // console.log($answer.text());
+    // console.log($titles[levelcount-1]);
+    //---awarding points from previous round---
+    if ($answer.text() === $titles[levelcount-1]) {
+
+      if (levelcount%2 === 0) {
+        player2.push(10);
+      } else {
+        player1.push(10);
+      }
+
+    } else {
+
+      if (levelcount%2 === 0) {
+        player2.push(0);
+      } else {
+        player1.push(0);
+      }
+
+    }
+    //---computing accumulated score
+
+    var indivscore1 = player1.reduce(getSum);
+    var indivscore2 = player2.reduce(getSum);
+
+    if (levelcount%2 === 0) {
+      console.log(`player 1 ${indivscore1}`);
+      $scoreboard.text(`${indivscore1} / 100 marks`);
+    } else {
+      console.log(`player 2 ${indivscore2}`);
+      $scoreboard.text(`${indivscore2} / 100 marks`);
+    }
+
+    //---moving game on to next level
+    $level.eq(levelcount).remove();
+    levelcount += 1;
+    //---if game has ended
+    if (levelcount === 21) {
+      fanfare.play();
+
+      if (indivscore1 > indivscore2) {
+        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! ${player1name} is the winner!`);
+      }  else if (indivscore1 < indivscore2) {
+        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! ${player2name} is the winner!`);
+      } else {
+        $finale.html(`${player1name} and ${player2name} both have ${indivscore1} / 100 marks! It&#8217;s a tie!`);
+      }
+
+    }
+    //---if game has not ended
+    $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
+
+    if (levelcount%2 === 0) {
+      $contents.text(`${player2name}`);
+    } else {
+      $contents.text(`${player1name}`);
+    }
+
+    var $currentAnagramBoard = $level.eq(levelcount).find($anagramboard);
+    var $currentTile = $currentAnagramBoard.find($tile);
+    var $currentAnswerBoard = $answerboard.eq(levelcount-1);
+    for (var i = 0; i < $currentTile.length; i++) {
+      $($currentTile[i]).on('click', function(){
+        if (($(this)).hasClass('chosen')) {
+          unchoose.play();
+          $currentAnagramBoard.find('.anagramrow:first').append($(this));
+          $($(this)).removeClass('chosen');
+        } else {
+          choose.play();
+          ($(this)).addClass('chosen');
+          $currentAnswerBoard.append($(this));
+        }
+      });
+    }
+  }
+
 
 
   function startTimer() {
@@ -135,63 +232,9 @@ $(()=>{
   }
 
 
-  function playerSuccess() {
-    if (players===2) {
-      if (levelcount%2 === 0) {
-        player2.push(10);
-      } else {
-        player1.push(10);
-      }
-    } else {
-      points +=5;
-    }
-  }
 
 
-  function playerFail() {
-    if (players===2) {
-      if (levelcount%2 === 0) {
-        player2.push(0);
-      } else {
-        player1.push(0);
-      }
-    } else {
-      points += 0;
-    }
-  }
 
-
-  function accumulativeScore(a, b, c) {
-    if (players===2) {
-      if (levelcount%2 === 0) {
-        console.log(`player 1 ${a}`);
-        $scoreboard.text(`${a} / 100 marks`);
-      } else {
-        console.log(`player 2 ${b}`);
-        $scoreboard.text(`${b} / 100 marks`);
-      }
-    } else {
-      console.log(c);
-      $scoreboard.text(`${c} / 100 marks`);
-    }
-  }
-
-
-  function finalResult(a, b, c) {
-    fanfare.play();
-    if (players === 2) {
-      if (a > b) {
-        $finale.html(`Player 1 has ${a} / 100 marks and Player 2 has ${b} / 100 marks! Player 1 is the winner!`);
-      }  else if (a < b) {
-        $finale.html(`Player 1 has ${a} / 100 marks and Player 2 has ${b} / 100 marks! Player 2 is the winner!`);
-      } else {
-        $finale.html(`Player 1 and Player 2 both have ${a} / 100 marks! It&#8217;s a tie!`);
-      }
-    } else {
-      $finale.text(`You earned ${c} / 100 marks!`);
-      rankplayer(c);
-    }
-  }
 
 
   function getSum(total, num) {
