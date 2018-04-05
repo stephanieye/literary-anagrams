@@ -553,8 +553,12 @@ span {
       padding-bottom: 10px;
     }
 
+    &.control {
+      padding: 10px 20px;
+    }
+
     &.contents, &.timer, &.score {
-      width: 200px;
+      width: 250px;
       padding: 8px 5px 2px 5px;
     }
 
@@ -585,7 +589,7 @@ span {
     }
 
     &.hint1 , &.hint2 {
-      width: 165px;
+      width: 200px;
       height: 85px;
       padding: 10px;
       box-shadow: 3px 3px 1px 0.5px $shadow;
