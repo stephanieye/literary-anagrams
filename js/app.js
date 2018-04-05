@@ -51,10 +51,6 @@ $(()=>{
   const warn = document.getElementById('warn');
   warn.src = 'sounds/warn.wav';
 
-  const $titles = ['FRANKENSTEIN', 'OLIVERTWIST', 'HEARTOFDARKNESS', 'BRIDESHEADREVISITED', 'WUTHERINGHEIGHTS', 'THEREMAINSOFTHEDAY', 'LORDOFTHEFLIES', 'ACLOCKWORKORANGE', 'THEWAROFTHEWORLDS', 'ANIMALFARM', 'APASSAGETOINDIA', 'MRSDALLOWAY', 'TINKERTAILORSOLDIERSPY', 'ASTUDYINSCARLET', 'BRAVENEWWORLD', 'THEWINDINTHEWILLOWS', 'MANSFIELDPARK', 'SILASMARNER','MYFAMILYANDOTHERANIMALS','JUDETHEOBSCURE'];
-
-  const $hints = [['Mary Shelley', 'F'], ['Charles Dickens', 'O'], ['Joseph Conrad', 'H'], ['Evelyn Waugh', 'B'], ['Emily Brontë', 'W'], ['Kazuo Ishiguro', 'T'], ['William Golding','L'], ['Anthony Burgess', 'A'], ['H.G. Wells', 'T'], ['George Orwell', 'A'], ['E.M. Forster', 'A'], ['Virginia Woolf', 'M'], ['John le Carré', 'T'], ['Arthur Conan Doyle', 'A'], ['Aldous Huxley', 'B'], ['Kenneth Grahame', 'T'], ['Jane Austen', 'M'], ['George Eliot', 'S'], ['Gerald Durrell', 'M'], ['Thomas Hardy', 'J']];
-
 
   $duobutton.on('click', function(){
     compete.play();
@@ -101,23 +97,7 @@ $(()=>{
       $finale.text(`You earned ${score} / 100 marks!`);
       rankplayer(score);
     }
-    $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
-    var $currentAnagramBoard = $level.eq(levelcount).find($anagramboard);
-    var $currentTile = $currentAnagramBoard.find($tile);
-    var $currentAnswerBoard = $answerboard.eq(levelcount-1);
-    for (var i = 0; i < $currentTile.length; i++) {
-      $($currentTile[i]).on('click', function(){
-        if (($(this)).hasClass('chosen')) {
-          unchoose.play();
-          $currentAnagramBoard.find('.anagramrow:first').append($(this));
-          $($(this)).removeClass('chosen');
-        } else {
-          choose.play();
-          ($(this)).addClass('chosen');
-          $currentAnswerBoard.find('.anagramrow:first').append($(this));
-        }
-      });
-    }
+    layOutGame();
   }
 
 
@@ -161,11 +141,18 @@ $(()=>{
         $finale.html(`${player1name} and ${player2name} both have ${indivscore1} / 100 marks! <br><br>&#9733; It&#8217;s a tie! &#9733;`);
       }
     }
+    layOutGame();
+  }
+
+
+  function layOutGame() {
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
-    if (levelcount%2 === 0) {
-      $contents.html(`${player2name}&#8217;s turn`);
-    } else {
-      $contents.html(`${player1name}&#8217;s turn`);
+    if (players === 2) {
+      if (levelcount%2 === 0) {
+        $contents.html(`${player2name}&#8217;s turn`);
+      } else {
+        $contents.html(`${player1name}&#8217;s turn`);
+      }
     }
     var $currentAnagramBoard = $level.eq(levelcount).find($anagramboard);
     var $currentTile = $currentAnagramBoard.find($tile);
@@ -184,7 +171,6 @@ $(()=>{
       });
     }
   }
-
 
   function startTimer() {
     $timer.text('60 seconds left');
