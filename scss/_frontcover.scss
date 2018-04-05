@@ -63,12 +63,30 @@ header {
 div {
 
   &.music {
+    z-index: 2;
     height: 50px;
     width: 50px;
     position: fixed;
     top: 25px;
     right: 25px;
     p {
+      font-size: 30px;
+      line-height: 50px;
+      color: $shadow;
+    }
+  }
+
+  &.cross {
+    display: none;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 20px;
+    right: 22px;
+    p {
+      font-size: 35px;
+      line-height: 55px;
       color: $shadow;
     }
   }
@@ -219,8 +237,25 @@ input {
     }
 
     &.music {
-      top: 35px;
-      right: 35px;
+      height: 100px;
+      width: 100px;
+      top: 50px;
+      right: 50px;
+      p {
+        font-size: 60px;
+        line-height: 100px;
+      }
+    }
+
+    &.cross {
+      height: 100px;
+      width: 100px;
+      top: 40px;
+      right: 44px;
+      p {
+        font-size: 70px;
+        line-height: 110px;
+      }
     }
 
     &.introtop {

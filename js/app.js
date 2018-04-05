@@ -35,6 +35,7 @@ $(()=>{
   const $playagainbutton = $('button.playagain');
   const $showsociety = $('div.showsociety');
   const $music = $('div.music');
+  const $cross = $('div.cross');
   const $audio = $('audio');
 
   const choose = document.getElementById('choose');
@@ -278,10 +279,10 @@ $(()=>{
     for (var i = 0; i < $audio.length; i++) {
       if ($audio[i].muted === true) {
         $audio[i].muted = false;
-        $music.find('p').removeClass('strikethrough');
+        $cross.css({'display': 'none'});
       } else {
         $audio[i].muted = true;
-        $music.find('p').addClass('strikethrough');
+        $cross.css({'display': 'block'});
       }
     }
   });

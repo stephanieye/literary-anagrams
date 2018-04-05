@@ -638,12 +638,27 @@ header {
     animation: move10 5s linear 2s forwards; }
 
 div.music {
+  z-index: 2;
   height: 50px;
   width: 50px;
   position: fixed;
   top: 25px;
   right: 25px; }
   div.music p {
+    font-size: 30px;
+    line-height: 50px;
+    color: rgba(99, 99, 99, 0.5); }
+div.cross {
+  display: none;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  top: 20px;
+  right: 22px; }
+  div.cross p {
+    font-size: 35px;
+    line-height: 55px;
     color: rgba(99, 99, 99, 0.5); }
 div.masthead {
   width: 80%;
@@ -740,8 +755,21 @@ input {
   div.masthead {
     width: 90%; }
   div.music {
-    top: 35px;
-    right: 35px; }
+    height: 100px;
+    width: 100px;
+    top: 50px;
+    right: 50px; }
+    div.music p {
+      font-size: 60px;
+      line-height: 100px; }
+  div.cross {
+    height: 100px;
+    width: 100px;
+    top: 40px;
+    right: 44px; }
+    div.cross p {
+      font-size: 70px;
+      line-height: 110px; }
   div.introtop {
     padding: 5px;
     height: 600px; }
