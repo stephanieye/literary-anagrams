@@ -198,7 +198,11 @@ $(()=>{
       }
       if (timeRemaining === 0) {
         clearInterval(timerId);
-        playgame();
+        if (players === 1) {
+          playgame();
+        } else {
+          playgame2(player1name, player2name);
+        }
       }
     }, 1000);
   }
