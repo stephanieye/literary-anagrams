@@ -85,8 +85,6 @@ $(()=>{
       startTimer();
     }
     var $answer = $('div.chosen');
-    // console.log($answer.text());
-    // console.log($titles[levelcount-1]);
     if ($answer.text() === $titles[levelcount-1]) {
       points +=5;
     } else {
@@ -129,8 +127,6 @@ $(()=>{
       startTimer();
     }
     var $answer = $('div.chosen');
-    // console.log($answer.text());
-    // console.log($titles[levelcount-1]);
     if ($answer.text() === $titles[levelcount-1]) {
       if (levelcount%2 === 0) {
         player2.push(10);
@@ -147,10 +143,8 @@ $(()=>{
     var indivscore1 = player1.reduce(getSum);
     var indivscore2 = player2.reduce(getSum);
     if (levelcount%2 === 0) {
-      console.log(`player 1 ${indivscore1}`);
       $scoreboard.text(`${indivscore1} / 100 marks`);
     } else {
-      console.log(`player 2 ${indivscore2}`);
       $scoreboard.text(`${indivscore2} / 100 marks`);
     }
     $level.eq(levelcount).remove();
@@ -158,11 +152,11 @@ $(()=>{
     if (levelcount === 21) {
       fanfare.play();
       if (indivscore1 > indivscore2) {
-        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! ${player1name} is the winner!`);
+        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! <br><br>${player1name} is the winner!`);
       }  else if (indivscore1 < indivscore2) {
-        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! ${player2name} is the winner!`);
+        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! <br><br>${player2name} is the winner!`);
       } else {
-        $finale.html(`${player1name} and ${player2name} both have ${indivscore1} / 100 marks! It&#8217;s a tie!`);
+        $finale.html(`${player1name} and ${player2name} both have ${indivscore1} / 100 marks! <br><br>It&#8217;s a tie!`);
       }
     }
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
