@@ -40,6 +40,9 @@ button {
     height: 55px;
     width: 110px;
     border-radius: 30px;
+    p {
+      line-height: 20px;
+    }
     &:hover {
       height: 65px;
       width: 120px;
@@ -101,5 +104,5 @@ button {
   }
 
 }
-  
+
 }

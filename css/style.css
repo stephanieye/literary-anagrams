@@ -91,6 +91,8 @@ button {
     height: 55px;
     width: 110px;
     border-radius: 30px; }
+    button p {
+      line-height: 20px; }
     button:hover {
       height: 65px;
       width: 120px; }
@@ -413,9 +415,9 @@ div.introbottom {
   align-items: center; }
 div.identities {
   background-color: #f2dede;
-  height: 250px;
   padding: 20px 0;
   width: 100%;
+  height: 300px;
   display: none; }
 div.form {
   margin: 0 auto;
@@ -428,10 +430,12 @@ div.field {
   padding: 20px; }
 
 input {
+  font-family: 'Special Elite', cursive;
   font-size: 30px;
   height: 50px;
-  width: 300px;
-  padding: 10px; }
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 10px 10px 10px; }
 
 @media only screen and (max-width: 1200px) {
   header {
@@ -450,7 +454,11 @@ input {
 
   div.music {
     top: 20px;
-    right: 20px; } }
+    right: 20px; }
+  div.identities {
+    height: 350px; }
+  div.form {
+    flex-direction: column; } }
 @media only screen and (max-device-width: 1040px) {
   header {
     font-size: 80px; }
@@ -464,7 +472,24 @@ input {
     padding: 5px;
     height: 600px; }
   div.intromiddle {
-    padding: 30px 5px; } }
+    padding: 30px 5px; }
+  div.introbottom {
+    height: 200px; }
+  div.identities {
+    height: 600px;
+    padding: 20px; }
+  div.form {
+    flex-direction: column;
+    padding: 5px;
+    width: 100%; }
+  div.field {
+    width: 80%; }
+
+  input {
+    font-size: 70px;
+    height: 90px;
+    width: 100%;
+    max-width: 100%; } }
 div.control {
   background-color: #efb3b3;
   width: 100%;
@@ -582,16 +607,16 @@ div.tile {
     width: 250px;
     padding: 8px 5px 2px 5px; }
   div.question {
-    height: 330px; }
+    height: 390px; }
   div.anagramboard {
-    height: 280px;
+    height: 340px;
     padding: 0 20px; }
   div.anagramrow {
-    height: 68px; }
+    height: 85px; }
   div.answer {
-    height: 255px; }
+    height: 305px; }
   div.answerboard {
-    height: 205px;
+    height: 255px;
     padding: 0 20px; }
   div.hint {
     padding: 10px 20px; }
@@ -603,11 +628,11 @@ div.tile {
     div.hint1.hintrevealed, div.hint2.hintrevealed {
       box-shadow: -3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); }
   div.tile {
-    font-size: 35px;
-    height: 52px;
-    width: 52px;
+    font-size: 45px;
+    height: 65px;
+    width: 65px;
     padding: 10px;
-    margin: 8px;
+    margin: 9px 7px;
     box-shadow: 3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); }
     div.tile.chosen {
       box-shadow: -3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); } }

@@ -159,24 +159,24 @@ div {
     }
 
     &.question {
-      height: 330px;
+      height: 390px;
     }
 
     &.anagramboard {
-      height: 280px;
+      height: 340px;
       padding: 0 20px;
     }
 
     &.anagramrow {
-      height: 68px;
+      height: 85px;
     }
 
     &.answer {
-      height: 255px;
+      height: 305px;
     }
 
     &.answerboard {
-      height: 205px;
+      height: 255px;
       padding: 0 20px;
     }
 
@@ -195,11 +195,11 @@ div {
     }
 
     &.tile {
-      font-size: 35px;
-      height: 52px;
-      width: 52px;
+      font-size: 45px;
+      height: 65px;
+      width: 65px;
       padding: 10px;
-      margin: 8px;
+      margin: 9px 7px;
       box-shadow: 3px 3px 1px 0.5px $shadow;
       &.chosen {
         box-shadow: -3px 3px 1px 0.5px $shadow;
