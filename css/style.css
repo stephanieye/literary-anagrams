@@ -293,10 +293,10 @@ button {
     left: 0px;
     top: 0px; }
   50% {
-    left: -77.25%;
+    left: -77.5%;
     top: 200px; }
   100% {
-    left: -77.25%;
+    left: -77.5%;
     top: 0px; } }
 @keyframes fade {
   0% {
