@@ -773,6 +773,11 @@ div.caste {
   flex-direction: row;
   justify-content: space-between; }
 
+@media only screen and (max-width: 800px) {
+  div.society {
+    padding: 10px; }
+  div.caste {
+    width: 95%; } }
 @media only screen and (max-device-width: 1040px) {
   div.finaltop {
     padding: 5px;

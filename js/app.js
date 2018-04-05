@@ -114,7 +114,7 @@ $(()=>{
         } else {
           choose.play();
           ($(this)).addClass('chosen');
-          $currentAnswerBoard.append($(this));
+          $currentAnswerBoard.find('.anagramrow:first').append($(this));
         }
       });
     }
@@ -154,11 +154,11 @@ $(()=>{
     if (levelcount === 21) {
       fanfare.play();
       if (indivscore1 > indivscore2) {
-        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! <br><br>${player1name} is the winner!`);
+        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! <br><br>&#9733; ${player1name} is the winner! &#9733;`);
       }  else if (indivscore1 < indivscore2) {
-        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! <br><br>${player2name} is the winner!`);
+        $finale.html(`${player1name} has ${indivscore1} / 100 marks and ${player2name} has ${indivscore2} / 100 marks! <br><br>&#9733; ${player2name} is the winner! &#9733;`);
       } else {
-        $finale.html(`${player1name} and ${player2name} both have ${indivscore1} / 100 marks! <br><br>It&#8217;s a tie!`);
+        $finale.html(`${player1name} and ${player2name} both have ${indivscore1} / 100 marks! <br><br>&#9733; It&#8217;s a tie! &#9733;`);
       }
     }
     $level.eq(levelcount).css({'display': 'block', 'visibility': 'visible'});
@@ -179,7 +179,7 @@ $(()=>{
         } else {
           choose.play();
           ($(this)).addClass('chosen');
-          $currentAnswerBoard.append($(this));
+          $currentAnswerBoard.find('.anagramrow:first').append($(this));
         }
       });
     }
