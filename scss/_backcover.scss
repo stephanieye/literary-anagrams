@@ -1,0 +1,91 @@
+div {
+
+  &.finaltop {
+    padding: 50px;
+    background-color: $grey;
+    background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
+    animation: flowing 10s linear infinite;
+    background-size: 400% 400%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.finalmiddle {
+    background-color: $pink;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.finalbottom {
+    background-color: $grey;
+    background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
+    animation: flowing 10s linear infinite;
+    background-size: 400% 400%;
+    padding: 20px 50px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  #ranking1, #ranking2, #ranking3, #ranking4, #ranking5, #ranking6, #ranking7 {
+    display: none;
+  }
+
+  &.showsociety {
+    margin-top: 20px;
+  }
+
+  &.society {
+    display: none;
+    padding: 50px;
+    background-color: $pink;
+  }
+
+  &.caste {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+
+}
+
+@media only screen and (max-device-width: 1040px) {
+
+  div {
+
+    &.finaltop {
+      padding: 5px;
+      height: 300px;
+    }
+
+    &.finalmiddle {
+      padding: 30px 5px;
+    }
+
+
+    &.society {
+      padding: 10px;
+    }
+
+    &.caste {
+      width: 100%;
+      p {
+        font-size: 50px;
+      }
+    }
+
+
+  }
+
+}

@@ -1,0 +1,105 @@
+button {
+  margin: 20px;
+  height: 80px;
+  width: 160px;
+  color: $black;
+  border: 2px solid $header;
+  border-radius: 40px;
+  background-color: $base;
+  background: linear-gradient(45deg, $blush, $rose, $kitten, $slate, $sky, $ocean);
+  background-size: 400% 400%;
+  animation: flowing 5s linear infinite;
+  &:hover {
+    border: 3px solid $base;
+    height: 90px;
+    width: 180px;
+    color: $base;
+    p {
+      font-size: 35px;
+      &.small {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &.big {
+    margin: 5px 40px;
+    height: 150px;
+    width: 300px;
+    &:hover {
+      height: 150px;
+      width: 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+
+  button {
+    margin: 10px;
+    height: 55px;
+    width: 110px;
+    border-radius: 30px;
+    &:hover {
+      height: 65px;
+      width: 120px;
+      p {
+        font-size: 25px;
+        &.small {
+          font-size: 20px;
+        }
+      }
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+  button {
+    padding: 0;
+    &.big {
+      margin: 5px 10px;
+      height: 100px;
+      width: 200px;
+      &:hover {
+        height: 100px;
+        width: 200px;
+      }
+      p {
+        line-height: 20px;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-device-width: 1040px) {
+
+  button {
+    margin: 5px;
+    height: 150px;
+    width: 300px;
+    &:hover {
+      height: 160px;
+      width: 320px;
+      p {
+        font-size: 65px;
+        &.small {
+          font-size: 45px;
+        }
+      }
+    }
+    &.big {
+      margin: 5px 30px;
+      height: 250px;
+      width: 400px;
+      &:hover {
+        height: 250px;
+        width: 400px;
+      }
+    }
+  }
+
+}
+  
+}

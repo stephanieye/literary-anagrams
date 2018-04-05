@@ -1,0 +1,192 @@
+header {
+  font-family: 'Special Elite', cursive;
+  color: $header;
+  text-shadow: 2px 2px $header;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 15px;
+
+  &.move1 {
+    position: relative;
+    animation: move1 5s ease-out 2s forwards;
+  }
+
+  &.move2 {
+    position: relative;
+    animation: move2 5s linear 2s forwards;
+  }
+
+  &.move3 {
+    position: relative;
+    animation: move3 5s ease-in 2s forwards;
+  }
+
+  &.move4 {
+    position: relative;
+    animation: move4 6s ease-in 7.5s forwards;
+  }
+
+  &.move5 {
+    position: relative;
+    animation: move5 5s linear 2s forwards;
+  }
+
+  &.move6 {
+    position: relative;
+    animation: move6 5s ease-out 2s forwards;
+  }
+
+  &.move7 {
+    position: relative;
+    animation: move7 5s ease-in 2s forwards;
+  }
+
+  &.move8 {
+    position: relative;
+    animation: move8 5s linear 2s forwards;
+  }
+
+  &.move9 {
+    position: relative;
+    animation: move9 5s ease-out 2s forwards;
+  }
+
+  &.move10 {
+    position: relative;
+    animation: move10 5s linear 2s forwards;
+  }
+
+}
+
+
+
+div {
+
+  &.music {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    p {
+      color: $shadow;
+    }
+  }
+
+  &.masthead {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  &.introtop {
+    padding: 50px;
+    background-color: $grey;
+    background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
+    animation: flowing 10s linear infinite;
+    background-size: 400% 400%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.intromiddle {
+    background-color: $pink;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.introbottom {
+    background-color: $grey;
+    background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
+    animation: flowing 10s linear infinite;
+    background-size: 400% 400%;
+    padding: 20px 50px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+  header {
+    font-size: 50px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  div {
+
+    &.masthead {
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 800px) {
+
+  header {
+    font-size: 35px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+
+  div {
+
+    &.music {
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+}
+
+
+@media only screen and (max-device-width: 1040px) {
+
+  header {
+    font-size: 80px;
+  }
+
+  div {
+
+    &.masthead {
+      width: 90%;
+    }
+
+    &.music {
+      top: 35px;
+      right: 35px;
+    }
+
+
+
+    &.introtop {
+      padding: 5px;
+      height: 600px;
+    }
+
+    &.intromiddle {
+      padding: 30px 5px;
+    }
+        
+  }
+
+
+}
