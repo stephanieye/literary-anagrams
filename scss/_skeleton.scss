@@ -39,8 +39,8 @@ div {
 
 p {
   font-family: 'Special Elite', cursive;
-  line-height: 35px;
-  font-size: 30px;
+  line-height: 30px;
+  font-size: 25px;
   &.small {
     line-height: 25px;
     font-size: 20px;
@@ -84,11 +84,11 @@ span {
   }
 
   p {
-    line-height: 30px;
-    font-size: 25px;
+    line-height: 25px;
+    font-size: 20px;
     &.small {
-      line-height: 25px;
-      font-size: 20px;
+      line-height: 20px;
+      font-size: 15px;
     }
   }
 
@@ -98,11 +98,11 @@ span {
 @media only screen and (max-width: 800px) {
 
   p {
-    line-height: 25px;
-    font-size: 20px;
+    line-height: 20px;
+    font-size: 15px;
     &.small {
-      line-height: 20px;
-      font-size: 15px;
+      line-height: 15px;
+      font-size: 10px;
     }
   }
 
