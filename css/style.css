@@ -736,6 +736,7 @@ div.tile {
       box-shadow: -3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); } }
 @media only screen and (max-width: 800px) {
   div.control {
+    margin-top: 0;
     flex-direction: column; }
   div.contents, div.timer, div.score {
     width: 60%;
@@ -753,11 +754,11 @@ div.tile {
     height: 165px;
     padding: 0 15px; }
   div.hint {
-    height: 100px;
+    height: 90px;
     padding: 8px 15px; }
   div.hint1, div.hint2 {
     width: 130px;
-    height: 75px;
+    height: 70px;
     padding: 5px;
     box-shadow: 1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); }
     div.hint1.hintrevealed, div.hint2.hintrevealed {

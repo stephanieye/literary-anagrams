@@ -218,6 +218,7 @@ div {
   div {
 
     &.control {
+      margin-top: 0;
       flex-direction: column;
     }
 
@@ -249,13 +250,13 @@ div {
     }
 
     &.hint {
-      height: 100px;
+      height: 90px;
       padding: 8px 15px;
     }
 
     &.hint1 , &.hint2 {
       width: 130px;
-      height: 75px;
+      height: 70px;
       padding: 5px;
       box-shadow: 1.5px 1.5px 0.5px 0.25px $shadow;
       &.hintrevealed {
