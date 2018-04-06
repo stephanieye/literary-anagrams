@@ -62,7 +62,13 @@ $(()=>{
 
   $getnamesbutton.on('click', function(){
     player1name = document.getElementById('player1name').value;
+    if (player1name === '') {
+      player1name = 'Player 1';
+    }
     player2name = document.getElementById('player2name').value;
+    if (player2name === '') {
+      player2name = 'Player 2';
+    }
     players += 1;
     playGame2(player1name, player2name);
   });
