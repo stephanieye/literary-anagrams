@@ -47,9 +47,13 @@ The key game feature -- that when the player clicks on a tile, it is moved to th
 -------------------------------------------------------------------------------------------------------------------------
 ##Improvements going forward
 -------------------------------------------------------------------------------------------------------------------------
-The game still does not display well on several mobile devices, so I have to work on the media queries.
+The game still does not display well on several mobile devices (particularly the CSS animation of the title), so I have to work on the media queries.
 
 This game was created in a Chrome browser, so I am not sure if it renders well in other browsers.
+
+My 'play again' button uses location.reload(), which I am aware is considered an amateurish method, so I could work on restoring the game's start page in a more sophisticated way.
+
+I could do with more refactoring of my code.
 
 -------------------------------------------------------------------------------------------------------------------------
 ##Technologies
