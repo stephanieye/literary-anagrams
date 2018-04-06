@@ -66,13 +66,6 @@ span.p2colour {
     p.small {
       line-height: 20px;
       font-size: 15px; } }
-@media only screen and (max-device-width: 1040px) {
-  p {
-    line-height: 70px;
-    font-size: 60px; }
-    p.small {
-      line-height: 50px;
-      font-size: 40px; } }
 button {
   margin: 20px;
   height: 80px;
@@ -105,15 +98,6 @@ button {
       margin: 5px 10px;
       height: 80px;
       width: 160px; } }
-@media only screen and (max-width: 1200px) and (max-device-width: 1040px) {
-  button {
-    margin: 5px;
-    height: 150px;
-    width: 300px; }
-    button.big {
-      margin: 5px 30px;
-      height: 250px;
-      width: 400px; } }
 @keyframes move1 {
   0% {
     left: 0px;
@@ -604,50 +588,6 @@ input {
     font-size: 25px;
     height: 40px;
     padding: 10px 5px 5px 5px; } }
-@media only screen and (max-device-width: 1040px) {
-  header {
-    display: none; }
-
-  div.masthead {
-    width: 90%; }
-  div.music {
-    height: 100px;
-    width: 100px;
-    top: 50px;
-    right: 50px; }
-    div.music p {
-      font-size: 60px;
-      line-height: 100px; }
-  div.cross {
-    height: 100px;
-    width: 100px;
-    top: 40px;
-    right: 44px; }
-    div.cross p {
-      font-size: 70px;
-      line-height: 110px; }
-  div.introtop {
-    padding: 5px;
-    height: 600px; }
-  div.intromiddle {
-    padding: 30px 5px; }
-  div.introbottom {
-    height: 200px; }
-  div.identities {
-    height: 600px;
-    padding: 20px; }
-  div.form {
-    flex-direction: column;
-    padding: 5px;
-    width: 100%; }
-  div.field {
-    width: 80%; }
-
-  input {
-    font-size: 70px;
-    height: 90px;
-    width: 100%;
-    max-width: 100%; } }
 div.control {
   background-color: #efb3b3;
   width: 100%;
@@ -834,60 +774,6 @@ div.tile {
     box-shadow: 1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); }
     div.tile.chosen {
       box-shadow: -1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); } }
-@media only screen and (max-device-width: 1040px) {
-  div.control {
-    flex-direction: column;
-    margin-top: 20px;
-    padding: 5px; }
-  div.contents, div.timer, div.score {
-    text-align: center;
-    width: 60%;
-    padding: 14px 10px 6px 10px; }
-  div.question {
-    height: 570px;
-    padding: 0 15px;
-    background-color: #d2d2e6;
-    background: radial-gradient(circle, #d2d2e6, #bebed2, #aaaabe, #9696aa);
-    background-size: 400% 400%;
-    animation: flowing 10s linear infinite; }
-  div.instruction, div.deinstruction {
-    padding: 10px; }
-    div.instruction p, div.deinstruction p {
-      font-size: 45px; }
-  div.anagramboard {
-    padding: 0 2px;
-    height: 520px;
-    font-family: 'Acme', sans-serif;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start; }
-  div.anagramrow {
-    margin: 0;
-    height: 130px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap; }
-  div.tile {
-    font-size: 75px;
-    height: 105px;
-    width: 83px;
-    padding: 15px 0 0 0; }
-  div.answer {
-    height: 440px; }
-  div.answerboard {
-    padding: 0 4px;
-    height: 390px; }
-  div.hint {
-    padding: 5px;
-    height: 320px; }
-  div.hint1, div.hint2 {
-    width: 300px;
-    height: 280px;
-    padding: 5px; } }
 div.finaltop {
   padding: 50px;
   background-color: #d2d2e6;
@@ -941,17 +827,5 @@ div.caste {
     padding: 10px; }
   div.caste {
     width: 95%; } }
-@media only screen and (max-device-width: 1040px) {
-  div.finaltop {
-    padding: 5px;
-    height: 300px; }
-  div.finalmiddle {
-    padding: 30px 5px; }
-  div.society {
-    padding: 10px; }
-  div.caste {
-    width: 100%; }
-    div.caste p {
-      font-size: 50px; } }
 
 /*# sourceMappingURL=style.css.map */

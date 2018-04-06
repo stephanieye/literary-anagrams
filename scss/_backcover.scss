@@ -86,34 +86,3 @@ div {
 
 }
 }
-
-
-@media only screen and (max-device-width: 1040px) {
-
-  div {
-
-    &.finaltop {
-      padding: 5px;
-      height: 300px;
-    }
-
-    &.finalmiddle {
-      padding: 30px 5px;
-    }
-
-
-    &.society {
-      padding: 10px;
-    }
-
-    &.caste {
-      width: 100%;
-      p {
-        font-size: 50px;
-      }
-    }
-
-
-  }
-
-}

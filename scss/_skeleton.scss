@@ -107,17 +107,3 @@ span {
   }
 
 }
-
-
-@media only screen and (max-device-width: 1040px) {
-
-  p {
-    line-height: 70px;
-    font-size: 60px;
-    &.small {
-      line-height: 50px;
-      font-size: 40px;
-    }
-  }
-
-}

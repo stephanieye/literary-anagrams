@@ -40,22 +40,5 @@ button {
         width: 160px;
       }
     }
-
   }
-
-  @media only screen and (max-device-width: 1040px) {
-
-    button {
-      margin: 5px;
-      height: 150px;
-      width: 300px;
-      &.big {
-        margin: 5px 30px;
-        height: 250px;
-        width: 400px;
-      }
-    }
-
-  }
-
 }
