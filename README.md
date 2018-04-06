@@ -26,7 +26,7 @@ Each level is worth 10 points, giving each player a final score out of 100.
 ^At the end of the game, the final mark is displayed. The solo player will get a ranking (from Alpha Double-Plus to Epsilon), based on the caste system in Aldous Huxley's *Brave New World*. In the 2-player game, a winner is announced, and players can also look at the ranking.
 
 <img src="/READMEimages/mobile.png" alt="mobile" style="width: 20%; float: left; padding: 20px 20px 0 0" />
-<The design is responsive and, theoretically, can be played on mobile devices.
+The design is responsive and, theoretically, can be played on mobile devices.
 
 Another feature is sound effects, which can be switched off by clicking on the music note icon in the upper right corner. When muted, the music note icon has a cross over it.
 
