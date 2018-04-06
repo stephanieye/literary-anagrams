@@ -227,10 +227,7 @@ input {
 @media only screen and (max-device-width: 1040px) {
 
   header {
-    font-size: 80px;
-      &.move1, &.move2, &.move3, &.move4, &.move5, &.move6, &.move7, &.move8, &.move9, &.move10 {
-        animation: none;
-      }
+    display: none;
   }
 
   div {
