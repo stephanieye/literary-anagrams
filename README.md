@@ -4,6 +4,7 @@
 #LITERARY ANAGRAMS
 ------------------------------------------------------------------------------------------------------------------------
 
+[Play game online](http://stephanieye.com/literary-anagram-game/)
 [View repository on GitHub](https://github.com/stephslye/literary-anagram-game)
 
 This game combines my love of books and of puzzles. The player must unscramble a series of anagrams to reveal the titles of novels by British writers. There is also a two-player option (with customisable names), where players alternate levels and a winner is announced at the end. The player has 60 seconds per level.
