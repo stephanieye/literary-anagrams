@@ -21,13 +21,28 @@ Each level is worth 10 points, giving each player a final score out of 100.
 ^At each level, the player is presented with a series of tiles that spell out an anagram. The player can click on any tile to select it, and click on it again to deselect it.
 
 ![Level completed](/READMEimages/answer.png)
+
 ^Players click tiles in sequence to spell out the scrambled book title. There are also two hint buttons at the bottom of the screen, which when clicked reveal hints. However, each click costs the player points (1 point for a solo player, 2 points for a player in a 2-player game).
 
 ![Result](/READMEimages/result.png)
+<img src="/READMEimages/mobile.png" alt="mobile" style="width: 150px; float: left; padding: 20px 20px 0 0" />
+
 ^At the end of the game, the final mark is displayed. The solo player will get a ranking (from Alpha Double-Plus to Epsilon), based on the caste system in Aldous Huxley's *Brave New World*. In the 2-player game, a winner is announced, and players can also look at the ranking.
 
-![Mobile](/READMEimages/mobile.png)
-^The design is responsive and can be played on mobile devices (though I have to improve this feature!). Another feature is sound effects, which can be switched off by clicking on the music note icon in the upper right corner.
+<The design is responsive and can be played on mobile devices. **Going forward, I would work to improve this feature as currently, the game does not display well on several devices**
+
+Another feature is sound effects, which can be switched off by clicking on the music note icon in the upper right corner. When muted, the music note icon has a cross over it.
+
+-------------------------------------------------------------------------------------------------------------------------
+##Approach
+-------------------------------------------------------------------------------------------------------------------------
+Each level is a separate section in the HTML file, and remains hidden with display:none until called upon by the player pressing the 'submit' button, whereby the level's display changes to 'block'.
+
+Originally, I created all the anagram tiles in JavaScript; however, this meant each level took several seconds to render, so I decided to code the anagrams in HTML. I am still in two minds about this, as coding in HTML means all the questions can be seen in the source code. However, the answers cannot be seen, and I've decided to prioritise speed over secrecy.
+
+JavaScript/jQuery is used for the event listener buttons, the timer, the player's interaction with the game and the calculation of marks.
+
+The key game feature -- that when the player clicks on a tile, it is moved to the player's board -- is achieved using jQuery's append(). I experimented with drag-and-drop with jQuery UI, but found the responsiveness too sluggish.
 
 -------------------------------------------------------------------------------------------------------------------------
 ##Technologies and resources
@@ -38,11 +53,11 @@ Languages:
 3. JavaScript/jQuery
 
 Sources of typefaces:
-1. [Google Fonts](fonts.google.com)
+1. [Google Fonts](http://fonts.google.com)
 
 Sources of sound effects:
-1. [Freesound](freesound.org)
-2. [ZapSplat](zapsplat.com)
+1. [Freesound](http://freesound.org)
+2. [ZapSplat](http://zapsplat.com)
 
 -------------------------------------------------------------------------------------------------------------------------
 ##Contact me
