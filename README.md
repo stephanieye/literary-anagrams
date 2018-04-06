@@ -81,7 +81,7 @@ Browser:
 ##Contact me
 -------------------------------------------------------------------------------------------------------------------------
 
-hello@stephanieye.com
-stephanieye.com
+* hello@stephanieye.com
+* stephanieye.com
 
 --end--
