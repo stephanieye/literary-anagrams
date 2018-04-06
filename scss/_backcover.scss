@@ -27,7 +27,6 @@ div {
     animation: flowing 10s linear infinite;
     background-size: 400% 400%;
     padding: 20px 50px;
-    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,6 +64,18 @@ div {
 
 div {
 
+  &.finaltop {
+    padding: 20px;
+  }
+
+  &.finalmiddle {
+    padding: 20px;
+  }
+
+  &.finalbottom {
+    padding: 10px;
+  }
+
   &.society {
     padding: 10px;
   }
@@ -75,10 +86,6 @@ div {
 
 }
 }
-
-
-
-
 
 
 @media only screen and (max-device-width: 1040px) {

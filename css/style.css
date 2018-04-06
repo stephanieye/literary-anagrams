@@ -54,12 +54,18 @@ span.p2colour {
     width: 100%; }
 
   p {
-    font-family: 'Special Elite', cursive;
     line-height: 30px;
     font-size: 25px; }
     p.small {
       line-height: 25px;
       font-size: 20px; } }
+@media only screen and (max-width: 800px) {
+  p {
+    line-height: 25px;
+    font-size: 20px; }
+    p.small {
+      line-height: 20px;
+      font-size: 15px; } }
 @media only screen and (max-device-width: 1040px) {
   p {
     line-height: 70px;
@@ -80,69 +86,34 @@ button {
   animation: flowing 5s linear infinite; }
   button:hover {
     border: 3px solid white;
-    height: 90px;
-    width: 180px;
     color: white; }
-    button:hover p {
-      font-size: 35px; }
-      button:hover p.small {
-        font-size: 30px; }
   button.big {
     margin: 5px 40px;
     height: 150px;
     width: 300px; }
-    button.big:hover {
-      height: 150px;
-      width: 300px; }
 
 @media only screen and (max-width: 1200px) {
   button {
     margin: 10px;
     height: 55px;
     width: 110px;
-    border-radius: 30px; }
-    button p {
-      line-height: 20px; }
-    button:hover {
-      height: 65px;
-      width: 120px; }
-      button:hover p {
-        font-size: 25px; }
-        button:hover p.small {
-          font-size: 20px; } }
+    border-radius: 30px; } }
 @media only screen and (max-width: 1200px) and (max-width: 800px) {
   button {
     padding: 0; }
     button.big {
       margin: 5px 10px;
-      height: 100px;
-      width: 200px; }
-      button.big:hover {
-        height: 100px;
-        width: 200px; }
-      button.big p {
-        line-height: 20px; } }
+      height: 80px;
+      width: 160px; } }
 @media only screen and (max-width: 1200px) and (max-device-width: 1040px) {
   button {
     margin: 5px;
     height: 150px;
     width: 300px; }
-    button:hover {
-      height: 160px;
-      width: 320px; }
-      button:hover p {
-        font-size: 65px; }
-        button:hover p.small {
-          font-size: 45px; }
     button.big {
       margin: 5px 30px;
       height: 250px;
-      width: 400px; }
-      button.big p {
-        line-height: 55px; }
-      button.big:hover {
-        height: 250px;
-        width: 400px; } }
+      width: 400px; } }
 @keyframes move1 {
   0% {
     left: 0px;
@@ -343,134 +314,6 @@ button {
     opacity: 1; }
   100% {
     opacity: 0.3; } }
-@media only screen and (max-device-width: 1040px) {
-  @keyframes move1 {
-    0% {
-      left: 0px;
-      top: 0px; }
-    50% {
-      left: 31%;
-      top: 500px; }
-    100% {
-      left: 31%;
-      top: 0px; } }
-  @keyframes move2 {
-    0% {
-      left: 0px;
-      top: 0px; }
-    50% {
-      left: 70.2%;
-      top: 300px; }
-    100% {
-      left: 70.2%;
-      top: 0px; } }
-  @keyframes move4 {
-    0% {
-      left: 0px;
-      top: 0px;
-      transform: skewY(-35deg); }
-    15% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(-35deg) rotate(-10deg); }
-    20% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(0deg); }
-    25% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(10deg); }
-    30% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(0deg); }
-    35% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(-8deg); }
-    40% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(0deg); }
-    45% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(8deg); }
-    50% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(0deg); }
-    55% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(-6deg); }
-    60% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(0deg); }
-    65% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(6deg); }
-    70% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(0deg); }
-    75% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(-4deg); }
-    80% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(0deg); }
-    85% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(4deg); }
-    90% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(0deg); }
-    95% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0) rotate(-2deg); }
-    100% {
-      left: 64%;
-      top: 0px;
-      transform: skewY(0); } }
-  @keyframes move8 {
-    0% {
-      left: 0px;
-      top: 0px; }
-    50% {
-      left: -37.45%;
-      top: 300px; }
-    100% {
-      left: -37.45%;
-      top: 0px; } }
-  @keyframes move9 {
-    0% {
-      left: 0px;
-      top: 0px; }
-    50% {
-      left: -26%;
-      top: 250px; }
-    100% {
-      left: -26%;
-      top: 0px; } }
-  @keyframes move10 {
-    0% {
-      left: 0px;
-      top: 0px; }
-    50% {
-      left: -76.5%;
-      top: 200px; }
-    100% {
-      left: -76.5%;
-      top: 0px; } } }
 @media only screen and (max-width: 800px) {
   @keyframes move1 {
     0% {
@@ -744,13 +587,26 @@ input {
   div.music {
     top: 20px;
     right: 20px; }
+  div.introtop {
+    padding: 20px; }
+  div.intromiddle {
+    padding: 10px; }
+  div.introbottom {
+    padding: 20px;
+    height: 80px; }
   div.identities {
-    height: 350px; }
+    padding: 10px 0;
+    height: 300px; }
   div.form {
-    flex-direction: column; } }
+    flex-direction: column; }
+
+  input {
+    font-size: 25px;
+    height: 40px;
+    padding: 10px 5px 5px 5px; } }
 @media only screen and (max-device-width: 1040px) {
   header {
-    font-size: 80px; }
+    display: none; }
 
   div.masthead {
     width: 90%; }
@@ -961,7 +817,7 @@ div.tile {
     padding: 8px 15px; }
   div.hint1, div.hint2 {
     width: 130px;
-    height: 85px;
+    height: 75px;
     padding: 5px;
     box-shadow: 1.5px 1.5px 0.5px 0.25px rgba(99, 99, 99, 0.5); }
     div.hint1.hintrevealed, div.hint2.hintrevealed {
@@ -1055,7 +911,6 @@ div.finalbottom {
   animation: flowing 10s linear infinite;
   background-size: 400% 400%;
   padding: 20px 50px;
-  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1076,6 +931,12 @@ div.caste {
   justify-content: space-between; }
 
 @media only screen and (max-width: 800px) {
+  div.finaltop {
+    padding: 20px; }
+  div.finalmiddle {
+    padding: 20px; }
+  div.finalbottom {
+    padding: 10px; }
   div.society {
     padding: 10px; }
   div.caste {

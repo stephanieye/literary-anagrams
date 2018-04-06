@@ -211,14 +211,33 @@ input {
       right: 20px;
     }
 
-    &.identities {
-      height: 350px;
+    &.introtop {
+      padding: 20px;
     }
 
+    &.intromiddle {
+      padding: 10px;
+    }
+
+    &.introbottom {
+      padding: 20px;
+      height: 80px;
+    }
+
+    &.identities {
+      padding: 10px 0;
+      height: 300px;
+    }
 
     &.form {
       flex-direction: column;
     }
+  }
+
+  input {
+    font-size: 25px;
+    height: 40px;
+    padding: 10px 5px 5px 5px;
   }
 
 }
