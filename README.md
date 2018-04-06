@@ -22,14 +22,14 @@ Each level is worth 10 points, giving each player a final score out of 100.
 
 ![Level completed](/READMEimages/answer.png)
 
-^Players click tiles in sequence to spell out the scrambled book title. There are also two hint buttons at the bottom of the screen, which when clicked reveal hints. However, each click costs the player points (1 point for a solo player, 2 points for a player in a 2-player game).
+^Players click tiles in sequence to spell out the book title. There are also two hint buttons at the bottom of the screen, which when clicked reveal hints. However, each click costs the player points (1 point for a solo player, 2 points for a player in a 2-player game).
 
 ![Result](/READMEimages/result.png)
 <img src="/READMEimages/mobile.png" alt="mobile" style="width: 150px; float: left; padding: 20px 20px 0 0" />
 
 ^At the end of the game, the final mark is displayed. The solo player will get a ranking (from Alpha Double-Plus to Epsilon), based on the caste system in Aldous Huxley's *Brave New World*. In the 2-player game, a winner is announced, and players can also look at the ranking.
 
-<The design is responsive and can be played on mobile devices. **Going forward, I would work to improve this feature as currently, the game does not display well on several devices**
+<The design is responsive and, theoretically, can be played on mobile devices.
 
 Another feature is sound effects, which can be switched off by clicking on the music note icon in the upper right corner. When muted, the music note icon has a cross over it.
 
@@ -45,19 +45,35 @@ JavaScript/jQuery is used for the event listener buttons, the timer, the player'
 The key game feature -- that when the player clicks on a tile, it is moved to the player's board -- is achieved using jQuery's append(). I experimented with drag-and-drop with jQuery UI, but found the responsiveness too sluggish.
 
 -------------------------------------------------------------------------------------------------------------------------
-##Technologies and resources
+##Improvements going forward
+-------------------------------------------------------------------------------------------------------------------------
+The game still does not display well on several mobile devices, so I have to work on the media queries.
+
+This game was created in a Chrome browser, so I am not sure if it renders well in other browsers.
+
+-------------------------------------------------------------------------------------------------------------------------
+##Technologies
 -------------------------------------------------------------------------------------------------------------------------
 Languages:
-1. HTML5 with HTML Audio
-2. CSS with Flexbox and animation
-3. JavaScript/jQuery
+* HTML5 with HTML Audio
+* Sass/CSS with Flexbox and animation
+* jQuery/JavaScript
 
-Sources of typefaces:
-1. [Google Fonts](http://fonts.google.com)
+Anagram generator:
+* [Internet Anagram Server](https://wordsmith.org/anagram/)
 
-Sources of sound effects:
-1. [Freesound](http://freesound.org)
-2. [ZapSplat](http://zapsplat.com)
+Typefaces:
+* [Google Fonts](http://fonts.google.com)
+
+Sound effects:
+* [Freesound](http://freesound.org)
+* [ZapSplat](http://zapsplat.com)
+
+Text Editor:
+* Atom
+
+Browser:
+* Chrome
 
 -------------------------------------------------------------------------------------------------------------------------
 ##Contact me
