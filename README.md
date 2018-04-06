@@ -25,7 +25,7 @@ Each level is worth 10 points, giving each player a final score out of 100.
 ^Players click tiles in sequence to spell out the book title. There are also two hint buttons at the bottom of the screen, which when clicked reveal hints. However, each click costs the player points (1 point for a solo player, 2 points for a player in a 2-player game).
 
 ![Result](/READMEimages/result.png)
-<img src="/READMEimages/mobile.png" alt="mobile" style="width: 40%; float: left; padding: 20px 20px 0 0" />
+<img src="/READMEimages/mobile.png" alt="mobile" style="width: 20%; float: left; padding: 20px 20px 0 0" />
 
 ^At the end of the game, the final mark is displayed. The solo player will get a ranking (from Alpha Double-Plus to Epsilon), based on the caste system in Aldous Huxley's *Brave New World*. In the 2-player game, a winner is announced, and players can also look at the ranking.
 
