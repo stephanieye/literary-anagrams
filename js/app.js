@@ -64,20 +64,20 @@ $(()=>{
     player1name = document.getElementById('player1name').value;
     player2name = document.getElementById('player2name').value;
     players += 1;
-    playgame2(player1name, player2name);
+    playGame2(player1name, player2name);
   });
 
 
   $submitbutton.on('click', function() {
     if (players === 1) {
-      playgame();
+      playGame();
     } else {
-      playgame2(player1name, player2name);
+      playGame2(player1name, player2name);
     }
   });
 
 
-  function playgame(){
+  function playGame(){
     submit.play();
     $timer.removeClass('warning');
     clearInterval(timerId);
@@ -97,13 +97,13 @@ $(()=>{
     if (levelcount === 21) {
       fanfare.play();
       $finale.text(`You earned ${score} / 100 marks!`);
-      rankplayer(score);
+      rankPlayer(score);
     }
     layOutGame();
   }
 
 
-  function playgame2(player1name, player2name){
+  function playGame2(player1name, player2name){
     submit.play();
     $timer.removeClass('warning');
     clearInterval(timerId);
@@ -181,6 +181,7 @@ $(()=>{
     }
   }
 
+
   function startTimer() {
     $timer.text('60 seconds left');
     var timeRemaining = 60;
@@ -194,9 +195,9 @@ $(()=>{
       if (timeRemaining === 0) {
         clearInterval(timerId);
         if (players === 1) {
-          playgame();
+          playGame();
         } else {
-          playgame2(player1name, player2name);
+          playGame2(player1name, player2name);
         }
       }
     }, 1000);
@@ -208,7 +209,7 @@ $(()=>{
   }
 
 
-  function rankplayer(s){
+  function rankPlayer(s){
     if (s === 100) {
       $ranking1.css({'display': 'block'});
     } else if (s > 79) {
@@ -231,15 +232,7 @@ $(()=>{
     purr.play();
     $(this).find('p').text(`${$hints[levelcount-1][0]}`);
     $(this).addClass('hintrevealed');
-    if (players===2) {
-      if (levelcount%2 === 0) {
-        player2.push(-2);
-      } else {
-        player1.push(-2);
-      }
-    } else {
-      demerits += 1;
-    }
+    giveDemerits();
   });
 
 
@@ -247,6 +240,11 @@ $(()=>{
     purr.play();
     $(this).find('p').text(`${$hints[levelcount-1][1]}`);
     $(this).addClass('hintrevealed');
+    giveDemerits();
+  });
+
+
+  function giveDemerits() {
     if (players===2) {
       if (levelcount%2 === 0) {
         player2.push(-2);
@@ -256,7 +254,7 @@ $(()=>{
     } else {
       demerits += 1;
     }
-  });
+  }
 
 
   $playagainbutton.on('click', function(){
