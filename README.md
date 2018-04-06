@@ -17,18 +17,15 @@ Two players:
 Each level is worth 10 points, giving each player a final score out of 100.
 
 ![Level](/READMEimages/anagram.png)
-
 ^At each level, the player is presented with a series of tiles that spell out an anagram. The player can click on any tile to select it, and click on it again to deselect it.
 
 ![Level completed](/READMEimages/answer.png)
-
 ^Players click tiles in sequence to spell out the book title. There are also two hint buttons at the bottom of the screen, which when clicked reveal hints. However, each click costs the player points (1 point for a solo player, 2 points for a player in a 2-player game).
 
 ![Result](/READMEimages/result.png)
-<img src="/READMEimages/mobile.png" alt="mobile" style="width: 20%; float: left; padding: 20px 20px 0 0" />
-
 ^At the end of the game, the final mark is displayed. The solo player will get a ranking (from Alpha Double-Plus to Epsilon), based on the caste system in Aldous Huxley's *Brave New World*. In the 2-player game, a winner is announced, and players can also look at the ranking.
 
+<img src="/READMEimages/mobile.png" alt="mobile" style="width: 20%; float: left; padding: 20px 20px 0 0" />
 <The design is responsive and, theoretically, can be played on mobile devices.
 
 Another feature is sound effects, which can be switched off by clicking on the music note icon in the upper right corner. When muted, the music note icon has a cross over it.
