@@ -210,20 +210,27 @@ $(()=>{
 
 
   function rankPlayer(s){
-    if (s === 100) {
-      $ranking1.css({'display': 'block'});
-    } else if (s > 79) {
-      $ranking2.css({'display': 'block'});
-    } else if (s > 69) {
-      $ranking3.css({'display': 'block'});
-    } else if (s > 59) {
-      $ranking4.css({'display': 'block'});
-    } else if (s > 49) {
-      $ranking5.css({'display': 'block'});
-    } else if (s > 39) {
-      $ranking6.css({'display': 'block'});
-    } else {
-      $ranking7.css({'display': 'block'});
+    switch (true) {
+      case (s === 100):
+        $ranking1.css({'display': 'block'});
+        break;
+      case (s > 79):
+        $ranking2.css({'display': 'block'});
+        break;
+      case (s > 69):
+        $ranking3.css({'display': 'block'});
+        break;
+      case (s > 59):
+        $ranking4.css({'display': 'block'});
+        break;
+      case (s > 49):
+        $ranking5.css({'display': 'block'});
+        break;
+      case (s > 39):
+        $ranking6.css({'display': 'block'});
+        break;
+      default:
+        $ranking7.css({'display': 'block'});
     }
   }
 
