@@ -102,9 +102,9 @@ div {
   }
 
   &.mastheadmobile {
+    width: 100%;
+    padding: 5px 5px 0 5px;
     margin: 0 auto;
-    width: 80%;
-    padding: 5px;
     display: none;
   }
 
@@ -187,7 +187,6 @@ input {
 
   header {
     font-size: 50px;
-    text-align: left;
     margin-bottom: 10px;
   }
 
@@ -209,6 +208,12 @@ input {
     margin-bottom: 5px;
   }
 
+  input {
+    font-size: 25px;
+    height: 30px;
+    width: 100%;
+    padding: 10px 5px 5px 5px;
+  }
 
   div {
 
@@ -239,12 +244,16 @@ input {
     }
 
     &.identities {
-      padding: 10px 0;
-      height: 300px;
+      padding: 0;
+      height: 230px;
     }
 
     &.form {
       flex-direction: column;
+    }
+
+    &.field {
+      padding: 8px;
     }
   }
 

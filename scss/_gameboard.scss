@@ -218,7 +218,7 @@ div {
   div {
 
     &.control {
-      margin-top: 0;
+      margin-top: 10px;
       padding: 3px;
       flex-direction: column;
     }
@@ -257,11 +257,11 @@ div {
 
     &.hint {
       height: 90px;
-      padding: 8px 15px;
+      padding: 8px;
     }
 
     &.hint1 , &.hint2 {
-      width: 100px;
+      width: 90px;
       height: 70px;
       padding: 5px;
       box-shadow: 1.5px 1.5px 0.5px 0.25px $shadow;
@@ -276,7 +276,7 @@ div {
     &.tile {
       font-size: 25px;
       height: 40px;
-      width: 30px;
+      width: 26.5px;
       padding: 7px 0 0 0;
       margin: 2.5px;
       border-radius: 3px;
