@@ -59,7 +59,7 @@ span.p2colour {
     p.small {
       line-height: 20px;
       font-size: 15px; } }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 400px) {
   p {
     line-height: 20px;
     font-size: 15px; }
@@ -91,7 +91,7 @@ button {
     height: 55px;
     width: 110px;
     border-radius: 30px; } }
-@media only screen and (max-width: 1200px) and (max-width: 800px) {
+@media only screen and (max-width: 1200px) and (max-width: 400px) {
   button {
     padding: 0;
     margin: 0; }
@@ -567,7 +567,7 @@ input {
   div.masthead {
     padding-top: 20px;
     padding-bottom: 10px; } }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 400px) {
   header {
     font-size: 30px;
     margin-bottom: 5px; }
@@ -751,6 +751,12 @@ div.tile {
     div.tile.chosen {
       box-shadow: -3px 3px 1px 0.5px rgba(99, 99, 99, 0.5); } }
 @media only screen and (max-width: 800px) {
+  div.contents, div.timer, div.score {
+    width: 225px;
+    padding: 8px 2px 2px 2px; }
+  div.tile {
+    width: 60px; } }
+@media only screen and (max-width: 400px) {
   div.control {
     margin-top: 10px;
     padding: 3px;
@@ -837,7 +843,7 @@ div.caste {
   flex-direction: row;
   justify-content: space-between; }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 400px) {
   div.finaltop {
     padding: 20px; }
   div.finalmiddle {
