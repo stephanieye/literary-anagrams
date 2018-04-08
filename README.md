@@ -27,7 +27,8 @@ Each level is worth 10 points, giving each player a final score out of 100.
  * At the end of the game, the final mark is displayed. The solo player will get a ranking (from Alpha Double-Plus to Epsilon), based on the caste system in Aldous Huxley's *Brave New World*. In the 2-player game, a winner is announced, and players can also look at the ranking.
 
 <img src="/READMEimages/mobile.png" alt="mobile" style="width: 20%; float: left; padding: 20px 20px 0 0" />
-* The design is responsive and, theoretically, can be played on mobile devices.
+
+* The design is responsive and, theoretically, can be played on all mobile devices.
 
 * Another feature is sound effects, which can be switched off by clicking on the music note icon in the upper right corner. When muted, the music note icon has a cross over it.
 
@@ -49,7 +50,7 @@ The key game feature -- that when the player clicks on a tile, it is moved to th
 
 * The game displays well on iPad and iPhone, however, I have not tested it on other devices and am not confident it is fully responsive.
 
-* This game was created in a Chrome browser, and I am not confident it fully renders well in other browsers, particularly the title animation.
+* This game was created in a Chrome browser, and I am not confident it renders perfectly in other browsers, particularly the title animation.
 
 * My 'play again' button uses location.reload(), which I am aware is considered an amateurish method, so I could work on restoring the game's start page in a more sophisticated way.
 
