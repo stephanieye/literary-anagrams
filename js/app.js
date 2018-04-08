@@ -10,6 +10,8 @@ $(()=>{
   var player2 = [0];
   var soc = 1;
 
+  const $masthead = $('#mastheadanimation');
+  const $masthead1 = $('#mastheadnoanimation');
   const $identities = $('div.identities');
   const $getnamesbutton = $('button.getnames');
   const $submitbutton = $('button.submit');
@@ -38,6 +40,11 @@ $(()=>{
   const $cross = $('div.cross');
   const $audio = $('audio');
 
+
+  const typewriter = document.getElementById('typewriter');
+  typewriter.src= 'sounds/typewriter.mp3';
+  const shorttype = document.getElementById('shorttype');
+  shorttype.src= 'sounds/shorttype.wav';
   const choose = document.getElementById('choose');
   choose.src = 'sounds/choose.mp3';
   const unchoose = document.getElementById('unchoose');
@@ -52,6 +59,16 @@ $(()=>{
   fanfare.src = 'sounds/fanfare.flac';
   const warn = document.getElementById('warn');
   warn.src = 'sounds/warn.wav';
+
+
+  if ($masthead.is(':visible')) {
+    typewriter.play();
+  }
+
+
+  if ($masthead1.is(':visible')) {
+    shorttype.play();
+  }
 
 
   $duobutton.on('click', function(){
@@ -218,25 +235,25 @@ $(()=>{
   function rankPlayer(s){
     switch (true) {
       case (s === 100):
-        $ranking1.css({'display': 'block'});
-        break;
+      $ranking1.css({'display': 'block'});
+      break;
       case (s > 79):
-        $ranking2.css({'display': 'block'});
-        break;
+      $ranking2.css({'display': 'block'});
+      break;
       case (s > 69):
-        $ranking3.css({'display': 'block'});
-        break;
+      $ranking3.css({'display': 'block'});
+      break;
       case (s > 59):
-        $ranking4.css({'display': 'block'});
-        break;
+      $ranking4.css({'display': 'block'});
+      break;
       case (s > 49):
-        $ranking5.css({'display': 'block'});
-        break;
+      $ranking5.css({'display': 'block'});
+      break;
       case (s > 39):
-        $ranking6.css({'display': 'block'});
-        break;
+      $ranking6.css({'display': 'block'});
+      break;
       default:
-        $ranking7.css({'display': 'block'});
+      $ranking7.css({'display': 'block'});
     }
   }
 
