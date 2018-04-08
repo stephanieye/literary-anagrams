@@ -59,7 +59,7 @@ span.p2colour {
     p.small {
       line-height: 20px;
       font-size: 15px; } }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 745px) {
   p {
     line-height: 20px;
     font-size: 15px; }
@@ -91,7 +91,7 @@ button {
     height: 55px;
     width: 110px;
     border-radius: 30px; } }
-@media only screen and (max-width: 1200px) and (max-width: 400px) {
+@media only screen and (max-width: 1200px) and (max-width: 745px) {
   button {
     padding: 0;
     margin: 0; }
@@ -567,7 +567,7 @@ input {
   div.masthead {
     padding-top: 20px;
     padding-bottom: 10px; } }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 745px) {
   header {
     font-size: 30px;
     margin-bottom: 5px; }
@@ -756,7 +756,7 @@ div.tile {
     padding: 8px 2px 2px 2px; }
   div.tile {
     width: 60px; } }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 745px) {
   div.control {
     margin-top: 10px;
     padding: 3px;
@@ -843,7 +843,7 @@ div.caste {
   flex-direction: row;
   justify-content: space-between; }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 745px) {
   div.finaltop {
     padding: 20px; }
   div.finalmiddle {
