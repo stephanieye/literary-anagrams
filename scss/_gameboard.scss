@@ -224,28 +224,33 @@ div {
 
     &.contents, &.timer, &.score {
       width: 60%;
-      padding: 8px 5px 2px 5px;
+      padding: 2px 5px;
+    }
+
+    &.instruction, &.deinstruction {
+      padding: 5px;
+      height: 30px;
     }
 
     &.question {
-      height: 270px;
+      height: 210px;
     }
 
     &.anagramboard {
-      height: 220px;
+      height: 180px;
       padding: 0 3px;
     }
 
     &.anagramrow {
-      height: 55px;
+      height: 45px;
     }
 
     &.answer {
-      height: 215px;
+      height: 165px;
     }
 
     &.answerboard {
-      height: 165px;
+      height: 135px;
       padding: 0 15px;
     }
 
@@ -255,7 +260,7 @@ div {
     }
 
     &.hint1 , &.hint2 {
-      width: 110px;
+      width: 100px;
       height: 70px;
       padding: 5px;
       box-shadow: 1.5px 1.5px 0.5px 0.25px $shadow;
@@ -268,9 +273,9 @@ div {
     }
 
     &.tile {
-      font-size: 30px;
-      height: 45px;
-      width: 35px;
+      font-size: 25px;
+      height: 40px;
+      width: 30px;
       padding: 7px 0 0 0;
       margin: 2.5px;
       border-radius: 3px;
