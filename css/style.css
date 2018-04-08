@@ -93,7 +93,8 @@ button {
     border-radius: 30px; } }
 @media only screen and (max-width: 1200px) and (max-width: 800px) {
   button {
-    padding: 0; }
+    padding: 0;
+    margin: 3px; }
     button.big {
       margin: 5px 10px;
       height: 80px;
@@ -569,7 +570,7 @@ input {
     padding-bottom: 10px; } }
 @media only screen and (max-width: 800px) {
   header {
-    font-size: 35px;
+    font-size: 30px;
     margin-bottom: 5px; }
 
   div.music {
@@ -745,6 +746,7 @@ div.tile {
 @media only screen and (max-width: 800px) {
   div.control {
     margin-top: 0;
+    padding: 3px;
     flex-direction: column; }
   div.contents, div.timer, div.score {
     width: 60%;
