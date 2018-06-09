@@ -3,19 +3,18 @@ div {
   &.control {
     background-color: $rose;
     width: 100%;
-    margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 10px 80px;
+    padding: 5px 20px;
   }
 
   &.contents, &.timer, &.score {
     text-align: center;
-    width: 280px;
-    padding: 14px 10px 6px 10px;
+    width: 250px;
+    padding: 8px 5px 2px 5px;
   }
 
   &.timer {
@@ -28,7 +27,7 @@ div {
     }
   }
   &.question {
-    height: 410px;
+    height: 390px;
     padding: 0 15px;
     background-color: $grey;
     background: radial-gradient(circle, $grey, $slate, $sky, $ocean);
@@ -53,8 +52,8 @@ div {
   }
 
   &.anagramboard {
-    padding: 0 50px;
-    height: 360px;
+    padding: 0 20px;
+    height: 340px;
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: column;
@@ -65,7 +64,7 @@ div {
 
   &.anagramrow {
     margin: 0 5px;
-    height: 90px;
+    height: 85px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -74,7 +73,7 @@ div {
   }
 
   &.answer {
-    height: 320px;
+    height: 305px;
     background-color: $pink;
     background: radial-gradient(circle, $blush, $rose, $kitten, $pink);
     background-size: 400% 400%;
@@ -82,8 +81,8 @@ div {
   }
 
   &.answerboard {
-    padding: 0 50px;
-    height: 270px;
+    padding: 0 20px;
+    height: 255px;
     font-family: 'Acme', sans-serif;
     display: flex;
     flex-direction: row;
@@ -91,10 +90,11 @@ div {
     align-items: flex-start;
     flex-wrap: wrap;
   }
+
   &.hint {
     background-color: $slate;
-    padding: 10px 50px;
-    height: 120px;
+    padding: 5px 20px;
+    height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -103,12 +103,12 @@ div {
   }
 
   &.hint1 , &.hint2 {
-    width: 250px;
-    height: 100px;
+    width: 200px;
+    height: 60px;
     border: 1px solid $header;
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 6px 6px 2px 1px $shadow;
+    padding: 0 5px;
+    box-shadow: 3px 3px 1px 0.5px $shadow;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,94 +117,31 @@ div {
     }
     &.hintrevealed {
       background-color: $pink;
-      box-shadow: -6px 6px 2px 1px $shadow;
+      box-shadow: -3px 3px 1px 0.5px $shadow;
     }
   }
 
   &.tile {
-    font-size: 55px;
-    height: 70px;
-    width: 70px;
+    font-size: 45px;
+    height: 65px;
+    width: 65px;
     background-color: $base;
     border: 1px solid $header;
     border-radius: 10px;
     padding: 10px;
-    margin: 10px;
-    box-shadow: 6px 6px 2px 1px $shadow;
+    margin: 9px 7px;
+    box-shadow: 3px 3px 1px 0.5px $shadow;
     &:hover {
       background-color: $lemon;
     }
 
     &.chosen {
       animation: bounce 0.3s ease-out 1;
-      box-shadow: -6px 6px 2px 1px $shadow;
+      box-shadow: -3px 3px 1px 0.5px $shadow;
     }
 
   }
 
-}
-
-@media only screen and (max-width: 1200px) {
-
-  div {
-
-    &.control {
-      padding: 8px 20px;
-    }
-
-    &.contents, &.timer, &.score {
-      width: 250px;
-      padding: 8px 5px 2px 5px;
-    }
-
-    &.question {
-      height: 390px;
-    }
-
-    &.anagramboard {
-      height: 340px;
-      padding: 0 20px;
-    }
-
-    &.anagramrow {
-      height: 85px;
-    }
-
-    &.answer {
-      height: 305px;
-    }
-
-    &.answerboard {
-      height: 255px;
-      padding: 0 20px;
-    }
-
-    &.hint {
-      padding: 10px 20px;
-    }
-
-    &.hint1 , &.hint2 {
-      width: 200px;
-      height: 85px;
-      padding: 10px;
-      box-shadow: 3px 3px 1px 0.5px $shadow;
-      &.hintrevealed {
-        box-shadow: -3px 3px 1px 0.5px $shadow;
-      }
-    }
-
-    &.tile {
-      font-size: 45px;
-      height: 65px;
-      width: 65px;
-      padding: 10px;
-      margin: 9px 7px;
-      box-shadow: 3px 3px 1px 0.5px $shadow;
-      &.chosen {
-        box-shadow: -3px 3px 1px 0.5px $shadow;
-      }
-    }
-  }
 }
 
 
