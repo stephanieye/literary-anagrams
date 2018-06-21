@@ -4,7 +4,7 @@
 #LITERARY ANAGRAMS
 ------------------
 
-* [Play game online](http://stephanieye.com/literary-anagram-game/)
+* [Play game online](http://stephanieye.com/literary-anagrams/)
 * [View repository on GitHub](https://github.com/stephslye/literary-anagram-game)
 
 This game combines my love of books and of puzzles. The player must unscramble a series of anagrams to reveal the titles of novels by British writers. There is also a two-player option (with customisable names), where players alternate levels and a winner is announced at the end. The player has 60 seconds per level.
@@ -21,7 +21,7 @@ Each level is worth 10 points, giving each player a final score out of 100.
 * At each level, the player is presented with a series of tiles that spell out an anagram. The player can click on any tile to select it, and click on it again to deselect it.
 
 ![Level completed](/READMEimages/answer.png)
- * Players click tiles in sequence to spell out the book title. There are also two hint buttons at the bottom of the screen, which when clicked reveal hints. However, each click costs the player points (1 point for a solo player, 2 points for a player in a 2-player game).
+ * Players click on tiles in sequence to spell out the book title. There are also two hint buttons at the bottom of the screen, which when clicked reveal hints. However, each click costs the player points (1 point for a solo player, 2 points for a player in a 2-player game).
 
 ![Result](/READMEimages/result.png)
  * At the end of the game, the final mark is displayed. The solo player will get a ranking (from Alpha Double-Plus to Epsilon), based on the caste system in Aldous Huxley's *Brave New World*. In the 2-player game, a winner is announced, and players can also look at the ranking.
